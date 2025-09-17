@@ -1,0 +1,19 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>Latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<Copyright>Copyright (c) 2025 ds5678</Copyright>
+		<Authors>ds5678</Authors>
+		<Company>AssetRipper</Company>
+		<Description>C# port of crunch.</Description>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/AssetRipper/AssetRipper.Conversions.Crunch</RepositoryUrl>
+		<PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+	</PropertyGroup>
+</Project>

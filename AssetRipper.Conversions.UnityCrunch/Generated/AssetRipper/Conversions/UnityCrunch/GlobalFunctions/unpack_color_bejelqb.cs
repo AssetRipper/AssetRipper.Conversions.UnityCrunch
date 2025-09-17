@@ -1,0 +1,24 @@
+using AssetRipper.Conversions.UnityCrunch.Helpers;
+using AssetRipper.Conversions.UnityCrunch.Structures;
+
+namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
+
+[MangledName("?unpack_color@dxt1_block@crnd@@SAXAEAI00G_N@Z")]
+[DemangledName("public: static void __cdecl crnd::dxt1_block::unpack_color(unsigned int &, unsigned int &, unsigned int &, unsigned short, bool)")]
+[CleanName("unpack_color")]
+internal static partial class unpack_color_bejelqb
+{
+	public unsafe static void Invoke(void* r, void* g, void* b, short packed_color, bool scaled)
+	{
+		crnd_color_quad crnd_color_quad = default(crnd_color_quad);
+		bool num = scaled;
+		short packed_color2 = packed_color;
+		unpack_color_ifs9dpd.Invoke(&crnd_color_quad, packed_color2, ((num ? 1u : 0u) & 1u) == 1, 0);
+		unchecked
+		{
+			*(int*)r = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field_0))->field_0;
+			*(int*)g = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field_0))->field_1;
+			*(int*)b = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field_0))->field_2;
+		}
+	}
+}

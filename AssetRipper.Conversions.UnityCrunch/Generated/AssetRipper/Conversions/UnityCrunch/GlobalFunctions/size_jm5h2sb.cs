@@ -8,8 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("size")]
 internal static partial class size_jm5h2sb
 {
+	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this)
 	{
-		return unchecked((crnd_vector_11*)@this)->field_1;
+		return unchecked((crnd_vector_y4ukjxd*)@this)->field_1;
 	}
 }

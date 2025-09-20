@@ -5,6 +5,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 4)]
 [MangledName("class.crnd::color_quad")]
+[DemangledName("crnd::color_quad")]
 public partial struct crnd_color_quad
 {
 	[FieldOffset(0)]

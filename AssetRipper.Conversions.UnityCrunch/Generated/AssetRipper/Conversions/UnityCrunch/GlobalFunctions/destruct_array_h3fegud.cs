@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("destruct_array")]
 internal static partial class destruct_array_h3fegud
 {
-	public unsafe static void Invoke(void* p, int n)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("struct crnd::crn_unpacker::block_buffer_element *")] void* p, [NativeType("unsigned int")] int n)
 	{
 		destruct_array_vfxflmb.Invoke(p, n);
 	}

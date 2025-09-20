@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("construct")]
 internal static partial class construct_e5fhx3a
 {
-	public unsafe static void* Invoke(void* p)
+	[return: NativeType("class crnd::prefix_coding::decoder_tables *")]
+	public unsafe static void* Invoke([NativeType("class crnd::prefix_coding::decoder_tables *")] void* p)
 	{
 		decoder_tables_Constructor_2o5uqyd.Invoke(p);
 		return p;

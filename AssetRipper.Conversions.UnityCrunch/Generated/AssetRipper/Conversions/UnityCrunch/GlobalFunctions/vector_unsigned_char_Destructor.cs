@@ -14,6 +14,7 @@ internal static partial class vector_unsigned_char_Destructor
 	public unsafe static void Invoke(void* @this)
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
+		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
 		clear_q4odfmb.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{

@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("construct_array")]
 internal static partial class construct_array_5afuwda
 {
-	public unsafe static void Invoke(void* p, int n)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("struct crnd::crn_unpacker::block_buffer_element *")] void* p, [NativeType("unsigned int")] int n)
 	{
 		construct_array_f9hrzwd.Invoke(p, n);
 	}

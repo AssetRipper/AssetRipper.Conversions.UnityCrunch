@@ -5,6 +5,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 4)]
 [MangledName("union.anon")]
+[DemangledName("anon")]
 [CleanName("anon")]
 public partial struct anon_fewgjra
 {

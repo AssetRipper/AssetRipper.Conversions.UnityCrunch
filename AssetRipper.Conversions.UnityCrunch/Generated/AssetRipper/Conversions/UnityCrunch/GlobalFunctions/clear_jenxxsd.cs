@@ -8,29 +8,24 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("clear")]
 internal static partial class clear_jenxxsd
 {
-	private partial struct LocalVariables
-	{
-	}
-
+	[return: NativeType("void")]
 	public unsafe static void Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		unchecked
 		{
-			if (((crnd_vector_11*)@this)->field_0 != null)
+			if (((crnd_vector_y4ukjxd*)@this)->field_0 != null)
 			{
-				destruct_array_h3fegud.Invoke(n: ((crnd_vector_11*)@this)->field_1, p: ((crnd_vector_11*)@this)->field_0);
-				crnd_free.Invoke(((crnd_vector_11*)@this)->field_0);
+				destruct_array_h3fegud.Invoke(n: ((crnd_vector_y4ukjxd*)@this)->field_1, p: ((crnd_vector_y4ukjxd*)@this)->field_0);
+				crnd_free.Invoke(((crnd_vector_y4ukjxd*)@this)->field_0);
 				if (ExceptionInfo.Current != null)
 				{
 					return;
 				}
-				((crnd_vector_11*)@this)->field_0 = null;
-				((crnd_vector_11*)@this)->field_1 = 0;
-				((crnd_vector_11*)@this)->field_2 = 0;
+				((crnd_vector_y4ukjxd*)@this)->field_0 = null;
+				((crnd_vector_y4ukjxd*)@this)->field_1 = 0;
+				((crnd_vector_y4ukjxd*)@this)->field_2 = 0;
 			}
-			((crnd_vector_11*)@this)->field_3 = 0;
-			StackFrameList.Current.Clear(startFrame);
+			((crnd_vector_y4ukjxd*)@this)->field_3 = 0;
 		}
 	}
 }

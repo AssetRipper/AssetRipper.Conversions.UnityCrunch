@@ -8,52 +8,37 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("resize")]
 internal static partial class resize_kfwzjla
 {
-	private partial struct LocalVariables
+	[return: NativeType("bool")]
+	public unsafe static bool Invoke(void* @this, [NativeType("unsigned int")] int new_size)
 	{
-		public bool field_0;
-
-		public int field_1;
-	}
-
-	public unsafe static bool Invoke(void* @this, int new_size)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = new_size;
+		bool flag = false;
 		unchecked
 		{
-			if (((crnd_vector_11*)@this)->field_1 != startFrame.GetLocalsPointer<LocalVariables>()->field_1)
+			if (((crnd_vector_y4ukjxd*)@this)->field_1 != new_size)
 			{
-				if ((uint)startFrame.GetLocalsPointer<LocalVariables>()->field_1 < (uint)((crnd_vector_11*)@this)->field_1)
+				if ((uint)new_size < (uint)((crnd_vector_y4ukjxd*)@this)->field_1)
 				{
-					destruct_array_h3fegud.Invoke(n: ((crnd_vector_11*)@this)->field_1 - startFrame.GetLocalsPointer<LocalVariables>()->field_1, p: (byte*)((crnd_vector_11*)@this)->field_0 + (nint)(uint)startFrame.GetLocalsPointer<LocalVariables>()->field_1 * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
+					destruct_array_h3fegud.Invoke(n: ((crnd_vector_y4ukjxd*)@this)->field_1 - new_size, p: (byte*)((crnd_vector_y4ukjxd*)@this)->field_0 + (nint)(uint)new_size * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
 				}
 				else
 				{
-					if ((uint)startFrame.GetLocalsPointer<LocalVariables>()->field_1 > (uint)((crnd_vector_11*)@this)->field_2)
+					if ((uint)new_size > (uint)((crnd_vector_y4ukjxd*)@this)->field_2)
 					{
-						bool flag = increase_capacity_ucojcwb.Invoke(grow_hint: startFrame.GetLocalsPointer<LocalVariables>()->field_1 == ((crnd_vector_11*)@this)->field_1 + 1, @this: @this, min_new_capacity: startFrame.GetLocalsPointer<LocalVariables>()->field_1);
+						bool flag2 = increase_capacity_ucojcwb.Invoke(@this, new_size, new_size == ((crnd_vector_y4ukjxd*)@this)->field_1 + 1);
 						if (ExceptionInfo.Current != null)
 						{
 							return false;
 						}
-						if (!flag)
+						if (!flag2)
 						{
-							startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-							goto IL_0177;
+							return false;
 						}
 					}
-					construct_array_5afuwda.Invoke(n: startFrame.GetLocalsPointer<LocalVariables>()->field_1 - ((crnd_vector_11*)@this)->field_1, p: (byte*)((crnd_vector_11*)@this)->field_0 + (nint)(uint)((crnd_vector_11*)@this)->field_1 * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
+					construct_array_5afuwda.Invoke(n: new_size - ((crnd_vector_y4ukjxd*)@this)->field_1, p: (byte*)((crnd_vector_y4ukjxd*)@this)->field_0 + (nint)(uint)((crnd_vector_y4ukjxd*)@this)->field_1 * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
 				}
-				((crnd_vector_11*)@this)->field_1 = startFrame.GetLocalsPointer<LocalVariables>()->field_1;
+				((crnd_vector_y4ukjxd*)@this)->field_1 = new_size;
 			}
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = true;
-			goto IL_0177;
+			return true;
 		}
-		IL_0177:
-		bool field_ = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-		StackFrameList.Current.Clear(startFrame);
-		return field_;
 	}
 }

@@ -8,7 +8,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("pack_color")]
 internal static partial class pack_color_kobnz2a
 {
-	public unsafe static short Invoke(int r, int g, int b, bool scaled, int bias)
+	[return: NativeType("unsigned short")]
+	public unsafe static short Invoke([NativeType("unsigned int")] int r, [NativeType("unsigned int")] int g, [NativeType("unsigned int")] int b, [NativeType("bool")] bool scaled, [NativeType("unsigned int")] int bias)
 	{
 		crnd_color_quad crnd_color_quad = default(crnd_color_quad);
 		sbyte b2 = (scaled ? ((sbyte)1) : ((sbyte)0));

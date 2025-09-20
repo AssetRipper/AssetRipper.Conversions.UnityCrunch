@@ -7,30 +7,27 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("struct crnd::crn_header const * __cdecl crnd::crnd_get_header(void const *, unsigned int)")]
 internal static partial class crnd_get_header
 {
-	public unsafe static void* Invoke(void* pData, int data_size)
+	[return: NativeType("struct crnd::crn_header const *")]
+	public unsafe static void* Invoke([NativeType("void const *")] void* pData, [NativeType("unsigned int")] int data_size)
 	{
 		void* ptr = null;
-		int num = 0;
 		void* ptr2 = null;
-		void* ptr3 = null;
-		num = data_size;
-		ptr2 = pData;
 		unchecked
 		{
-			if (ptr2 == null || (ulong)(uint)num < 74uL)
+			if (pData == null || (ulong)(uint)data_size < 74uL)
 			{
 				return null;
 			}
-			ptr3 = ptr2;
-			if (operator_unsigned_int_f3crpsb.Invoke(&((crnd_crn_header*)ptr3)->field_0) != 18552)
+			ptr2 = pData;
+			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr2)->field_0) != 18552)
 			{
 				return null;
 			}
-			if ((ulong)(uint)operator_unsigned_int_f3crpsb.Invoke(&((crnd_crn_header*)ptr3)->field_1) < 74uL || (uint)num < (uint)operator_unsigned_int_uxo4hgd.Invoke(&((crnd_crn_header*)ptr3)->field_3))
+			if ((ulong)(uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr2)->field_1) < 74uL || (uint)data_size < (uint)crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr2)->field_3))
 			{
 				return null;
 			}
-			return ptr3;
+			return ptr2;
 		}
 	}
 }

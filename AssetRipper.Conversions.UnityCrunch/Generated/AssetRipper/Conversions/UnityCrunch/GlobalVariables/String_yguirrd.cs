@@ -8,9 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [CleanName("String")]
 internal static partial class String_yguirrd
 {
-	public unsafe static InlineArray_28_w3otm9c* __pointer;
+	public unsafe static InlineArray28_SByte* __pointer;
 
-	public unsafe static InlineArray_28_w3otm9c Value
+	public unsafe static InlineArray28_SByte Value
 	{
 		get
 		{
@@ -24,7 +24,7 @@ internal static partial class String_yguirrd
 
 	unsafe static String_yguirrd()
 	{
-		__pointer = unchecked((InlineArray_28_w3otm9c*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray_28_w3otm9c))));
-		Value = InlineArrayHelper.Create<InlineArray_28_w3otm9c, byte>(".\\Original/inc/crn_decomp.h\0"u8);
+		__pointer = unchecked((InlineArray28_SByte*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray28_SByte))));
+		Value = InlineArrayHelper.Create<InlineArray28_SByte, byte>(".\\Original/inc/crn_decomp.h\0"u8);
 	}
 }

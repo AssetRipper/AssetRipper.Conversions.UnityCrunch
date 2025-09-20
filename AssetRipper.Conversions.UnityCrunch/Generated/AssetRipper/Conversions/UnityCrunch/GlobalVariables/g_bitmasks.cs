@@ -7,9 +7,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [DemangledName("unsigned int *crnd::math::g_bitmasks")]
 internal static partial class g_bitmasks
 {
-	private static InlineArray_32_vqkfj7a __value;
+	private static InlineArray32_Int32 __value;
 
-	public static InlineArray_32_vqkfj7a Value
+	public static InlineArray32_Int32 Value
 	{
 		get
 		{
@@ -23,7 +23,7 @@ internal static partial class g_bitmasks
 
 	static g_bitmasks()
 	{
-		Value = InlineArrayHelper.Create<InlineArray_32_vqkfj7a, int>(new int[32]
+		Value = InlineArrayHelper.Create<InlineArray32_Int32, int>(new int[32]
 		{
 			1, 2, 4, 8, 16, 32, 64, 128, 256, 512,
 			1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288,

@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: class crnd::color_quad<unsigned char, int> & __cdecl crnd::color_quad<unsigned char, int>::set(int, int, int, int)")]
 internal static partial class set
 {
-	public unsafe static void* Invoke(void* @this, int red, int green, int blue, int alpha)
+	[return: NativeType("class crnd::color_quad<unsigned char, int> &")]
+	public unsafe static void* Invoke(void* @this, [NativeType("int")] int red, [NativeType("int")] int green, [NativeType("int")] int blue, [NativeType("int")] int alpha)
 	{
 		unchecked
 		{

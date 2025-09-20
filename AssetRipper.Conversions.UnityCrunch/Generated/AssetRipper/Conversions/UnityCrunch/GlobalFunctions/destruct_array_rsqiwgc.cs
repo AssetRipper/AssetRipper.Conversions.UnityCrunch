@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("destruct_array")]
 internal static partial class destruct_array_rsqiwgc
 {
-	public unsafe static void Invoke(void* parameter_0, int parameter_1)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("unsigned int *")] void* parameter_0, [NativeType("unsigned int")] int parameter_1)
 	{
 	}
 }

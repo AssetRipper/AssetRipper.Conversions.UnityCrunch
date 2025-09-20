@@ -7,6 +7,7 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: unsigned int __cdecl crnd::crn_unpacker::get_data_size(void) const")]
 internal static partial class Get_data_size
 {
+	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this)
 	{
 		return unchecked((crnd_crn_unpacker*)@this)->field_2;

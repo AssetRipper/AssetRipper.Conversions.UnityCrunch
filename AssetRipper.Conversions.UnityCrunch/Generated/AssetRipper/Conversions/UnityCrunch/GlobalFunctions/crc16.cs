@@ -6,31 +6,29 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("unsigned short __cdecl crnd::crc16(void const *, unsigned int, unsigned short)")]
 internal static partial class crc16
 {
-	public unsafe static short Invoke(void* pBuf, int len, short crc)
+	[return: NativeType("unsigned short")]
+	public unsafe static short Invoke([NativeType("void const *")] void* pBuf, [NativeType("unsigned int")] int len, [NativeType("unsigned short")] short crc)
 	{
 		short num = 0;
-		int num2 = 0;
-		void* ptr = null;
-		short num3 = 0;
-		short num4 = 0;
-		num = crc;
-		num2 = len;
+		short num2 = 0;
+		short num3 = crc;
+		int i = len;
 		unchecked
 		{
-			num = (short)((ushort)num ^ -1);
-			ptr = pBuf;
-			for (; num2 != 0; num2 += -1)
+			num3 = (short)((ushort)num3 ^ -1);
+			void* ptr = pBuf;
+			for (; i != 0; i += -1)
 			{
 				void* ptr2 = ptr;
 				ptr = (byte*)ptr2 + 1;
-				num3 = (short)((byte)(*(sbyte*)ptr2) ^ ((ushort)num >> 8));
-				num = (short)((ushort)num << 8);
-				num4 = (short)(((ushort)num3 >> 4) ^ (ushort)num3);
-				num = (short)((ushort)num ^ (ushort)num4);
-				num4 = (short)((ushort)num4 << 5);
-				num = (short)((ushort)(short)((ushort)num ^ (ushort)num4) ^ (ushort)(short)((ushort)num4 << 7));
+				num = (short)((byte)(*(sbyte*)ptr2) ^ ((ushort)num3 >> 8));
+				num3 = (short)((ushort)num3 << 8);
+				num2 = (short)(((ushort)num >> 4) ^ (ushort)num);
+				num3 = (short)((ushort)num3 ^ (ushort)num2);
+				num2 = (short)((ushort)num2 << 5);
+				num3 = (short)((ushort)(short)((ushort)num3 ^ (ushort)num2) ^ (ushort)(short)((ushort)num2 << 7));
 			}
-			return (short)((ushort)num ^ -1);
+			return (short)((ushort)num3 ^ -1);
 		}
 	}
 }

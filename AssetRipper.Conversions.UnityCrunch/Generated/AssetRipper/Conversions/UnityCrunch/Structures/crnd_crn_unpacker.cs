@@ -6,6 +6,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 392)]
 [MangledName("class.crnd::crn_unpacker")]
+[DemangledName("crnd::crn_unpacker")]
 public partial struct crnd_crn_unpacker
 {
 	[FieldOffset(0)]
@@ -27,23 +28,23 @@ public partial struct crnd_crn_unpacker
 	public crnd_static_huffman_data_model field_5;
 
 	[FieldOffset(112)]
-	public InlineArray_2_tahu2ya field_6;
+	public InlineArray2_crnd_static_huffman_data_model field_6;
 
 	[FieldOffset(192)]
-	public InlineArray_2_tahu2ya field_7;
+	public InlineArray2_crnd_static_huffman_data_model field_7;
 
 	[FieldOffset(272)]
-	public crnd_vector_5 field_8;
+	public crnd_vector_maaktjc field_8;
 
 	[FieldOffset(296)]
-	public crnd_vector_5 field_9;
+	public crnd_vector_maaktjc field_9;
 
 	[FieldOffset(320)]
-	public crnd_vector_8 field_10;
+	public crnd_vector_rf9iywd field_10;
 
 	[FieldOffset(344)]
-	public crnd_vector_8 field_11;
+	public crnd_vector_rf9iywd field_11;
 
 	[FieldOffset(368)]
-	public crnd_vector_11 field_12;
+	public crnd_vector_y4ukjxd field_12;
 }

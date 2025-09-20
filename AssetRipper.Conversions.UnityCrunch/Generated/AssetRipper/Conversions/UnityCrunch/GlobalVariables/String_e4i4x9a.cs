@@ -8,9 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [CleanName("String")]
 internal static partial class String_e4i4x9a
 {
-	public unsafe static InlineArray_31_w3otm9c* __pointer;
+	public unsafe static InlineArray31_SByte* __pointer;
 
-	public unsafe static InlineArray_31_w3otm9c Value
+	public unsafe static InlineArray31_SByte Value
 	{
 		get
 		{
@@ -24,7 +24,7 @@ internal static partial class String_e4i4x9a
 
 	unsafe static String_e4i4x9a()
 	{
-		__pointer = unchecked((InlineArray_31_w3otm9c*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray_31_w3otm9c))));
-		Value = InlineArrayHelper.Create<InlineArray_31_w3otm9c, byte>("model.m_code_sizes[sym] == len\0"u8);
+		__pointer = unchecked((InlineArray31_SByte*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray31_SByte))));
+		Value = InlineArrayHelper.Create<InlineArray31_SByte, byte>("model.m_code_sizes[sym] == len\0"u8);
 	}
 }

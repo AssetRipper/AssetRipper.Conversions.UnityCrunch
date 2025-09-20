@@ -7,14 +7,13 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("destruct_array")]
 internal static partial class destruct_array_lrbdoxa
 {
-	public unsafe static void Invoke(void* p, int n)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("unsigned int *")] void* p, [NativeType("unsigned int")] int n)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
-		ptr = p;
+		void* ptr = p;
 		unchecked
 		{
-			for (ptr2 = (byte*)ptr + (nint)(uint)n * (nint)4; ptr != ptr2; ptr = (byte*)ptr + 4)
+			for (void* ptr2 = (byte*)ptr + (nint)(uint)n * (nint)4; ptr != ptr2; ptr = (byte*)ptr + 4)
 			{
 			}
 		}

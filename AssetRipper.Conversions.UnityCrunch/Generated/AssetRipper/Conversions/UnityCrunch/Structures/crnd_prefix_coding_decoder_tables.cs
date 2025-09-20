@@ -6,6 +6,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 192)]
 [MangledName("class.crnd::prefix_coding::decoder_tables")]
+[DemangledName("crnd::prefix_coding::decoder_tables")]
 public partial struct crnd_prefix_coding_decoder_tables
 {
 	[FieldOffset(0)]
@@ -33,10 +34,10 @@ public partial struct crnd_prefix_coding_decoder_tables
 	public sbyte field_7;
 
 	[FieldOffset(28)]
-	public InlineArray_17_vqkfj7a field_8;
+	public InlineArray17_Int32 field_8;
 
 	[FieldOffset(96)]
-	public InlineArray_17_vqkfj7a field_9;
+	public InlineArray17_Int32 field_9;
 
 	[FieldOffset(164)]
 	public int field_10;

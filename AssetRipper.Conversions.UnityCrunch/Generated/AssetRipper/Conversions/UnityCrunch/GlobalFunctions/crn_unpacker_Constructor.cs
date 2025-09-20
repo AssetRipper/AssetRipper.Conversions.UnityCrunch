@@ -8,16 +8,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: __cdecl crnd::crn_unpacker::crn_unpacker(void)")]
 internal static partial class crn_unpacker_Constructor
 {
-	private partial struct LocalVariables
-	{
-		public unsafe void* field_0;
-	}
-
 	public unsafe static void* Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = @this;
 		unchecked
 		{
 			((crnd_crn_unpacker*)@this)->field_0 = 519686845;
@@ -27,7 +19,7 @@ internal static partial class crn_unpacker_Constructor
 			symbol_codec_Constructor.Invoke(&((crnd_crn_unpacker*)@this)->field_4);
 			crnd_static_huffman_data_model* field_ = &((crnd_crn_unpacker*)@this)->field_5;
 			static_huffman_data_model_Constructor_tl33idc.Invoke(field_);
-			InlineArray_2_tahu2ya* field_2 = &((crnd_crn_unpacker*)@this)->field_6;
+			InlineArray2_crnd_static_huffman_data_model* field_2 = &((crnd_crn_unpacker*)@this)->field_6;
 			crnd_static_huffman_data_model* ptr = (crnd_static_huffman_data_model*)field_2;
 			crnd_static_huffman_data_model* ptr2 = ptr + 2L;
 			crnd_static_huffman_data_model* intPtr = ptr;
@@ -43,7 +35,7 @@ internal static partial class crn_unpacker_Constructor
 						intPtr = ptr4;
 						continue;
 					}
-					InlineArray_2_tahu2ya* field_3 = &((crnd_crn_unpacker*)@this)->field_7;
+					InlineArray2_crnd_static_huffman_data_model* field_3 = &((crnd_crn_unpacker*)@this)->field_7;
 					crnd_static_huffman_data_model* ptr5 = (crnd_static_huffman_data_model*)field_3;
 					crnd_static_huffman_data_model* ptr6 = ptr5 + 2L;
 					crnd_static_huffman_data_model* intPtr2 = ptr5;
@@ -59,28 +51,26 @@ internal static partial class crn_unpacker_Constructor
 								intPtr2 = ptr8;
 								continue;
 							}
-							crnd_vector_5* field_4 = &((crnd_crn_unpacker*)@this)->field_8;
+							crnd_vector_maaktjc* field_4 = &((crnd_crn_unpacker*)@this)->field_8;
 							vector_unsigned_int_Constructor.Invoke(field_4);
 							if (ExceptionInfo.Current == null)
 							{
-								crnd_vector_5* field_5 = &((crnd_crn_unpacker*)@this)->field_9;
+								crnd_vector_maaktjc* field_5 = &((crnd_crn_unpacker*)@this)->field_9;
 								vector_unsigned_int_Constructor.Invoke(field_5);
 								if (ExceptionInfo.Current == null)
 								{
-									crnd_vector_8* field_6 = &((crnd_crn_unpacker*)@this)->field_10;
+									crnd_vector_rf9iywd* field_6 = &((crnd_crn_unpacker*)@this)->field_10;
 									vector_unsigned_short_Constructor.Invoke(field_6);
 									if (ExceptionInfo.Current == null)
 									{
-										crnd_vector_8* field_7 = &((crnd_crn_unpacker*)@this)->field_11;
+										crnd_vector_rf9iywd* field_7 = &((crnd_crn_unpacker*)@this)->field_11;
 										vector_unsigned_short_Constructor.Invoke(field_7);
 										if (ExceptionInfo.Current == null)
 										{
 											vector_struct_crnd_crn_unpacker_block_buffer_element_Constructor.Invoke(&((crnd_crn_unpacker*)@this)->field_12);
 											if (ExceptionInfo.Current == null)
 											{
-												void* field_8 = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-												StackFrameList.Current.Clear(startFrame);
-												return field_8;
+												return @this;
 											}
 											ExceptionInfo current = ExceptionInfo.Current;
 											ExceptionInfo.Current = null;

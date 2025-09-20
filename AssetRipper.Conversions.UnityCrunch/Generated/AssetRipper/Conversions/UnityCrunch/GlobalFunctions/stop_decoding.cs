@@ -7,6 +7,7 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: unsigned __int64 __cdecl crnd::symbol_codec::stop_decoding(void)")]
 internal static partial class stop_decoding
 {
+	[return: NativeType("unsigned __int64")]
 	public unsafe static long Invoke(void* @this)
 	{
 		return unchecked((long)((crnd_symbol_codec*)@this)->field_1 - (long)((crnd_symbol_codec*)@this)->field_0);

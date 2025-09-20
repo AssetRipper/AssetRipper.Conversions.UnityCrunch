@@ -6,19 +6,18 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: unsigned int __cdecl crnd::symbol_codec::decode_bits(unsigned int)")]
 internal static partial class decode_bits
 {
-	public unsafe static int Invoke(void* @this, int num_bits)
+	[return: NativeType("unsigned int")]
+	public unsafe static int Invoke(void* @this, [NativeType("unsigned int")] int num_bits)
 	{
 		int num = 0;
 		int num2 = 0;
 		int num3 = 0;
-		int num4 = 0;
-		num2 = num_bits;
-		switch (num2)
+		switch (num_bits)
 		{
 		case 0:
 			return 0;
 		default:
-			return (Get_bits.Invoke(@this, unchecked(num2 - 16)) << 16) | Get_bits.Invoke(@this, 16);
+			return (Get_bits.Invoke(@this, unchecked(num_bits - 16)) << 16) | Get_bits.Invoke(@this, 16);
 		case 1:
 		case 2:
 		case 3:
@@ -35,7 +34,7 @@ internal static partial class decode_bits
 		case 14:
 		case 15:
 		case 16:
-			return Get_bits.Invoke(@this, num2);
+			return Get_bits.Invoke(@this, num_bits);
 		}
 	}
 }

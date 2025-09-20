@@ -6,6 +6,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 104)]
 [MangledName("struct.crnd::crn_file_info")]
+[DemangledName("crnd::crn_file_info")]
 public partial struct crnd_crn_file_info
 {
 	[FieldOffset(0)]
@@ -27,7 +28,7 @@ public partial struct crnd_crn_file_info
 	public int field_5;
 
 	[FieldOffset(24)]
-	public InlineArray_16_vqkfj7a field_6;
+	public InlineArray16_Int32 field_6;
 
 	[FieldOffset(88)]
 	public int field_7;

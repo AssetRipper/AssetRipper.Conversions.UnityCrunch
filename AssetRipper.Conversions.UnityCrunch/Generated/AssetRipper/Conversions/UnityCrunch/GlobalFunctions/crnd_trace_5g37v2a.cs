@@ -8,17 +8,14 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("crnd_trace")]
 internal static partial class crnd_trace_5g37v2a
 {
-	public unsafe static void Invoke(void* pFmt, void* args)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("char const *")] void* pFmt, [NativeType("char *")] void* args)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
-		InlineArray_512_w3otm9c inlineArray_512_w3otm9c = default(InlineArray_512_w3otm9c);
-		ptr = args;
-		ptr2 = pFmt;
+		InlineArray512_SByte inlineArray512_SByte = default(InlineArray512_SByte);
 		if (crnd_is_debugger_present.Invoke())
 		{
-			vsprintf.Invoke(&inlineArray_512_w3otm9c, ptr2, ptr);
-			crnd_output_debug_string.Invoke(&inlineArray_512_w3otm9c);
+			vsprintf.Invoke(&inlineArray512_SByte, pFmt, args);
+			crnd_output_debug_string.Invoke(&inlineArray512_SByte);
 		}
 	}
 }

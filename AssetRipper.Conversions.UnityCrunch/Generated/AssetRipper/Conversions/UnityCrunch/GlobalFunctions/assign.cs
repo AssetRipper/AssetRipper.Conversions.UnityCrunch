@@ -8,62 +8,44 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: bool __cdecl crnd::vector<unsigned char>::assign(class crnd::vector<unsigned char> const &)")]
 internal static partial class assign
 {
-	private partial struct LocalVariables
+	[return: NativeType("bool")]
+	public unsafe static bool Invoke(void* @this, [NativeType("class crnd::vector<unsigned char> const &")] void* other)
 	{
-		public bool field_0;
-
-		public unsafe void* field_1;
-	}
-
-	public unsafe static bool Invoke(void* @this, void* other)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = other;
+		bool flag = false;
+		if (@this == other)
+		{
+			return true;
+		}
 		unchecked
 		{
-			if (@this == startFrame.GetLocalsPointer<LocalVariables>()->field_1)
+			if (((crnd_vector_f3cmzmc*)@this)->field_2 == ((crnd_vector_f3cmzmc*)other)->field_1)
 			{
-				startFrame.GetLocalsPointer<LocalVariables>()->field_0 = true;
+				resize_rzzl5xd.Invoke(@this, 0);
+				if (ExceptionInfo.Current != null)
+				{
+					return false;
+				}
 			}
 			else
 			{
-				if (((crnd_vector*)@this)->field_2 == ((crnd_vector*)startFrame.GetLocalsPointer<LocalVariables>()->field_1)->field_1)
+				clear_q4odfmb.Invoke(@this);
+				if (ExceptionInfo.Current != null)
 				{
-					resize_rzzl5xd.Invoke(@this, 0);
-					if (ExceptionInfo.Current != null)
-					{
-						return false;
-					}
+					return false;
 				}
-				else
+				bool flag2 = increase_capacity_a7boycc.Invoke(@this, ((crnd_vector_f3cmzmc*)other)->field_1, grow_hint: false);
+				if (ExceptionInfo.Current != null)
 				{
-					clear_q4odfmb.Invoke(@this);
-					if (ExceptionInfo.Current != null)
-					{
-						return false;
-					}
-					bool flag = increase_capacity_a7boycc.Invoke(@this, ((crnd_vector*)startFrame.GetLocalsPointer<LocalVariables>()->field_1)->field_1, grow_hint: false);
-					if (ExceptionInfo.Current != null)
-					{
-						return false;
-					}
-					if (!flag)
-					{
-						startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-						goto IL_014e;
-					}
+					return false;
 				}
-				llvm_memcpy_p0_p0_i64.Invoke(((crnd_vector*)@this)->field_0, ((crnd_vector*)startFrame.GetLocalsPointer<LocalVariables>()->field_1)->field_0, (long)(uint)((crnd_vector*)startFrame.GetLocalsPointer<LocalVariables>()->field_1)->field_1 * 1L, isVolatile: false);
-				((crnd_vector*)@this)->field_1 = ((crnd_vector*)startFrame.GetLocalsPointer<LocalVariables>()->field_1)->field_1;
-				startFrame.GetLocalsPointer<LocalVariables>()->field_0 = true;
+				if (!flag2)
+				{
+					return false;
+				}
 			}
-			goto IL_014e;
+			llvm_memcpy_p0_p0_i64.Invoke(((crnd_vector_f3cmzmc*)@this)->field_0, ((crnd_vector_f3cmzmc*)other)->field_0, (long)(uint)((crnd_vector_f3cmzmc*)other)->field_1 * 1L, isVolatile: false);
+			((crnd_vector_f3cmzmc*)@this)->field_1 = ((crnd_vector_f3cmzmc*)other)->field_1;
+			return true;
 		}
-		IL_014e:
-		bool field_ = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-		StackFrameList.Current.Clear(startFrame);
-		return field_;
 	}
 }

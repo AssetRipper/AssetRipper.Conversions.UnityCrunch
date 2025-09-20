@@ -8,31 +8,21 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("clear")]
 internal static partial class clear_egw7ktb
 {
-	private partial struct LocalVariables
-	{
-	}
-
+	[return: NativeType("void")]
 	public unsafe static void Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		unchecked
 		{
 			((crnd_static_huffman_data_model*)@this)->field_0 = 0;
 			clear_q4odfmb.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1);
-			if (ExceptionInfo.Current != null)
-			{
-				return;
-			}
-			if (((crnd_static_huffman_data_model*)@this)->field_2 != null)
+			if (ExceptionInfo.Current == null && ((crnd_static_huffman_data_model*)@this)->field_2 != null)
 			{
 				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->field_2);
-				if (ExceptionInfo.Current != null)
+				if (ExceptionInfo.Current == null)
 				{
-					return;
+					((crnd_static_huffman_data_model*)@this)->field_2 = null;
 				}
-				((crnd_static_huffman_data_model*)@this)->field_2 = null;
 			}
-			StackFrameList.Current.Clear(startFrame);
 		}
 	}
 }

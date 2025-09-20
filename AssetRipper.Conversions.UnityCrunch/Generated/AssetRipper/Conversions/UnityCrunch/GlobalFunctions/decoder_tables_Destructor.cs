@@ -8,13 +8,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: __cdecl crnd::prefix_coding::decoder_tables::~decoder_tables(void)")]
 internal static partial class decoder_tables_Destructor
 {
-	private partial struct LocalVariables
-	{
-	}
-
 	public unsafe static void Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		unchecked
 		{
 			if (((crnd_prefix_coding_decoder_tables*)@this)->field_11 != null)
@@ -22,21 +17,21 @@ internal static partial class decoder_tables_Destructor
 				crnd_delete_array_nughn5d.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_11);
 				if (ExceptionInfo.Current != null)
 				{
-					goto IL_0067;
+					goto IL_0051;
 				}
 			}
-			if (((crnd_prefix_coding_decoder_tables*)@this)->field_13 != null)
+			if (((crnd_prefix_coding_decoder_tables*)@this)->field_13 == null)
 			{
-				crnd_delete_array_rytswyc.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_13);
-				if (ExceptionInfo.Current != null)
-				{
-					goto IL_0067;
-				}
+				return;
 			}
-			StackFrameList.Current.Clear(startFrame);
-			return;
+			crnd_delete_array_rytswyc.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_13);
+			if (ExceptionInfo.Current == null)
+			{
+				return;
+			}
+			goto IL_0051;
 		}
-		IL_0067:
+		IL_0051:
 		ExceptionInfo.Current = null;
 		std_terminate.Invoke();
 		throw null;

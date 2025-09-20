@@ -8,7 +8,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("unpack_color")]
 internal static partial class unpack_color_bejelqb
 {
-	public unsafe static void Invoke(void* r, void* g, void* b, short packed_color, bool scaled)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("unsigned int &")] void* r, [NativeType("unsigned int &")] void* g, [NativeType("unsigned int &")] void* b, [NativeType("unsigned short")] short packed_color, [NativeType("bool")] bool scaled)
 	{
 		crnd_color_quad crnd_color_quad = default(crnd_color_quad);
 		bool num = scaled;

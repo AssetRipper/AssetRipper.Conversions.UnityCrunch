@@ -8,7 +8,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("construct_array")]
 internal static partial class construct_array_oifcoec
 {
-	public unsafe static void Invoke(void* p, int n)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("unsigned char *")] void* p, [NativeType("unsigned int")] int n)
 	{
 		llvm_memset_p0_i64.Invoke(p, 0, unchecked(1L * (long)(uint)n), isVolatile: false);
 	}

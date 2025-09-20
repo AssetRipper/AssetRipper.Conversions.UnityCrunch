@@ -8,9 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [CleanName("String")]
 internal static partial class String_ypy7scc
 {
-	public unsafe static InlineArray_26_w3otm9c* __pointer;
+	public unsafe static InlineArray26_SByte* __pointer;
 
-	public unsafe static InlineArray_26_w3otm9c Value
+	public unsafe static InlineArray26_SByte Value
 	{
 		get
 		{
@@ -24,7 +24,7 @@ internal static partial class String_ypy7scc
 
 	unsafe static String_ypy7scc()
 	{
-		__pointer = unchecked((InlineArray_26_w3otm9c*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray_26_w3otm9c))));
-		Value = InlineArrayHelper.Create<InlineArray_26_w3otm9c, byte>("crnd_malloc: size too big\0"u8);
+		__pointer = unchecked((InlineArray26_SByte*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray26_SByte))));
+		Value = InlineArrayHelper.Create<InlineArray26_SByte, byte>("crnd_malloc: size too big\0"u8);
 	}
 }

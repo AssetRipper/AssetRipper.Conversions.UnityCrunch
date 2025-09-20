@@ -6,19 +6,17 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("unsigned int __cdecl crnd::math::ceil_log2i(unsigned int)")]
 internal static partial class ceil_log2i
 {
-	public static int Invoke(int v)
+	[return: NativeType("unsigned int")]
+	public static int Invoke([NativeType("unsigned int")] int v)
 	{
-		int num = 0;
-		int num2 = 0;
-		num = v;
-		num2 = floor_log2i.Invoke(num);
+		int num = floor_log2i.Invoke(v);
 		unchecked
 		{
-			if (num2 != 32 && (uint)num > (uint)(1 << num2))
+			if (num != 32 && (uint)v > (uint)(1 << num))
 			{
-				num2++;
+				num++;
 			}
-			return num2;
+			return num;
 		}
 	}
 }

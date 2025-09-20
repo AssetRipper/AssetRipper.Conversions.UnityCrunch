@@ -8,14 +8,13 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("destruct_array")]
 internal static partial class destruct_array_vfxflmb
 {
-	public unsafe static void Invoke(void* p, int n)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("struct crnd::crn_unpacker::block_buffer_element *")] void* p, [NativeType("unsigned int")] int n)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
-		ptr = p;
+		void* ptr = p;
 		unchecked
 		{
-			for (ptr2 = (byte*)ptr + (nint)(uint)n * (nint)sizeof(crnd_crn_unpacker_block_buffer_element); ptr != ptr2; ptr = (byte*)ptr + sizeof(crnd_crn_unpacker_block_buffer_element))
+			for (void* ptr2 = (byte*)ptr + (nint)(uint)n * (nint)sizeof(crnd_crn_unpacker_block_buffer_element); ptr != ptr2; ptr = (byte*)ptr + sizeof(crnd_crn_unpacker_block_buffer_element))
 			{
 			}
 		}

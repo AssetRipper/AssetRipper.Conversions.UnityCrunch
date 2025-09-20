@@ -7,36 +7,24 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("void __cdecl crnd::crnd_free(void *)")]
 internal static partial class crnd_free
 {
-	private partial struct LocalVariables
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("void *")] void* p)
 	{
-		public unsafe void* field_0;
-	}
-
-	public unsafe static void Invoke(void* p)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = p;
+		if (p == null)
+		{
+			return;
+		}
 		unchecked
 		{
-			if (startFrame.GetLocalsPointer<LocalVariables>()->field_0 != null)
+			if (((int)p & 7) != 0)
 			{
-				if (((int)startFrame.GetLocalsPointer<LocalVariables>()->field_0 & 7) != 0)
-				{
-					crnd_mem_error.Invoke(String_gcwah5d.__pointer);
-				}
-				else
-				{
-					void* value = g_pRealloc.Value;
-					void* value2 = g_pUser_data.Value;
-					((delegate*<void*, long, void*, bool, void*, void*>)value)(startFrame.GetLocalsPointer<LocalVariables>()->field_0, 0L, null, true, value2);
-					if (ExceptionInfo.Current != null)
-					{
-						return;
-					}
-				}
+				crnd_mem_error.Invoke(String_gcwah5d.__pointer);
+				return;
 			}
-			StackFrameList.Current.Clear(startFrame);
+			((delegate*<void*, long, void*, bool, void*, void*>)g_pRealloc.Value)(p, 0L, null, true, g_pUser_data.Value);
+			if (ExceptionInfo.Current == null)
+			{
+			}
 		}
 	}
 }

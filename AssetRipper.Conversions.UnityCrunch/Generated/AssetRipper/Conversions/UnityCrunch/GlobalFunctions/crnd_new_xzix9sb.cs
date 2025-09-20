@@ -7,39 +7,25 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("crnd_new")]
 internal static partial class crnd_new_xzix9sb
 {
-	private partial struct LocalVariables
-	{
-		public unsafe void* field_0;
-
-		public unsafe void* field_1;
-	}
-
+	[return: NativeType("class crnd::crn_unpacker *")]
 	public unsafe static void* Invoke()
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = null;
-		void* field_ = crnd_malloc.Invoke(392L, null);
+		void* ptr = null;
+		void* ptr2 = crnd_malloc.Invoke(392L, null);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = field_;
-		if (startFrame.GetLocalsPointer<LocalVariables>()->field_1 == null)
+		void* ptr3 = ptr2;
+		if (ptr3 == null)
 		{
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
+			return null;
 		}
-		else
+		void* result = construct_bzfae7a.Invoke(ptr3);
+		if (ExceptionInfo.Current != null)
 		{
-			void* field_2 = construct_bzfae7a.Invoke(startFrame.GetLocalsPointer<LocalVariables>()->field_1);
-			if (ExceptionInfo.Current != null)
-			{
-				return null;
-			}
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = field_2;
+			return null;
 		}
-		void* field_3 = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-		StackFrameList.Current.Clear(startFrame);
-		return field_3;
+		return result;
 	}
 }

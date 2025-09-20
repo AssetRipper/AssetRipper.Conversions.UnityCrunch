@@ -8,9 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [CleanName("String")]
 internal static partial class String_tghxvvc
 {
-	public unsafe static InlineArray_33_w3otm9c* __pointer;
+	public unsafe static InlineArray33_SByte* __pointer;
 
-	public unsafe static InlineArray_33_w3otm9c Value
+	public unsafe static InlineArray33_SByte Value
 	{
 		get
 		{
@@ -24,7 +24,7 @@ internal static partial class String_tghxvvc
 
 	unsafe static String_tghxvvc()
 	{
-		__pointer = unchecked((InlineArray_33_w3otm9c*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray_33_w3otm9c))));
-		Value = InlineArrayHelper.Create<InlineArray_33_w3otm9c, byte>("%s(%u): Assertion failure: \"%s\"\n\0"u8);
+		__pointer = unchecked((InlineArray33_SByte*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray33_SByte))));
+		Value = InlineArrayHelper.Create<InlineArray33_SByte, byte>("%s(%u): Assertion failure: \"%s\"\n\0"u8);
 	}
 }

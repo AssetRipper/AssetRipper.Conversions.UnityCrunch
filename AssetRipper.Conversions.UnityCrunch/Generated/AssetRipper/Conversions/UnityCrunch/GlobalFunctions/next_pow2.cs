@@ -6,7 +6,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("int __cdecl crnd::math::next_pow2(unsigned int)")]
 internal static partial class next_pow2
 {
-	public static int Invoke(int val)
+	[return: NativeType("int")]
+	public static int Invoke([NativeType("unsigned int")] int val)
 	{
 		unchecked
 		{

@@ -11,9 +11,11 @@ internal static partial class destruct_py7r2pc
 	{
 	}
 
-	public unsafe static void Invoke(void* p)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("class crnd::prefix_coding::decoder_tables *")] void* p)
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
+		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
 		decoder_tables_Destructor.Invoke(p);
 		if (ExceptionInfo.Current == null)
 		{

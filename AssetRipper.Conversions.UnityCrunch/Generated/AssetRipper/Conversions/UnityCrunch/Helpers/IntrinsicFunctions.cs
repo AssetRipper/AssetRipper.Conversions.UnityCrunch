@@ -156,6 +156,7 @@ internal static partial class IntrinsicFunctions
 
 	[DoesNotReturn]
 	[MangledName("__std_terminate")]
+	[MangledName("llvm.trap")]
 	public static void Terminate()
 	{
 		throw new FatalException("Terminate");

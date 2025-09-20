@@ -9,61 +9,32 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("unpack_level")]
 internal static partial class unpack_level_cvfjdga
 {
-	private partial struct LocalVariables
+	[return: NativeType("bool")]
+	public unsafe static bool Invoke(void* @this, [NativeType("void **")] void* pDst, [NativeType("unsigned int")] int dst_size_in_bytes, [NativeType("unsigned int")] int row_pitch_in_bytes, [NativeType("unsigned int")] int level_index)
 	{
-		public int field_0;
-
-		public int field_1;
-
-		public int field_2;
-
-		public unsafe void* field_3;
-
-		public int field_4;
-
-		public int field_5;
-	}
-
-	public unsafe static bool Invoke(void* @this, void* pDst, int dst_size_in_bytes, int row_pitch_in_bytes, int level_index)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_2 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_3 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_4 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_5 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = level_index;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = row_pitch_in_bytes;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_2 = dst_size_in_bytes;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_3 = pDst;
 		unchecked
 		{
-			int field_ = operator_unsigned_int_uxo4hgd.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)startFrame.GetLocalsPointer<LocalVariables>()->field_0 * (nint)sizeof(crnd_crn_packed_uint_0));
-			startFrame.GetLocalsPointer<LocalVariables>()->field_4 = field_;
-			int field_2 = ((crnd_crn_unpacker*)@this)->field_2;
-			startFrame.GetLocalsPointer<LocalVariables>()->field_5 = field_2;
-			if ((uint)(startFrame.GetLocalsPointer<LocalVariables>()->field_0 + 1) < (uint)operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_7))
+			int num = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)level_index * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+			int num2 = ((crnd_crn_unpacker*)@this)->field_2;
+			if ((uint)(level_index + 1) < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_7))
 			{
-				int field_3 = operator_unsigned_int_uxo4hgd.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)(startFrame.GetLocalsPointer<LocalVariables>()->field_0 + 1) * (nint)sizeof(crnd_crn_packed_uint_0));
-				startFrame.GetLocalsPointer<LocalVariables>()->field_5 = field_3;
+				num2 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)(level_index + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
 			}
-			int num;
-			if ((uint)startFrame.GetLocalsPointer<LocalVariables>()->field_5 > (uint)startFrame.GetLocalsPointer<LocalVariables>()->field_4)
+			int num3;
+			if ((uint)num2 > (uint)num)
 			{
-				num = -1;
+				num3 = -1;
 			}
 			else
 			{
 				crnd_assert.Invoke(String_huvyfmc.__pointer, String_yguirrd.__pointer, 2982);
-				num = 0;
+				num3 = 0;
 			}
-			bool result = unpack_level_zjb72ec.Invoke(level_index: startFrame.GetLocalsPointer<LocalVariables>()->field_0, row_pitch_in_bytes: startFrame.GetLocalsPointer<LocalVariables>()->field_1, dst_size_in_bytes: startFrame.GetLocalsPointer<LocalVariables>()->field_2, pDst: startFrame.GetLocalsPointer<LocalVariables>()->field_3, src_size_in_bytes: startFrame.GetLocalsPointer<LocalVariables>()->field_5 - startFrame.GetLocalsPointer<LocalVariables>()->field_4, @this: @this, pSrc: (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)startFrame.GetLocalsPointer<LocalVariables>()->field_4);
+			bool result = unpack_level_zjb72ec.Invoke(@this, (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)num, num2 - num, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 			if (ExceptionInfo.Current != null)
 			{
 				return false;
 			}
-			StackFrameList.Current.Clear(startFrame);
 			return result;
 		}
 	}

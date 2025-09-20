@@ -5,6 +5,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 40)]
 [MangledName("class.crnd::symbol_codec")]
+[DemangledName("crnd::symbol_codec")]
 public partial struct crnd_symbol_codec
 {
 	[FieldOffset(0)]

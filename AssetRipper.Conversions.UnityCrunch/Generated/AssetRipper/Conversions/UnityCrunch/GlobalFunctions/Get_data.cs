@@ -7,6 +7,7 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: void const * __cdecl crnd::crn_unpacker::get_data(void) const")]
 internal static partial class Get_data
 {
+	[return: NativeType("void const *")]
 	public unsafe static void* Invoke(void* @this)
 	{
 		return unchecked((crnd_crn_unpacker*)@this)->field_1;

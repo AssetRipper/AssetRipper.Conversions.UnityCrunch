@@ -7,9 +7,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [DemangledName("unsigned char const *const crnd::g_eight_alpha_invert_table")]
 internal static partial class g_eight_alpha_invert_table
 {
-	private static InlineArray_8_w3otm9c __value;
+	private static InlineArray8_SByte __value;
 
-	public static InlineArray_8_w3otm9c Value
+	public static InlineArray8_SByte Value
 	{
 		get
 		{
@@ -23,6 +23,6 @@ internal static partial class g_eight_alpha_invert_table
 
 	static g_eight_alpha_invert_table()
 	{
-		Value = InlineArrayHelper.Create<InlineArray_8_w3otm9c, byte>(new byte[8] { 1, 0, 7, 6, 5, 4, 3, 2 });
+		Value = InlineArrayHelper.Create<InlineArray8_SByte, byte>(new byte[8] { 1, 0, 7, 6, 5, 4, 3, 2 });
 	}
 }

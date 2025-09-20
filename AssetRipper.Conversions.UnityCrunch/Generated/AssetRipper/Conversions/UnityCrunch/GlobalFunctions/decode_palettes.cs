@@ -7,103 +7,84 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("private: bool __cdecl crnd::crn_unpacker::decode_palettes(void)")]
 internal static partial class decode_palettes
 {
-	private partial struct LocalVariables
-	{
-		public bool field_0;
-	}
-
+	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		if (operator_unsigned_int_f3crpsb.Invoke(&unchecked((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_2) == 0)
-		{
-			goto IL_0093;
-		}
-		bool flag = decode_color_endpoints.Invoke(@this);
-		if (ExceptionInfo.Current != null)
-		{
-			return false;
-		}
-		if (!flag)
-		{
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		}
-		else
-		{
-			bool flag2 = decode_color_selectors.Invoke(@this);
-			if (ExceptionInfo.Current != null)
-			{
-				return false;
-			}
-			if (flag2)
-			{
-				goto IL_0093;
-			}
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		}
-		goto IL_0183;
-		IL_0183:
-		bool field_ = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-		StackFrameList.Current.Clear(startFrame);
-		return field_;
-		IL_0093:
+		bool flag = false;
 		unchecked
 		{
-			if (operator_unsigned_int_f3crpsb.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2) != 0)
+			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_2) != 0)
 			{
-				bool flag3 = decode_alpha_endpoints.Invoke(@this);
+				bool flag2 = decode_color_endpoints.Invoke(@this);
+				if (ExceptionInfo.Current != null)
+				{
+					return false;
+				}
+				if (!flag2)
+				{
+					return false;
+				}
+				bool flag3 = decode_color_selectors.Invoke(@this);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
 				}
 				if (!flag3)
 				{
-					startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-					goto IL_0183;
+					return false;
 				}
-				if (operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 14)
+			}
+			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2) != 0)
+			{
+				bool flag4 = decode_alpha_endpoints.Invoke(@this);
+				if (ExceptionInfo.Current != null)
 				{
-					bool flag4 = decode_alpha_selectors_etcs.Invoke(@this);
-					if (ExceptionInfo.Current != null)
-					{
-						return false;
-					}
-					if (!flag4)
-					{
-						goto IL_015b;
-					}
+					return false;
 				}
-				else if (operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12)
+				if (!flag4)
 				{
-					bool flag5 = decode_alpha_selectors_etc.Invoke(@this);
+					return false;
+				}
+				if (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 14)
+				{
+					bool flag5 = decode_alpha_selectors_etcs.Invoke(@this);
 					if (ExceptionInfo.Current != null)
 					{
 						return false;
 					}
 					if (!flag5)
 					{
-						goto IL_015b;
+						goto IL_0118;
 					}
 				}
-				else
+				else if (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12)
 				{
-					bool flag6 = decode_alpha_selectors.Invoke(@this);
+					bool flag6 = decode_alpha_selectors_etc.Invoke(@this);
 					if (ExceptionInfo.Current != null)
 					{
 						return false;
 					}
 					if (!flag6)
 					{
-						goto IL_015b;
+						goto IL_0118;
+					}
+				}
+				else
+				{
+					bool flag7 = decode_alpha_selectors.Invoke(@this);
+					if (ExceptionInfo.Current != null)
+					{
+						return false;
+					}
+					if (!flag7)
+					{
+						goto IL_0118;
 					}
 				}
 			}
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = true;
-			goto IL_0183;
+			return true;
 		}
-		IL_015b:
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		goto IL_0183;
+		IL_0118:
+		return false;
 	}
 }

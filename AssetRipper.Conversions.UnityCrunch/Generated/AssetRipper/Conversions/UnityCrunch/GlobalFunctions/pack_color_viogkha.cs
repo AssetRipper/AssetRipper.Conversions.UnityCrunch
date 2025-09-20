@@ -8,24 +8,20 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("pack_color")]
 internal static partial class pack_color_viogkha
 {
-	public unsafe static short Invoke(void* color, bool scaled, int bias)
+	[return: NativeType("unsigned short")]
+	public unsafe static short Invoke([NativeType("class crnd::color_quad<unsigned char, int> const &")] void* color, [NativeType("bool")] bool scaled, [NativeType("unsigned int")] int bias)
 	{
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
-		int num4 = 0;
-		num = bias;
-		bool num5 = scaled;
+		bool num = scaled;
 		unchecked
 		{
-			num2 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_0;
-			num3 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_1;
-			num4 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_2;
-			if (((num5 ? 1u : 0u) & 1u) == 1)
+			int num2 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_0;
+			int num3 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_1;
+			int num4 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_2;
+			if (((num ? 1u : 0u) & 1u) == 1)
 			{
-				num2 = (int)((uint)(num2 * 31 + num) / 255u);
-				num3 = (int)((uint)(num3 * 63 + num) / 255u);
-				num4 = (int)((uint)(num4 * 31 + num) / 255u);
+				num2 = (int)((uint)(num2 * 31 + bias) / 255u);
+				num3 = (int)((uint)(num3 * 63 + bias) / 255u);
+				num4 = (int)((uint)(num4 * 31 + bias) / 255u);
 			}
 			num2 = minimum.Invoke(num2, 31);
 			num3 = minimum.Invoke(num3, 63);

@@ -6,10 +6,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("bool __cdecl crnd::math::is_power_of_2(unsigned int)")]
 internal static partial class is_power_of_2
 {
-	public static bool Invoke(int x)
+	[return: NativeType("bool")]
+	public static bool Invoke([NativeType("unsigned int")] int x)
 	{
-		int num = 0;
-		num = x;
-		return num != 0 && (num & unchecked(num - 1)) == 0;
+		return x != 0 && (x & unchecked(x - 1)) == 0;
 	}
 }

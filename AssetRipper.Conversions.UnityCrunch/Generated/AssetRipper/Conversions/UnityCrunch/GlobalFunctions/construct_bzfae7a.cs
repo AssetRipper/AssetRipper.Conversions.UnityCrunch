@@ -7,19 +7,14 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("construct")]
 internal static partial class construct_bzfae7a
 {
-	private partial struct LocalVariables
+	[return: NativeType("class crnd::crn_unpacker *")]
+	public unsafe static void* Invoke([NativeType("class crnd::crn_unpacker *")] void* p)
 	{
-	}
-
-	public unsafe static void* Invoke(void* p)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		crn_unpacker_Constructor.Invoke(p);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
-		StackFrameList.Current.Clear(startFrame);
 		return p;
 	}
 }

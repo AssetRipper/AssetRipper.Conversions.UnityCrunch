@@ -7,29 +7,20 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("crnd_delete")]
 internal static partial class crnd_delete_e7rwdhb
 {
-	private partial struct LocalVariables
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("class crnd::crn_unpacker *")] void* p)
 	{
-		public unsafe void* field_0;
-	}
-
-	public unsafe static void Invoke(void* p)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = p;
-		if (startFrame.GetLocalsPointer<LocalVariables>()->field_0 != null)
+		if (p == null)
 		{
-			destruct_f77lq2b.Invoke(startFrame.GetLocalsPointer<LocalVariables>()->field_0);
-			if (ExceptionInfo.Current != null)
+			return;
+		}
+		destruct_f77lq2b.Invoke(p);
+		if (ExceptionInfo.Current == null)
+		{
+			crnd_free.Invoke(p);
+			if (ExceptionInfo.Current == null)
 			{
-				return;
-			}
-			crnd_free.Invoke(startFrame.GetLocalsPointer<LocalVariables>()->field_0);
-			if (ExceptionInfo.Current != null)
-			{
-				return;
 			}
 		}
-		StackFrameList.Current.Clear(startFrame);
 	}
 }

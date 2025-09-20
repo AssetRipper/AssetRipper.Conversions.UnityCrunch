@@ -7,10 +7,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("_vsnprintf_l")]
 internal static partial class vsnprintf_l
 {
-	public unsafe static int Invoke(void* Buffer, long BufferCount, void* Format, void* Locale, void* ArgList)
+	public unsafe static int Invoke([MangledName("_Buffer")] void* Buffer, [MangledName("_BufferCount")] long BufferCount, [MangledName("_Format")] void* Format, [MangledName("_Locale")] void* Locale, [MangledName("_ArgList")] void* ArgList)
 	{
-		int num = 0;
-		num = stdio_common_vsprintf.Invoke(*unchecked((long*)local_stdio_printf_options.Invoke()) | 1L, Buffer, BufferCount, Format, Locale, ArgList);
+		int num = stdio_common_vsprintf.Invoke(*unchecked((long*)local_stdio_printf_options.Invoke()) | 1L, Buffer, BufferCount, Format, Locale, ArgList);
 		return (num >= 0) ? num : (-1);
 	}
 }

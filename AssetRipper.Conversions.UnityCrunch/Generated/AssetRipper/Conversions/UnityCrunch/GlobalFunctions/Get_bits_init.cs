@@ -7,6 +7,7 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("private: void __cdecl crnd::symbol_codec::get_bits_init(void)")]
 internal static partial class Get_bits_init
 {
+	[return: NativeType("void")]
 	public unsafe static void Invoke(void* @this)
 	{
 		unchecked

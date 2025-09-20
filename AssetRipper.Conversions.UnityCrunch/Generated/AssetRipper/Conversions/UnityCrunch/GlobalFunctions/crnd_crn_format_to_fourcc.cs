@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("unsigned int __cdecl crnd::crnd_crn_format_to_fourcc(enum crn_format)")]
 internal static partial class crnd_crn_format_to_fourcc
 {
-	public unsafe static int Invoke(int fmt)
+	[return: NativeType("unsigned int")]
+	public unsafe static int Invoke([NativeType("enum crn_format")] int fmt)
 	{
 		int num = 0;
 		switch (fmt)

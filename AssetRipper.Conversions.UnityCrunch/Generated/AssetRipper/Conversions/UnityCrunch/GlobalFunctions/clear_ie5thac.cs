@@ -8,13 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("clear")]
 internal static partial class clear_ie5thac
 {
-	private partial struct LocalVariables
-	{
-	}
-
+	[return: NativeType("void")]
 	public unsafe static void Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		unchecked
 		{
 			if (((crnd_prefix_coding_decoder_tables*)@this)->field_11 != null)
@@ -30,14 +26,12 @@ internal static partial class clear_ie5thac
 			if (((crnd_prefix_coding_decoder_tables*)@this)->field_13 != null)
 			{
 				crnd_delete_array_rytswyc.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_13);
-				if (ExceptionInfo.Current != null)
+				if (ExceptionInfo.Current == null)
 				{
-					return;
+					((crnd_prefix_coding_decoder_tables*)@this)->field_13 = null;
+					((crnd_prefix_coding_decoder_tables*)@this)->field_12 = 0;
 				}
-				((crnd_prefix_coding_decoder_tables*)@this)->field_13 = null;
-				((crnd_prefix_coding_decoder_tables*)@this)->field_12 = 0;
 			}
-			StackFrameList.Current.Clear(startFrame);
 		}
 	}
 }

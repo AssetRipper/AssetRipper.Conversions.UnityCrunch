@@ -8,57 +8,52 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: void __cdecl crnd::dxt3_block::set_alpha(unsigned int, unsigned int, unsigned int, bool)")]
 internal static partial class Set_alpha
 {
-	public unsafe static void Invoke(void* @this, int x, int y, int value, bool scaled)
+	[return: NativeType("void")]
+	public unsafe static void Invoke(void* @this, [NativeType("unsigned int")] int x, [NativeType("unsigned int")] int y, [NativeType("unsigned int")] int value, [NativeType("bool")] bool scaled)
 	{
-		sbyte b = 0;
 		int num = 0;
 		int num2 = 0;
-		int num3 = 0;
-		int num4 = 0;
-		int num5 = 0;
-		b = (scaled ? ((sbyte)1) : ((sbyte)0));
-		num = value;
-		num2 = y;
-		num3 = x;
+		sbyte b = (scaled ? ((sbyte)1) : ((sbyte)0));
+		int num3 = value;
 		unchecked
 		{
+			int num4;
+			if ((uint)x < 4u && (uint)y < 4u)
+			{
+				num4 = -1;
+			}
+			else
+			{
+				crnd_assert.Invoke(String_cahur4b.__pointer, String_yguirrd.__pointer, 2831);
+				num4 = 0;
+			}
 			int num6;
-			if ((uint)num3 < 4u && (uint)num2 < 4u)
+			if ((b & 1) == 1)
+			{
+				int num5;
+				if ((uint)num3 <= 255u)
+				{
+					num5 = -1;
+				}
+				else
+				{
+					crnd_assert.Invoke(String_932ftxa.__pointer, String_yguirrd.__pointer, 2834);
+					num5 = 0;
+				}
+				num3 = (int)((uint)(num3 * 15 + 128) / 255u);
+			}
+			else if ((uint)num3 <= 15u)
 			{
 				num6 = -1;
 			}
 			else
 			{
-				crnd_assert.Invoke(String_cahur4b.__pointer, String_yguirrd.__pointer, 2831);
+				crnd_assert.Invoke(String_azii4xc.__pointer, String_yguirrd.__pointer, 2837);
 				num6 = 0;
 			}
-			int num8;
-			if ((b & 1) == 1)
-			{
-				int num7;
-				if ((uint)num <= 255u)
-				{
-					num7 = -1;
-				}
-				else
-				{
-					crnd_assert.Invoke(String_932ftxa.__pointer, String_yguirrd.__pointer, 2834);
-					num7 = 0;
-				}
-				num = (int)((uint)(num * 15 + 128) / 255u);
-			}
-			else if ((uint)num <= 15u)
-			{
-				num8 = -1;
-			}
-			else
-			{
-				crnd_assert.Invoke(String_azii4xc.__pointer, String_yguirrd.__pointer, 2837);
-				num8 = 0;
-			}
-			num4 = (num2 << 1) + (num3 >>> 1);
-			num5 = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)num4];
-			((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)num4] = (sbyte)((num5 & ((15 << ((num3 & 1) << 2)) ^ -1)) | (num << ((num3 & 1) << 2)));
+			num = (y << 1) + (x >>> 1);
+			num2 = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)num];
+			((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)num] = (sbyte)((num2 & ((15 << ((x & 1) << 2)) ^ -1)) | (num3 << ((x & 1) << 2)));
 		}
 	}
 }

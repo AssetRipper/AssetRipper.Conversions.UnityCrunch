@@ -11,10 +11,10 @@ internal static partial class vector_unsigned_char_Constructor
 	{
 		unchecked
 		{
-			((crnd_vector*)@this)->field_0 = null;
-			((crnd_vector*)@this)->field_1 = 0;
-			((crnd_vector*)@this)->field_2 = 0;
-			((crnd_vector*)@this)->field_3 = 0;
+			((crnd_vector_f3cmzmc*)@this)->field_0 = null;
+			((crnd_vector_f3cmzmc*)@this)->field_1 = 0;
+			((crnd_vector_f3cmzmc*)@this)->field_2 = 0;
+			((crnd_vector_f3cmzmc*)@this)->field_3 = 0;
 			return @this;
 		}
 	}

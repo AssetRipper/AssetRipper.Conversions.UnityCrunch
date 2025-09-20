@@ -9,10 +9,9 @@ internal static partial class crnd_default_msize
 {
 	public unsafe static readonly void* __pointer = PointerIndices.Register((delegate*<void*, void*, long>)(&Invoke));
 
-	public unsafe static long Invoke(void* p, void* pUser_data)
+	[return: NativeType("unsigned __int64")]
+	public unsafe static long Invoke([NativeType("void *")] void* p, [NativeType("void *")] void* pUser_data)
 	{
-		void* ptr = null;
-		ptr = p;
-		return (ptr == null) ? 0L : msize.Invoke(ptr);
+		return (p == null) ? 0L : msize.Invoke(p);
 	}
 }

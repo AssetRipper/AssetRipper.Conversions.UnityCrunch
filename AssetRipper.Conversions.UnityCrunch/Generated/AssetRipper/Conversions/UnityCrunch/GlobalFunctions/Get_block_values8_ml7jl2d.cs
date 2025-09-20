@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("Get_block_values8")]
 internal static partial class Get_block_values8_ml7jl2d
 {
-	public unsafe static int Invoke(void* pDst, int l, int h)
+	[return: NativeType("unsigned int")]
+	public unsafe static int Invoke([NativeType("unsigned int *")] void* pDst, [NativeType("unsigned int")] int l, [NativeType("unsigned int")] int h)
 	{
 		unchecked
 		{

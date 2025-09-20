@@ -7,19 +7,14 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("construct")]
 internal static partial class construct_zybj4yc
 {
-	private partial struct LocalVariables
+	[return: NativeType("class crnd::prefix_coding::decoder_tables *")]
+	public unsafe static void* Invoke([NativeType("class crnd::prefix_coding::decoder_tables *")] void* p, [NativeType("class crnd::prefix_coding::decoder_tables const &")] void* init)
 	{
-	}
-
-	public unsafe static void* Invoke(void* p, void* init)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		decoder_tables_Constructor_3v4xfjd.Invoke(p, init);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
-		StackFrameList.Current.Clear(startFrame);
 		return p;
 	}
 }

@@ -5,6 +5,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 16)]
 [MangledName("struct.crnd::elemental_vector")]
+[DemangledName("crnd::elemental_vector")]
 public partial struct crnd_elemental_vector
 {
 	[FieldOffset(0)]

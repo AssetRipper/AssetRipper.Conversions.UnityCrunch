@@ -10,217 +10,178 @@ internal static partial class decode_color_endpoints
 {
 	private partial struct LocalVariables
 	{
-		public bool field_0;
-
-		public int field_1;
-
-		public sbyte field_2;
-
-		public sbyte field_3;
-
-		public InlineArray_2_tahu2ya field_4;
-
-		public int field_5;
-
-		public int field_6;
-
-		public int field_7;
-
-		public int field_8;
-
-		public int field_9;
-
-		public int field_10;
-
-		public int field_11;
-
-		public int field_12;
-
-		public unsafe void* field_13;
-
-		public int field_14;
+		public InlineArray2_crnd_static_huffman_data_model field_0;
 	}
 
+	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this)
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_2 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_3 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_4 = default(InlineArray_2_tahu2ya);
-		startFrame.GetLocalsPointer<LocalVariables>()->field_5 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_6 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_7 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_8 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_9 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_10 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_11 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_12 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_13 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_14 = 0;
+		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
+		bool flag = false;
+		sbyte b = 0;
+		sbyte b2 = 0;
+		localsPointer->field_0 = default(InlineArray2_crnd_static_huffman_data_model);
+		int num = 0;
+		int num2 = 0;
+		int num3 = 0;
+		int num4 = 0;
+		int num5 = 0;
+		int num6 = 0;
+		int num7 = 0;
+		int num8 = 0;
+		void* ptr = null;
+		int num9 = 0;
 		unchecked
 		{
-			int field_ = operator_unsigned_int_f3crpsb.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_2);
-			startFrame.GetLocalsPointer<LocalVariables>()->field_1 = field_;
-			int num = ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 10) ? (-1) : ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 11) ? (-1) : ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12) ? (-1) : ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) != 13) ? ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 14) ? 1 : 0) : (-1)))));
-			startFrame.GetLocalsPointer<LocalVariables>()->field_2 = (sbyte)(byte)num;
-			int num2 = ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 10) ? (-1) : ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) != 11) ? ((operator_unsigned_int_neugqod.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12) ? 1 : 0) : (-1)));
-			startFrame.GetLocalsPointer<LocalVariables>()->field_3 = (sbyte)(byte)num2;
-			bool flag = resize_a3d3m5b.Invoke(&((crnd_crn_unpacker*)@this)->field_8, startFrame.GetLocalsPointer<LocalVariables>()->field_1);
+			int num10 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_2);
+			b = (sbyte)(byte)((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 10) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 11) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) != 13) ? ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 14) ? 1 : 0) : (-1)))));
+			b2 = (sbyte)(byte)((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 10) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) != 11) ? ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12) ? 1 : 0) : (-1)));
+			bool flag2 = resize_a3d3m5b.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num10);
 			if (ExceptionInfo.Current != null)
 			{
 				return false;
 			}
-			if (!flag)
+			if (!flag2)
 			{
-				startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
+				flag = false;
 			}
-			else if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4, buf_size: operator_unsigned_int_4iyly2b.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_1), pBuf: (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)operator_unsigned_int_4iyly2b.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_0)))
+			else if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4, buf_size: crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_1), pBuf: (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_0)))
 			{
-				startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
+				flag = false;
 			}
 			else
 			{
-				crnd_static_huffman_data_model* ptr = (crnd_static_huffman_data_model*)(&startFrame.GetLocalsPointer<LocalVariables>()->field_4);
-				crnd_static_huffman_data_model* ptr2 = ptr + 2L;
-				crnd_static_huffman_data_model* intPtr = ptr;
+				crnd_static_huffman_data_model* ptr2 = (crnd_static_huffman_data_model*)(&localsPointer->field_0);
+				crnd_static_huffman_data_model* ptr3 = ptr2 + 2L;
+				crnd_static_huffman_data_model* intPtr = ptr2;
 				while (true)
 				{
-					void* ptr3 = intPtr;
-					static_huffman_data_model_Constructor_tl33idc.Invoke(ptr3);
+					void* ptr4 = intPtr;
+					static_huffman_data_model_Constructor_tl33idc.Invoke(ptr4);
 					if (ExceptionInfo.Current == null)
 					{
-						crnd_static_huffman_data_model* ptr4 = (crnd_static_huffman_data_model*)ptr3 + 1;
-						if (ptr4 == ptr2)
+						crnd_static_huffman_data_model* ptr5 = (crnd_static_huffman_data_model*)ptr4 + 1;
+						if (ptr5 == ptr3)
 						{
 							break;
 						}
-						intPtr = ptr4;
+						intPtr = ptr5;
 						continue;
 					}
 					ExceptionInfo current = ExceptionInfo.Current;
 					ExceptionInfo.Current = null;
-					if (ptr != ptr3)
+					if (ptr2 != ptr4)
 					{
-						nint num3 = (nint)ptr3;
+						nint num11 = (nint)ptr4;
 						while (true)
 						{
-							crnd_static_huffman_data_model* ptr5 = (crnd_static_huffman_data_model*)(num3 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
-							static_huffman_data_model_Destructor.Invoke(ptr5);
+							crnd_static_huffman_data_model* ptr6 = (crnd_static_huffman_data_model*)(num11 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
+							static_huffman_data_model_Destructor.Invoke(ptr6);
 							if (ExceptionInfo.Current != null)
 							{
 								return false;
 							}
-							if (ptr5 == ptr)
+							if (ptr6 == ptr2)
 							{
 								break;
 							}
-							num3 = (nint)ptr5;
+							num11 = (nint)ptr6;
 						}
 					}
 					ExceptionInfo.Current = current;
 					return false;
 				}
-				startFrame.GetLocalsPointer<LocalVariables>()->field_5 = 0;
+				num = 0;
 				while (true)
 				{
-					int field_2 = startFrame.GetLocalsPointer<LocalVariables>()->field_5;
-					bool flag2 = (startFrame.GetLocalsPointer<LocalVariables>()->field_2 & 1) == 1;
-					_ = flag2;
-					if ((uint)field_2 < (uint)InstructionHelper.Select(flag2, 1, 2))
+					int num12 = num;
+					bool flag3 = (b & 1) == 1;
+					_ = flag3;
+					if ((uint)num12 < (uint)InstructionHelper.Select(flag3, 1, 2))
 					{
-						crnd_symbol_codec* field_3 = &((crnd_crn_unpacker*)@this)->field_4;
-						long num4 = (uint)startFrame.GetLocalsPointer<LocalVariables>()->field_5;
-						bool flag3 = decode_receive_static_data_model.Invoke(field_3, (byte*)(&startFrame.GetLocalsPointer<LocalVariables>()->field_4) + (nint)num4 * sizeof(crnd_static_huffman_data_model));
+						bool flag4 = decode_receive_static_data_model.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&localsPointer->field_0) + (nint)(uint)num * (nint)sizeof(crnd_static_huffman_data_model));
 						if (ExceptionInfo.Current == null)
 						{
-							if (!flag3)
+							if (!flag4)
 							{
-								startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-								startFrame.GetLocalsPointer<LocalVariables>()->field_6 = 1;
+								flag = false;
+								num2 = 1;
 								break;
 							}
-							int field_4 = startFrame.GetLocalsPointer<LocalVariables>()->field_5 + 1;
-							startFrame.GetLocalsPointer<LocalVariables>()->field_5 = field_4;
+							num++;
 							continue;
 						}
 					}
 					else
 					{
-						startFrame.GetLocalsPointer<LocalVariables>()->field_7 = 0;
-						startFrame.GetLocalsPointer<LocalVariables>()->field_8 = 0;
-						startFrame.GetLocalsPointer<LocalVariables>()->field_9 = 0;
-						startFrame.GetLocalsPointer<LocalVariables>()->field_10 = 0;
-						startFrame.GetLocalsPointer<LocalVariables>()->field_11 = 0;
-						startFrame.GetLocalsPointer<LocalVariables>()->field_12 = 0;
-						void* field_5 = Index_rfutjka.Invoke(&((crnd_crn_unpacker*)@this)->field_8, 0);
+						num3 = 0;
+						num4 = 0;
+						num5 = 0;
+						num6 = 0;
+						num7 = 0;
+						num8 = 0;
+						void* ptr7 = vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, 0);
 						if (ExceptionInfo.Current == null)
 						{
-							startFrame.GetLocalsPointer<LocalVariables>()->field_13 = field_5;
-							startFrame.GetLocalsPointer<LocalVariables>()->field_14 = 0;
-							int field_18;
-							for (; (uint)startFrame.GetLocalsPointer<LocalVariables>()->field_14 < (uint)startFrame.GetLocalsPointer<LocalVariables>()->field_1; field_18 = startFrame.GetLocalsPointer<LocalVariables>()->field_14 + 1, startFrame.GetLocalsPointer<LocalVariables>()->field_14 = field_18)
+							ptr = ptr7;
+							for (num9 = 0; (uint)num9 < (uint)num10; num9++)
 							{
-								if ((startFrame.GetLocalsPointer<LocalVariables>()->field_2 & 1) == 1)
+								if ((b & 1) == 1)
 								{
-									startFrame.GetLocalsPointer<LocalVariables>()->field_8 = 0;
-									while ((uint)startFrame.GetLocalsPointer<LocalVariables>()->field_8 < 32u)
+									num4 = 0;
+									while ((uint)num4 < 32u)
 									{
-										int num5 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &startFrame.GetLocalsPointer<LocalVariables>()->field_4);
+										int num13 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 										if (ExceptionInfo.Current == null)
 										{
-											int field_6 = startFrame.GetLocalsPointer<LocalVariables>()->field_8;
-											int field_7 = startFrame.GetLocalsPointer<LocalVariables>()->field_7 + (num5 << field_6);
-											startFrame.GetLocalsPointer<LocalVariables>()->field_7 = field_7;
-											int field_8 = startFrame.GetLocalsPointer<LocalVariables>()->field_8 + 8;
-											startFrame.GetLocalsPointer<LocalVariables>()->field_8 = field_8;
+											num3 += num13 << num4;
+											num4 += 8;
 											continue;
 										}
-										goto IL_0943;
+										goto IL_0581;
 									}
-									int field_9 = startFrame.GetLocalsPointer<LocalVariables>()->field_7 & 0x1F1F1F1F;
-									startFrame.GetLocalsPointer<LocalVariables>()->field_7 = field_9;
-									int num6 = (((startFrame.GetLocalsPointer<LocalVariables>()->field_3 & 1) != 1) ? (((startFrame.GetLocalsPointer<LocalVariables>()->field_7 & 0x7000000) << 5) | ((startFrame.GetLocalsPointer<LocalVariables>()->field_7 & 0x7000000) << 2) | 0x2000000 | ((startFrame.GetLocalsPointer<LocalVariables>()->field_7 & 0x1F1F1F) << 3)) : startFrame.GetLocalsPointer<LocalVariables>()->field_7);
-									void* field_10 = startFrame.GetLocalsPointer<LocalVariables>()->field_13;
-									startFrame.GetLocalsPointer<LocalVariables>()->field_13 = (byte*)field_10 + 4;
-									*(int*)field_10 = num6;
+									num3 &= 0x1F1F1F1F;
+									int num14 = (((b2 & 1) != 1) ? (((num3 & 0x7000000) << 5) | ((num3 & 0x7000000) << 2) | 0x2000000 | ((num3 & 0x1F1F1F) << 3)) : num3);
+									void* ptr8 = ptr;
+									ptr = (byte*)ptr8 + 4;
+									*(int*)ptr8 = num14;
 									continue;
 								}
-								int field_11 = startFrame.GetLocalsPointer<LocalVariables>()->field_7;
-								int num7 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &startFrame.GetLocalsPointer<LocalVariables>()->field_4);
+								int num15 = num3;
+								int num16 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 								if (ExceptionInfo.Current == null)
 								{
-									startFrame.GetLocalsPointer<LocalVariables>()->field_7 = (field_11 + num7) & 0x1F;
-									int field_12 = startFrame.GetLocalsPointer<LocalVariables>()->field_8;
-									int num8 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&startFrame.GetLocalsPointer<LocalVariables>()->field_4) + sizeof(crnd_static_huffman_data_model));
+									num3 = (num15 + num16) & 0x1F;
+									int num17 = num4;
+									int num18 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&localsPointer->field_0) + sizeof(crnd_static_huffman_data_model));
 									if (ExceptionInfo.Current == null)
 									{
-										startFrame.GetLocalsPointer<LocalVariables>()->field_8 = (field_12 + num8) & 0x3F;
-										int field_13 = startFrame.GetLocalsPointer<LocalVariables>()->field_9;
-										int num9 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &startFrame.GetLocalsPointer<LocalVariables>()->field_4);
+										num4 = (num17 + num18) & 0x3F;
+										int num19 = num5;
+										int num20 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 										if (ExceptionInfo.Current == null)
 										{
-											startFrame.GetLocalsPointer<LocalVariables>()->field_9 = (field_13 + num9) & 0x1F;
-											int field_14 = startFrame.GetLocalsPointer<LocalVariables>()->field_10;
-											int num10 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &startFrame.GetLocalsPointer<LocalVariables>()->field_4);
+											num5 = (num19 + num20) & 0x1F;
+											int num21 = num6;
+											int num22 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 											if (ExceptionInfo.Current == null)
 											{
-												startFrame.GetLocalsPointer<LocalVariables>()->field_10 = (field_14 + num10) & 0x1F;
-												int field_15 = startFrame.GetLocalsPointer<LocalVariables>()->field_11;
-												int num11 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&startFrame.GetLocalsPointer<LocalVariables>()->field_4) + sizeof(crnd_static_huffman_data_model));
+												num6 = (num21 + num22) & 0x1F;
+												int num23 = num7;
+												int num24 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&localsPointer->field_0) + sizeof(crnd_static_huffman_data_model));
 												if (ExceptionInfo.Current == null)
 												{
-													startFrame.GetLocalsPointer<LocalVariables>()->field_11 = (field_15 + num11) & 0x3F;
-													int field_16 = startFrame.GetLocalsPointer<LocalVariables>()->field_12;
-													int num12 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &startFrame.GetLocalsPointer<LocalVariables>()->field_4);
+													num7 = (num23 + num24) & 0x3F;
+													int num25 = num8;
+													int num26 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 													if (ExceptionInfo.Current == null)
 													{
-														startFrame.GetLocalsPointer<LocalVariables>()->field_12 = (field_16 + num12) & 0x1F;
-														int num13 = startFrame.GetLocalsPointer<LocalVariables>()->field_9 | (startFrame.GetLocalsPointer<LocalVariables>()->field_8 << 5) | (startFrame.GetLocalsPointer<LocalVariables>()->field_7 << 11) | (startFrame.GetLocalsPointer<LocalVariables>()->field_12 << 16) | (startFrame.GetLocalsPointer<LocalVariables>()->field_11 << 21) | (startFrame.GetLocalsPointer<LocalVariables>()->field_10 << 27);
-														void* field_17 = startFrame.GetLocalsPointer<LocalVariables>()->field_13;
-														startFrame.GetLocalsPointer<LocalVariables>()->field_13 = (byte*)field_17 + 4;
-														*(int*)field_17 = num13;
+														num8 = (num25 + num26) & 0x1F;
+														int num27 = num5 | (num4 << 5) | (num3 << 11) | (num8 << 16) | (num7 << 21) | (num6 << 27);
+														void* ptr9 = ptr;
+														ptr = (byte*)ptr9 + 4;
+														*(int*)ptr9 = num27;
 														continue;
 													}
 												}
@@ -228,58 +189,58 @@ internal static partial class decode_color_endpoints
 										}
 									}
 								}
-								goto IL_0943;
+								goto IL_0581;
 							}
 							stop_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4);
-							startFrame.GetLocalsPointer<LocalVariables>()->field_0 = true;
-							startFrame.GetLocalsPointer<LocalVariables>()->field_6 = 1;
+							flag = true;
+							num2 = 1;
 							break;
 						}
 					}
-					goto IL_0943;
-					IL_0943:
+					goto IL_0581;
+					IL_0581:
 					ExceptionInfo current2 = ExceptionInfo.Current;
 					ExceptionInfo.Current = null;
-					crnd_static_huffman_data_model* ptr6 = (crnd_static_huffman_data_model*)(&startFrame.GetLocalsPointer<LocalVariables>()->field_4);
-					nint num14 = (nint)(ptr6 + 2L);
+					crnd_static_huffman_data_model* ptr10 = (crnd_static_huffman_data_model*)(&localsPointer->field_0);
+					nint num28 = (nint)(ptr10 + 2L);
 					while (true)
 					{
-						crnd_static_huffman_data_model* ptr7 = (crnd_static_huffman_data_model*)(num14 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
-						static_huffman_data_model_Destructor.Invoke(ptr7);
+						crnd_static_huffman_data_model* ptr11 = (crnd_static_huffman_data_model*)(num28 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
+						static_huffman_data_model_Destructor.Invoke(ptr11);
 						if (ExceptionInfo.Current != null)
 						{
 							return false;
 						}
-						if (ptr7 == ptr6)
+						if (ptr11 == ptr10)
 						{
 							break;
 						}
-						num14 = (nint)ptr7;
+						num28 = (nint)ptr11;
 					}
 					ExceptionInfo.Current = current2;
 					return false;
 				}
-				crnd_static_huffman_data_model* ptr8 = (crnd_static_huffman_data_model*)(&startFrame.GetLocalsPointer<LocalVariables>()->field_4);
-				nint num15 = (nint)(ptr8 + 2L);
+				crnd_static_huffman_data_model* ptr12 = (crnd_static_huffman_data_model*)(&localsPointer->field_0);
+				nint num29 = (nint)(ptr12 + 2L);
 				while (true)
 				{
-					crnd_static_huffman_data_model* ptr9 = (crnd_static_huffman_data_model*)(num15 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
-					static_huffman_data_model_Destructor.Invoke(ptr9);
+					crnd_static_huffman_data_model* ptr13 = (crnd_static_huffman_data_model*)(num29 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
+					static_huffman_data_model_Destructor.Invoke(ptr13);
 					if (ExceptionInfo.Current != null)
 					{
 						return false;
 					}
-					if (ptr9 != ptr8)
+					if (ptr13 != ptr12)
 					{
-						num15 = (nint)ptr9;
+						num29 = (nint)ptr13;
 						continue;
 					}
 					break;
 				}
 			}
-			bool field_19 = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
+			bool result = flag;
 			StackFrameList.Current.Clear(startFrame);
-			return field_19;
+			return result;
 		}
 	}
 }

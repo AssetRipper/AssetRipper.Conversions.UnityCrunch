@@ -7,19 +7,14 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("Get_block_values")]
 internal static partial class Get_block_values_2npk7qa
 {
-	public unsafe static int Invoke(void* pDst, int l, int h)
+	[return: NativeType("unsigned int")]
+	public unsafe static int Invoke([NativeType("unsigned int *")] void* pDst, [NativeType("unsigned int")] int l, [NativeType("unsigned int")] int h)
 	{
 		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
-		void* ptr = null;
-		num2 = h;
-		num3 = l;
-		ptr = pDst;
-		if (unchecked((uint)num3 > (uint)num2))
+		if (unchecked((uint)l > (uint)h))
 		{
-			return Get_block_values8_ml7jl2d.Invoke(ptr, num3, num2);
+			return Get_block_values8_ml7jl2d.Invoke(pDst, l, h);
 		}
-		return Get_block_values6_5klbycb.Invoke(ptr, num3, num2);
+		return Get_block_values6_5klbycb.Invoke(pDst, l, h);
 	}
 }

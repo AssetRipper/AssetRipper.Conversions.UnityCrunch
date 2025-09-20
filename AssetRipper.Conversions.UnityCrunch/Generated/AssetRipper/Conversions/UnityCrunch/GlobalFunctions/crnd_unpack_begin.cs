@@ -6,67 +6,39 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("void * __cdecl crnd::crnd_unpack_begin(void const *, unsigned int)")]
 internal static partial class crnd_unpack_begin
 {
-	private partial struct LocalVariables
+	[return: NativeType("void *")]
+	public unsafe static void* Invoke([NativeType("void const *")] void* pData, [NativeType("unsigned int")] int data_size)
 	{
-		public unsafe void* field_0;
-
-		public int field_1;
-
-		public unsafe void* field_2;
-
-		public unsafe void* field_3;
-	}
-
-	public unsafe static void* Invoke(void* pData, int data_size)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = 0;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_2 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_3 = null;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = data_size;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_2 = pData;
-		if (startFrame.GetLocalsPointer<LocalVariables>()->field_2 == null || unchecked((uint)startFrame.GetLocalsPointer<LocalVariables>()->field_1) < 62u)
+		void* ptr = null;
+		void* ptr2 = null;
+		if (pData == null || unchecked((uint)data_size) < 62u)
 		{
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
+			return null;
 		}
-		else
+		void* ptr3 = crnd_new_xzix9sb.Invoke();
+		if (ExceptionInfo.Current != null)
 		{
-			void* field_ = crnd_new_xzix9sb.Invoke();
+			return null;
+		}
+		ptr2 = ptr3;
+		if (ptr2 == null)
+		{
+			return null;
+		}
+		bool flag = init_lqqdgrc.Invoke(ptr2, pData, data_size);
+		if (ExceptionInfo.Current != null)
+		{
+			return null;
+		}
+		if (!flag)
+		{
+			crnd_delete_e7rwdhb.Invoke(ptr2);
 			if (ExceptionInfo.Current != null)
 			{
 				return null;
 			}
-			startFrame.GetLocalsPointer<LocalVariables>()->field_3 = field_;
-			if (startFrame.GetLocalsPointer<LocalVariables>()->field_3 == null)
-			{
-				startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-			}
-			else
-			{
-				bool flag = init_lqqdgrc.Invoke(startFrame.GetLocalsPointer<LocalVariables>()->field_3, data_size: startFrame.GetLocalsPointer<LocalVariables>()->field_1, pData: startFrame.GetLocalsPointer<LocalVariables>()->field_2);
-				if (ExceptionInfo.Current != null)
-				{
-					return null;
-				}
-				if (!flag)
-				{
-					crnd_delete_e7rwdhb.Invoke(startFrame.GetLocalsPointer<LocalVariables>()->field_3);
-					if (ExceptionInfo.Current != null)
-					{
-						return null;
-					}
-					startFrame.GetLocalsPointer<LocalVariables>()->field_0 = null;
-				}
-				else
-				{
-					void* field_2 = startFrame.GetLocalsPointer<LocalVariables>()->field_3;
-					startFrame.GetLocalsPointer<LocalVariables>()->field_0 = field_2;
-				}
-			}
+			return null;
 		}
-		void* field_3 = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-		StackFrameList.Current.Clear(startFrame);
-		return field_3;
+		return ptr2;
 	}
 }

@@ -7,9 +7,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [DemangledName("unsigned char const *const crnd::g_dxt5_to_linear")]
 internal static partial class g_dxt5_to_linear
 {
-	private static InlineArray_8_w3otm9c __value;
+	private static InlineArray8_SByte __value;
 
-	public static InlineArray_8_w3otm9c Value
+	public static InlineArray8_SByte Value
 	{
 		get
 		{
@@ -23,6 +23,6 @@ internal static partial class g_dxt5_to_linear
 
 	static g_dxt5_to_linear()
 	{
-		Value = InlineArrayHelper.Create<InlineArray_8_w3otm9c, byte>(new byte[8] { 0, 7, 1, 2, 3, 4, 5, 6 });
+		Value = InlineArrayHelper.Create<InlineArray8_SByte, byte>(new byte[8] { 0, 7, 1, 2, 3, 4, 5, 6 });
 	}
 }

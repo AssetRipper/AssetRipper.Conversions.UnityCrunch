@@ -6,12 +6,11 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("unsigned int __cdecl crnd::math::floor_log2i(unsigned int)")]
 internal static partial class floor_log2i
 {
-	public static int Invoke(int v)
+	[return: NativeType("unsigned int")]
+	public static int Invoke([NativeType("unsigned int")] int v)
 	{
-		int num = 0;
+		int num = v;
 		int num2 = 0;
-		num = v;
-		num2 = 0;
 		unchecked
 		{
 			while ((uint)num > 1u)

@@ -14,6 +14,7 @@ internal static partial class vector_struct_crnd_crn_unpacker_block_buffer_eleme
 	public unsafe static void Invoke(void* @this)
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
+		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
 		clear_jenxxsd.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{

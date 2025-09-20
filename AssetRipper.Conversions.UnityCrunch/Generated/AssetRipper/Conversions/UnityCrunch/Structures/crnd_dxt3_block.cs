@@ -6,8 +6,9 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 8)]
 [MangledName("struct.crnd::dxt3_block")]
+[DemangledName("crnd::dxt3_block")]
 public partial struct crnd_dxt3_block
 {
 	[FieldOffset(0)]
-	public InlineArray_8_w3otm9c field_0;
+	public InlineArray8_SByte field_0;
 }

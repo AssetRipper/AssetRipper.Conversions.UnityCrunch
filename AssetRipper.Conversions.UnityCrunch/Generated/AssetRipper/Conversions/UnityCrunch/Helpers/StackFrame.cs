@@ -24,11 +24,6 @@ internal partial struct StackFrame
 		}
 	}
 
-	public unsafe readonly ref T GetLocalsRef<T>() where T : unmanaged
-	{
-		return ref Unsafe.AsRef<T>(Locals);
-	}
-
 	public unsafe readonly T* GetLocalsPointer<T>() where T : unmanaged
 	{
 		return unchecked((T*)Locals);

@@ -8,9 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
 [CleanName("String")]
 internal static partial class String_h5wt4bd
 {
-	public unsafe static InlineArray_27_w3otm9c* __pointer;
+	public unsafe static InlineArray27_SByte* __pointer;
 
-	public unsafe static InlineArray_27_w3otm9c Value
+	public unsafe static InlineArray27_SByte Value
 	{
 		get
 		{
@@ -24,7 +24,7 @@ internal static partial class String_h5wt4bd
 
 	unsafe static String_h5wt4bd()
 	{
-		__pointer = unchecked((InlineArray_27_w3otm9c*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray_27_w3otm9c))));
-		Value = InlineArrayHelper.Create<InlineArray_27_w3otm9c, byte>("m_lookup[t] == cUINT32_MAX\0"u8);
+		__pointer = unchecked((InlineArray27_SByte*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray27_SByte))));
+		Value = InlineArrayHelper.Create<InlineArray27_SByte, byte>("m_lookup[t] == cUINT32_MAX\0"u8);
 	}
 }

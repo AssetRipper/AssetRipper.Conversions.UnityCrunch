@@ -9,59 +9,53 @@ internal static partial class crnd_default_realloc
 {
 	public unsafe static readonly void* __pointer = PointerIndices.Register((delegate*<void*, long, void*, bool, void*, void*>)(&Invoke));
 
-	public unsafe static void* Invoke(void* p, long size, void* pActual_size, bool movable, void* parameter_4)
+	[return: NativeType("void *")]
+	public unsafe static void* Invoke([NativeType("void *")] void* p, [NativeType("unsigned __int64")] long size, [NativeType("unsigned __int64 *")] void* pActual_size, [NativeType("bool")] bool movable, [NativeType("void *")] void* parameter_4)
 	{
-		sbyte b = 0;
 		void* ptr = null;
-		long num = 0L;
 		void* ptr2 = null;
-		void* ptr3 = null;
-		void* ptr4 = null;
-		b = (movable ? ((sbyte)1) : ((sbyte)0));
-		ptr = pActual_size;
-		num = size;
-		ptr2 = p;
+		sbyte b = (movable ? ((sbyte)1) : ((sbyte)0));
 		unchecked
 		{
-			if (ptr2 == null)
+			if (p == null)
 			{
-				ptr3 = malloc.Invoke(num);
-				if (ptr != null)
+				ptr = malloc.Invoke(size);
+				if (pActual_size != null)
 				{
-					*(long*)ptr = ((ptr3 == null) ? 0L : msize.Invoke(ptr3));
+					*(long*)pActual_size = ((ptr == null) ? 0L : msize.Invoke(ptr));
 				}
 			}
-			else if (num == 0L)
+			else if (size == 0L)
 			{
-				free.Invoke(ptr2);
-				ptr3 = null;
-				if (ptr != null)
+				free.Invoke(p);
+				ptr = null;
+				if (pActual_size != null)
 				{
-					*(long*)ptr = 0L;
+					*(long*)pActual_size = 0L;
 				}
 			}
 			else
 			{
-				ptr4 = ptr2;
-				ptr3 = null;
-				if (ptr3 != null)
+				ptr2 = p;
+				ptr = null;
+				if (ptr != null)
 				{
-					ptr4 = ptr3;
+					ptr2 = ptr;
 				}
 				else if ((b & 1) == 1)
 				{
-					ptr3 = realloc.Invoke(ptr2, num);
-					if (ptr3 != null)
+					ptr = realloc.Invoke(p, size);
+					if (ptr != null)
 					{
-						ptr4 = ptr3;
+						ptr2 = ptr;
 					}
 				}
-				if (ptr != null)
+				if (pActual_size != null)
 				{
-					*(long*)ptr = msize.Invoke(ptr4);
+					*(long*)pActual_size = msize.Invoke(ptr2);
 				}
 			}
-			return ptr3;
+			return ptr;
 		}
 	}
 }

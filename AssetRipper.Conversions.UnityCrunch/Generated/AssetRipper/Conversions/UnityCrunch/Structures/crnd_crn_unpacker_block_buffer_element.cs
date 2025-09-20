@@ -5,6 +5,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 8)]
 [MangledName("struct.crnd::crn_unpacker::block_buffer_element")]
+[DemangledName("crnd::crn_unpacker::block_buffer_element")]
 public partial struct crnd_crn_unpacker_block_buffer_element
 {
 	[FieldOffset(0)]

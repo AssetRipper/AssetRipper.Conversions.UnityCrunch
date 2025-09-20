@@ -6,6 +6,7 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("bool __cdecl crnd::crnd_is_debugger_present(void)")]
 internal static partial class crnd_is_debugger_present
 {
+	[return: NativeType("bool")]
 	public static bool Invoke()
 	{
 		return false;

@@ -8,35 +8,20 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("increase_capacity")]
 internal static partial class increase_capacity_h5f4usb
 {
-	private partial struct LocalVariables
+	[return: NativeType("bool")]
+	public unsafe static bool Invoke(void* @this, [NativeType("unsigned int")] int min_new_capacity, [NativeType("bool")] bool grow_hint)
 	{
-		public bool field_0;
-
-		public int field_1;
-	}
-
-	public unsafe static bool Invoke(void* @this, int min_new_capacity, bool grow_hint)
-	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
-		bool num = grow_hint;
-		startFrame.GetLocalsPointer<LocalVariables>()->field_1 = min_new_capacity;
-		bool flag = increase_capacity_nb7lc5b.Invoke(@this, startFrame.GetLocalsPointer<LocalVariables>()->field_1, ((num ? 1u : 0u) & 1u) == 1, 4, null);
+		bool flag = false;
+		bool flag2 = increase_capacity_nb7lc5b.Invoke(@this, min_new_capacity, ((grow_hint ? 1u : 0u) & 1u) == 1, 4, null);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;
 		}
-		if (!flag)
+		if (!flag2)
 		{
-			unchecked((crnd_vector_5*)@this)->field_3 = 1;
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = false;
+			unchecked((crnd_vector_maaktjc*)@this)->field_3 = 1;
+			return false;
 		}
-		else
-		{
-			startFrame.GetLocalsPointer<LocalVariables>()->field_0 = true;
-		}
-		bool field_ = startFrame.GetLocalsPointer<LocalVariables>()->field_0;
-		StackFrameList.Current.Clear(startFrame);
-		return field_;
+		return true;
 	}
 }

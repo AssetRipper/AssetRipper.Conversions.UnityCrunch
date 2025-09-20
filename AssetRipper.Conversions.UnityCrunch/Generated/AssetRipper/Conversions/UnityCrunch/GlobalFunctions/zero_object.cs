@@ -7,7 +7,8 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("void __cdecl crnd::utils::zero_object<unsigned int[17]>(unsigned int (&)[17])")]
 internal static partial class zero_object
 {
-	public unsafe static void Invoke(void* obj)
+	[return: NativeType("void")]
+	public unsafe static void Invoke([NativeType("unsigned int (&)[17]")] void* obj)
 	{
 		llvm_memset_p0_i64.Invoke(obj, 0, 68L, isVolatile: false);
 	}

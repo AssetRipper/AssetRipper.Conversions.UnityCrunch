@@ -5,6 +5,7 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 
 [StructLayout(LayoutKind.Explicit, Size = 36)]
 [MangledName("struct.crnd::crn_texture_info")]
+[DemangledName("crnd::crn_texture_info")]
 public partial struct crnd_crn_texture_info
 {
 	[FieldOffset(0)]

@@ -7,8 +7,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: unsigned short * __cdecl crnd::vector<unsigned short>::begin(void)")]
 internal static partial class begin
 {
+	[return: NativeType("unsigned short *")]
 	public unsafe static void* Invoke(void* @this)
 	{
-		return unchecked((crnd_vector_8*)@this)->field_0;
+		return unchecked((crnd_vector_rf9iywd*)@this)->field_0;
 	}
 }

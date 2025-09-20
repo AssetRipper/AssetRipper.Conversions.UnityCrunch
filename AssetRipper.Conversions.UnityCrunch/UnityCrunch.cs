@@ -23,6 +23,7 @@ public static partial class UnityCrunch
 		fixed (byte* pInput = input)
 		{
 			crnd_crn_texture_info textureInfo = default;
+			textureInfo.field_0 = 36; // size of crnd_crn_texture_info
 			if (!crnd_get_texture_info(pInput, inputLength, &textureInfo))
 			{
 				return False(out output);

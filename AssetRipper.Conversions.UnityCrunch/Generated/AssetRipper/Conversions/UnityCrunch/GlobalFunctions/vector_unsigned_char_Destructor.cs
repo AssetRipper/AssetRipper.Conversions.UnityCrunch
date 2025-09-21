@@ -7,18 +7,11 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: __cdecl crnd::vector<unsigned char>::~vector<unsigned char>(void)")]
 internal static partial class vector_unsigned_char_Destructor
 {
-	private partial struct LocalVariables
-	{
-	}
-
 	public unsafe static void Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>();
 		clear_q4odfmb.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{
-			StackFrameList.Current.Clear(startFrame);
 			return;
 		}
 		ExceptionInfo.Current = null;

@@ -23,9 +23,6 @@ internal static partial class static_huffman_data_model_Destructor
 				}
 			}
 			vector_unsigned_char_Destructor.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1);
-			if (ExceptionInfo.Current == null)
-			{
-			}
 		}
 	}
 }

@@ -70,9 +70,6 @@ internal static partial class crn_unpacker_Destructor
 				num2 = (nint)ptr2;
 			}
 			static_huffman_data_model_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_5);
-			if (ExceptionInfo.Current == null)
-			{
-			}
 		}
 	}
 }

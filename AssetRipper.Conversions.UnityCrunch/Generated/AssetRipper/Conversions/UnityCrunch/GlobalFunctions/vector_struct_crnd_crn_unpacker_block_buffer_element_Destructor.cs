@@ -7,18 +7,11 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [DemangledName("public: __cdecl crnd::vector<struct crnd::crn_unpacker::block_buffer_element>::~vector<struct crnd::crn_unpacker::block_buffer_element>(void)")]
 internal static partial class vector_struct_crnd_crn_unpacker_block_buffer_element_Destructor
 {
-	private partial struct LocalVariables
-	{
-	}
-
 	public unsafe static void Invoke(void* @this)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>();
 		clear_jenxxsd.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{
-			StackFrameList.Current.Clear(startFrame);
 			return;
 		}
 		ExceptionInfo.Current = null;

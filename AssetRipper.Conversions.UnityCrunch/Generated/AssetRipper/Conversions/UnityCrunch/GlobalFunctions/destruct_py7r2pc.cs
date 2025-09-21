@@ -7,19 +7,9 @@ namespace AssetRipper.Conversions.UnityCrunch.GlobalFunctions;
 [CleanName("destruct")]
 internal static partial class destruct_py7r2pc
 {
-	private partial struct LocalVariables
-	{
-	}
-
 	[return: NativeType("void")]
 	public unsafe static void Invoke([NativeType("class crnd::prefix_coding::decoder_tables *")] void* p)
 	{
-		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		startFrame.GetLocalsPointer<LocalVariables>();
 		decoder_tables_Destructor.Invoke(p);
-		if (ExceptionInfo.Current == null)
-		{
-			StackFrameList.Current.Clear(startFrame);
-		}
 	}
 }

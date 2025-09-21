@@ -44,7 +44,7 @@ public static partial class UnityCrunch
 			byte[] result = new byte[totalFaceSize];
 			fixed (byte* pResult = result)
 			{
-				if (!crnd_unpack_level(context, pResult, totalFaceSize, rowPitch, levelIndex))
+				if (!crnd_unpack_level(context, &pResult, totalFaceSize, rowPitch, levelIndex))
 				{
 					crnd_unpack_end(context);
 					return False(out output);

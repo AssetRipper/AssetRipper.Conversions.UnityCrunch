@@ -31,11 +31,10 @@ internal static partial class decode_receive_static_data_model
 		int num8 = 0;
 		int num9 = 0;
 		int num10 = 0;
-		int num11 = 0;
-		int num12 = decode_bits.Invoke(@this, total_bits.Invoke(8192));
+		int num11 = decode_bits.Invoke(@this, total_bits.Invoke(8192));
 		unchecked
 		{
-			if (num12 == 0)
+			if (num11 == 0)
 			{
 				clear_egw7ktb.Invoke(model);
 				if (ExceptionInfo.Current != null)
@@ -46,7 +45,7 @@ internal static partial class decode_receive_static_data_model
 			}
 			else
 			{
-				bool flag2 = resize_rzzl5xd.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num12);
+				bool flag2 = resize_rzzl5xd.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num11);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -57,7 +56,7 @@ internal static partial class decode_receive_static_data_model
 				}
 				else
 				{
-					llvm_memset_p0_i64.Invoke(vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, 0), 0, 1L * (long)(uint)num12, isVolatile: false);
+					llvm_memset_p0_i64.Invoke(vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, 0), 0, 1L * (long)(uint)num11, isVolatile: false);
 					num = decode_bits.Invoke(@this, 5);
 					if ((uint)num >= 1u && (uint)num <= 21u)
 					{
@@ -68,204 +67,195 @@ internal static partial class decode_receive_static_data_model
 							if (!flag3)
 							{
 								flag = false;
-								num2 = 1;
 							}
 							else
 							{
-								num3 = 0;
-								while ((uint)num3 < (uint)num)
+								num2 = 0;
+								while ((uint)num2 < (uint)num)
 								{
-									int num13 = decode_bits.Invoke(@this, 3);
+									int num12 = decode_bits.Invoke(@this, 3);
 									if (ExceptionInfo.Current == null)
 									{
-										sbyte b = (sbyte)num13;
-										void* ptr = vector_unsigned_char_Index_o39mi9c.Invoke(&localsPointer->field_0.field_1, (byte)((sbyte*)g_most_probable_codelength_codes.__pointer)[(uint)num3]);
+										sbyte b = (sbyte)num12;
+										void* ptr = vector_unsigned_char_Index_o39mi9c.Invoke(&localsPointer->field_0.field_1, (byte)((sbyte*)g_most_probable_codelength_codes.__pointer)[(uint)num2]);
 										if (ExceptionInfo.Current == null)
 										{
 											*(sbyte*)ptr = b;
-											num3++;
+											num2++;
 											continue;
 										}
 									}
-									goto IL_0449;
+									goto IL_0428;
 								}
 								bool flag4 = prepare_decoder_tables.Invoke(&localsPointer->field_0);
 								if (ExceptionInfo.Current != null)
 								{
-									goto IL_0449;
+									goto IL_0428;
 								}
 								if (!flag4)
 								{
 									flag = false;
-									num2 = 1;
 								}
 								else
 								{
-									num4 = 0;
-									while ((uint)num4 < (uint)num12)
+									num3 = 0;
+									while ((uint)num3 < (uint)num11)
 									{
-										num5 = num12 - num4;
-										int num14 = decode.Invoke(@this, &localsPointer->field_0);
+										num4 = num11 - num3;
+										int num13 = decode.Invoke(@this, &localsPointer->field_0);
 										if (ExceptionInfo.Current == null)
 										{
-											num6 = num14;
-											if ((uint)num6 <= 16u)
+											num5 = num13;
+											if ((uint)num5 <= 16u)
 											{
-												sbyte b2 = (sbyte)num6;
-												void* ptr2 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num4++);
+												sbyte b2 = (sbyte)num5;
+												void* ptr2 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num3++);
 												if (ExceptionInfo.Current == null)
 												{
 													*(sbyte*)ptr2 = b2;
 													continue;
 												}
 											}
-											else if (num6 == 17)
+											else if (num5 == 17)
 											{
-												int num15 = decode_bits.Invoke(@this, 3);
+												int num14 = decode_bits.Invoke(@this, 3);
 												if (ExceptionInfo.Current == null)
 												{
-													num7 = num15 + 3;
-													if ((uint)num7 <= (uint)num5)
+													num6 = num14 + 3;
+													if ((uint)num6 <= (uint)num4)
 													{
-														num4 += num7;
+														num3 += num6;
 														continue;
 													}
-													goto IL_0270;
+													goto IL_0267;
 												}
 											}
-											else if (num6 == 18)
+											else if (num5 == 18)
 											{
-												int num16 = decode_bits.Invoke(@this, 7);
+												int num15 = decode_bits.Invoke(@this, 7);
 												if (ExceptionInfo.Current == null)
 												{
-													num8 = num16 + 11;
-													if ((uint)num8 <= (uint)num5)
+													num7 = num15 + 11;
+													if ((uint)num7 <= (uint)num4)
 													{
-														num4 += num8;
+														num3 += num7;
 														continue;
 													}
-													goto IL_02bb;
+													goto IL_02af;
 												}
 											}
 											else
 											{
-												if (num6 != 19 && num6 != 20)
+												if (num5 != 19 && num5 != 20)
 												{
-													goto IL_03d4;
+													goto IL_03bc;
 												}
-												if (num6 == 19)
+												if (num5 == 19)
 												{
-													int num17 = decode_bits.Invoke(@this, 2);
+													int num16 = decode_bits.Invoke(@this, 2);
 													if (ExceptionInfo.Current == null)
 													{
-														num9 = num17 + 3;
-														goto IL_0332;
+														num8 = num16 + 3;
+														goto IL_0323;
 													}
 												}
 												else
 												{
-													int num18 = decode_bits.Invoke(@this, 6);
+													int num17 = decode_bits.Invoke(@this, 6);
 													if (ExceptionInfo.Current == null)
 													{
-														num9 = num18 + 7;
-														goto IL_0332;
+														num8 = num17 + 7;
+														goto IL_0323;
 													}
 												}
 											}
 										}
-										goto IL_0449;
-										IL_0332:
-										if (num4 == 0 || (uint)num9 > (uint)num5)
+										goto IL_0428;
+										IL_0323:
+										if (num3 == 0 || (uint)num8 > (uint)num4)
 										{
-											goto IL_0348;
+											goto IL_0339;
 										}
-										void* ptr3 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num4 - 1);
+										void* ptr3 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num3 - 1);
 										if (ExceptionInfo.Current == null)
 										{
-											num10 = (byte)(*(sbyte*)ptr3);
-											if (num10 == 0)
+											num9 = (byte)(*(sbyte*)ptr3);
+											if (num9 == 0)
 											{
-												goto IL_0383;
+												goto IL_0371;
 											}
-											num11 = num4 + num9;
-											while ((uint)num4 < (uint)num11)
+											num10 = num3 + num8;
+											while ((uint)num3 < (uint)num10)
 											{
-												sbyte b3 = (sbyte)num10;
-												void* ptr4 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num4++);
+												sbyte b3 = (sbyte)num9;
+												void* ptr4 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->field_1, num3++);
 												if (ExceptionInfo.Current == null)
 												{
 													*(sbyte*)ptr4 = b3;
 													continue;
 												}
-												goto IL_0449;
+												goto IL_0428;
 											}
 											continue;
 										}
-										goto IL_0449;
+										goto IL_0428;
 									}
-									if (num4 != num12)
+									if (num3 != num11)
 									{
 										flag = false;
-										num2 = 1;
 									}
 									else
 									{
 										bool flag5 = prepare_decoder_tables.Invoke(model);
 										if (ExceptionInfo.Current != null)
 										{
-											goto IL_0449;
+											goto IL_0428;
 										}
 										flag = flag5;
-										num2 = 1;
 									}
 								}
 							}
-							goto IL_0431;
+							goto IL_0410;
 						}
-						goto IL_0449;
+						goto IL_0428;
 					}
 					flag = false;
 				}
 			}
-			goto IL_0475;
+			goto IL_0454;
 		}
-		IL_0475:
+		IL_0454:
 		bool result = flag;
 		StackFrameList.Current.Clear(startFrame);
 		return result;
-		IL_0270:
+		IL_0267:
 		flag = false;
-		num2 = 1;
-		goto IL_0431;
-		IL_0383:
+		goto IL_0410;
+		IL_0371:
 		flag = false;
-		num2 = 1;
-		goto IL_0431;
-		IL_03d4:
+		goto IL_0410;
+		IL_03bc:
 		crnd_assert.Invoke(String_xzkwrkb.__pointer, String_yguirrd.__pointer, 2598);
 		if (ExceptionInfo.Current == null)
 		{
 			flag = false;
-			num2 = 1;
-			goto IL_0431;
+			goto IL_0410;
 		}
-		goto IL_0449;
-		IL_0431:
+		goto IL_0428;
+		IL_0410:
 		static_huffman_data_model_Destructor.Invoke(&localsPointer->field_0);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;
 		}
-		goto IL_0475;
-		IL_02bb:
+		goto IL_0454;
+		IL_02af:
 		flag = false;
-		num2 = 1;
-		goto IL_0431;
-		IL_0348:
+		goto IL_0410;
+		IL_0339:
 		flag = false;
-		num2 = 1;
-		goto IL_0431;
-		IL_0449:
+		goto IL_0410;
+		IL_0428:
 		ExceptionInfo current = ExceptionInfo.Current;
 		ExceptionInfo.Current = null;
 		static_huffman_data_model_Destructor.Invoke(&localsPointer->field_0);

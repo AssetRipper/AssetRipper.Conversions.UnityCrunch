@@ -17,15 +17,11 @@ internal static partial class decode_alpha_endpoints
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
-		bool flag = false;
 		localsPointer->field_0 = default(crnd_static_huffman_data_model);
-		void* ptr = null;
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
 		unchecked
 		{
-			int num4 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2);
+			int num = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2);
+			bool flag;
 			if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4, buf_size: crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_1), pBuf: (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_0)))
 			{
 				flag = false;
@@ -44,7 +40,7 @@ internal static partial class decode_alpha_endpoints
 				}
 				else
 				{
-					bool flag3 = resize_w95s75a.Invoke(&((crnd_crn_unpacker*)@this)->field_10, num4);
+					bool flag3 = resize_w95s75a.Invoke(&((crnd_crn_unpacker*)@this)->field_10, num);
 					if (ExceptionInfo.Current != null)
 					{
 						goto IL_01e3;
@@ -55,32 +51,32 @@ internal static partial class decode_alpha_endpoints
 					}
 					else
 					{
-						void* ptr2 = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_10, 0);
+						void* ptr = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_10, 0);
 						if (ExceptionInfo.Current != null)
 						{
 							goto IL_01e3;
 						}
-						ptr = ptr2;
-						num = 0;
-						num2 = 0;
-						num3 = 0;
-						while ((uint)num3 < (uint)num4)
+						void* ptr2 = ptr;
+						int num2 = 0;
+						int num3 = 0;
+						int num4 = 0;
+						while ((uint)num4 < (uint)num)
 						{
-							int num5 = num;
+							int num5 = num2;
 							int num6 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 							if (ExceptionInfo.Current == null)
 							{
-								num = (num5 + num6) & 0xFF;
-								int num7 = num2;
+								num2 = (num5 + num6) & 0xFF;
+								int num7 = num3;
 								int num8 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
 								if (ExceptionInfo.Current == null)
 								{
-									num2 = (num7 + num8) & 0xFF;
-									short num9 = (short)(num | (num2 << 8));
-									void* ptr3 = ptr;
-									ptr = (byte*)ptr3 + 2;
+									num3 = (num7 + num8) & 0xFF;
+									short num9 = (short)(num2 | (num3 << 8));
+									void* ptr3 = ptr2;
+									ptr2 = (byte*)ptr3 + 2;
 									*(short*)ptr3 = num9;
-									num3++;
+									num4++;
 									continue;
 								}
 							}

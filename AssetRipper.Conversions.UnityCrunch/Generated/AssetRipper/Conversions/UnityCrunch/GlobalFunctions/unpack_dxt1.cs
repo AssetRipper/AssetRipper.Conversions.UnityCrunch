@@ -10,49 +10,40 @@ internal static partial class unpack_dxt1
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this, [NativeType("unsigned char **")] void* pDst, [NativeType("unsigned int")] int output_pitch_in_bytes, [NativeType("unsigned int")] int output_width, [NativeType("unsigned int")] int output_height)
 	{
-		int num = 0;
-		sbyte b = 0;
-		int num2 = 0;
-		void* ptr = null;
-		int num3 = 0;
-		sbyte b2 = 0;
-		int num4 = 0;
-		void* ptr2 = null;
-		sbyte b3 = 0;
-		int num5 = 0;
 		unchecked
 		{
-			int num6 = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
-			int num7 = (output_width + 1) & -2;
-			int num8 = (output_height + 1) & -2;
-			int num9 = (output_pitch_in_bytes >>> 2) - (num7 << 1);
-			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->field_12) < (uint)num7)
+			int num = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
+			int num2 = (output_width + 1) & -2;
+			int num3 = (output_height + 1) & -2;
+			int num4 = (output_pitch_in_bytes >>> 2) - (num2 << 1);
+			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->field_12) < (uint)num2)
 			{
-				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num7);
+				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num2);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
 				}
 			}
-			num = 0;
-			b = 0;
-			for (num2 = 0; (uint)num2 < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_8); num2++)
+			int num5 = 0;
+			sbyte b = 0;
+			for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_8); i++)
 			{
-				ptr = ((void**)pDst)[(uint)num2];
-				num3 = 0;
-				while ((uint)num3 < (uint)num8)
+				void* ptr = ((void**)pDst)[(uint)i];
+				int num6 = 0;
+				while ((uint)num6 < (uint)num3)
 				{
-					b2 = (((uint)num3 < (uint)output_height) ? ((sbyte)1) : ((sbyte)0));
-					num4 = 0;
-					while ((uint)num4 < (uint)num7)
+					sbyte b2 = (((uint)num6 < (uint)output_height) ? ((sbyte)1) : ((sbyte)0));
+					int num7 = 0;
+					while ((uint)num7 < (uint)num2)
 					{
-						b2 = (((b2 & 1) == 1 && (uint)num4 < (uint)output_width) ? ((sbyte)1) : ((sbyte)0));
-						if ((num3 & 1) == 0 && (num4 & 1) == 0)
+						b2 = (((b2 & 1) == 1 && (uint)num7 < (uint)output_width) ? ((sbyte)1) : ((sbyte)0));
+						if ((num6 & 1) == 0 && (num7 & 1) == 0)
 						{
 							b = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_5);
 						}
-						ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num4);
-						if ((num3 & 1) != 0)
+						void* ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num7);
+						sbyte b3;
+						if ((num6 & 1) != 0)
 						{
 							b3 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0;
 						}
@@ -65,32 +56,32 @@ internal static partial class unpack_dxt1
 						}
 						if (b3 == 0)
 						{
-							num += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
-							if ((uint)num >= (uint)num6)
+							num5 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
+							if ((uint)num5 >= (uint)num)
 							{
-								num -= num6;
+								num5 -= num;
 							}
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num5;
 						}
 						else if ((byte)b3 == 1)
 						{
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num5;
 						}
 						else
 						{
-							num = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1;
+							num5 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1;
 						}
-						num5 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_7);
+						int i2 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_7);
 						if ((b2 & 1) == 1)
 						{
-							*(int*)ptr = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num);
-							((int*)ptr)[1] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_9, num5);
+							*(int*)ptr = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num5);
+							((int*)ptr)[1] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_9, i2);
 						}
-						num4++;
+						num7++;
 						ptr = (byte*)ptr + 8;
 					}
-					num3++;
-					ptr = (byte*)ptr + (nint)num9 * (nint)4;
+					num6++;
+					ptr = (byte*)ptr + (nint)num4 * (nint)4;
 				}
 			}
 			return true;

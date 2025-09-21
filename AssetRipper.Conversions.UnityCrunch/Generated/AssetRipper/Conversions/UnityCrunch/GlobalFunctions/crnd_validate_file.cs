@@ -11,12 +11,6 @@ internal static partial class crnd_validate_file
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke([NativeType("void const *")] void* pData, [NativeType("unsigned int")] int data_size, [NativeType("struct crnd::crn_file_info *")] void* pFile_info)
 	{
-		bool flag = false;
-		void* ptr = null;
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
-		int num4 = 0;
 		unchecked
 		{
 			if (pFile_info != null)
@@ -31,7 +25,7 @@ internal static partial class crnd_validate_file
 			{
 				return false;
 			}
-			ptr = crnd_get_header.Invoke(pData, data_size);
+			void* ptr = crnd_get_header.Invoke(pData, data_size);
 			if (ptr == null)
 			{
 				return false;
@@ -71,15 +65,15 @@ internal static partial class crnd_validate_file
 				((crnd_crn_file_info*)pFile_info)->field_3 = crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_14.field_1) + crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_15.field_1) + crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_16.field_1) + crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_17.field_1);
 				((crnd_crn_file_info*)pFile_info)->field_4 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_18);
 				((crnd_crn_file_info*)pFile_info)->field_5 = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_7);
-				for (num3 = 0; (uint)num3 < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_7); num3++)
+				for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_7); i++)
 				{
-					num4 = crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_3);
-					if ((uint)(num3 + 1) < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_7))
+					int num = crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_3);
+					if ((uint)(i + 1) < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_7))
 					{
-						num4 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->field_20) + (nint)(uint)(num3 + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+						num = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->field_20) + (nint)(uint)(i + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
 					}
-					int num5 = num4 - crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->field_20) + (nint)(uint)num3 * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
-					((int*)(&((crnd_crn_file_info*)pFile_info)->field_6))[(uint)num3] = num5;
+					int num2 = num - crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->field_20) + (nint)(uint)i * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+					((int*)(&((crnd_crn_file_info*)pFile_info)->field_6))[(uint)i] = num2;
 				}
 				((crnd_crn_file_info*)pFile_info)->field_7 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_14.field_2);
 				((crnd_crn_file_info*)pFile_info)->field_8 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_15.field_2);

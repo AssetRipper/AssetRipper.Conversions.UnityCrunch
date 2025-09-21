@@ -17,9 +17,7 @@ internal static partial class crnd_malloc
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
-		void* ptr = null;
 		localsPointer->field_0 = 0L;
-		void* ptr2 = null;
 		unchecked
 		{
 			long num = (size + 4L - 1L) & -4L;
@@ -27,6 +25,7 @@ internal static partial class crnd_malloc
 			{
 				num = 4L;
 			}
+			void* ptr;
 			if ((ulong)num > 2147418112uL)
 			{
 				crnd_mem_error.Invoke(String_ypy7scc.__pointer);
@@ -37,34 +36,28 @@ internal static partial class crnd_malloc
 				localsPointer->field_0 = num;
 				void* value = g_pRealloc.Value;
 				void* value2 = g_pUser_data.Value;
-				void* ptr3 = ((delegate*<void*, long, long*, bool, void*, void*>)value)(null, num, &localsPointer->field_0, true, value2);
+				void* ptr2 = ((delegate*<void*, long, long*, bool, void*, void*>)value)(null, num, &localsPointer->field_0, true, value2);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
 				}
-				ptr2 = ptr3;
+				void* ptr3 = ptr2;
 				if (pActual_size != null)
 				{
 					*(long*)pActual_size = localsPointer->field_0;
 				}
-				if (ptr2 == null || (ulong)localsPointer->field_0 < (ulong)num)
+				if (ptr3 == null || (ulong)localsPointer->field_0 < (ulong)num)
 				{
 					crnd_mem_error.Invoke(String_xewaojb.__pointer);
 					ptr = null;
 				}
 				else
 				{
-					int num2;
-					if (((int)ptr2 & 7) == 0)
-					{
-						num2 = -1;
-					}
-					else
+					if (((int)ptr3 & 7) != 0)
 					{
 						crnd_assert.Invoke(String_42humaa.__pointer, String_yguirrd.__pointer, 2017);
-						num2 = 0;
 					}
-					ptr = ptr2;
+					ptr = ptr3;
 				}
 			}
 			void* result = ptr;

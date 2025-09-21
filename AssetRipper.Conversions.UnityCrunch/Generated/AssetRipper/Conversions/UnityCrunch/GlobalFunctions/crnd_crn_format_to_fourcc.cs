@@ -10,7 +10,6 @@ internal static partial class crnd_crn_format_to_fourcc
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke([NativeType("enum crn_format")] int fmt)
 	{
-		int num = 0;
 		switch (fmt)
 		{
 		case 0:

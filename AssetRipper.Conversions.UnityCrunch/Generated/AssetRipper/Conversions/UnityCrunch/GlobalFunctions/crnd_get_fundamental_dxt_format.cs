@@ -9,7 +9,6 @@ internal static partial class crnd_get_fundamental_dxt_format
 	[return: NativeType("enum crn_format")]
 	public static int Invoke([NativeType("enum crn_format")] int fmt)
 	{
-		int num = 0;
 		if (fmt == 3 || fmt == 4 || fmt == 5 || fmt == 6)
 		{
 			return 2;

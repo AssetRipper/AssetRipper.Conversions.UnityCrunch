@@ -12,11 +12,10 @@ internal static partial class crnd_default_realloc
 	[return: NativeType("void *")]
 	public unsafe static void* Invoke([NativeType("void *")] void* p, [NativeType("unsigned __int64")] long size, [NativeType("unsigned __int64 *")] void* pActual_size, [NativeType("bool")] bool movable, [NativeType("void *")] void* parameter_4)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
 		sbyte b = (movable ? ((sbyte)1) : ((sbyte)0));
 		unchecked
 		{
+			void* ptr;
 			if (p == null)
 			{
 				ptr = malloc.Invoke(size);
@@ -36,7 +35,7 @@ internal static partial class crnd_default_realloc
 			}
 			else
 			{
-				ptr2 = p;
+				void* ptr2 = p;
 				ptr = null;
 				if (ptr != null)
 				{

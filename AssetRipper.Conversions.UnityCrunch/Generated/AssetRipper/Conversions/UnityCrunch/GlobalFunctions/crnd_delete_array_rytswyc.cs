@@ -11,21 +11,14 @@ internal static partial class crnd_delete_array_rytswyc
 	[return: NativeType("void")]
 	public unsafe static void Invoke([NativeType("unsigned short *")] void* p)
 	{
-		int num = 0;
 		unchecked
 		{
 			if (p != null)
 			{
-				num = *(int*)((byte*)p + -4);
-				int num2;
-				if (num != 0 && num == (*(int*)((byte*)p + -8) ^ -1))
-				{
-					num2 = -1;
-				}
-				else
+				int num = *(int*)((byte*)p + -4);
+				if (num == 0 || num != (*(int*)((byte*)p + -8) ^ -1))
 				{
 					crnd_assert.Invoke(String_zzvckkc.__pointer, String_yguirrd.__pointer, 347);
-					num2 = 0;
 				}
 				destruct_array_viasmsc.Invoke(p, num);
 				crnd_free.Invoke((byte*)p + -8);

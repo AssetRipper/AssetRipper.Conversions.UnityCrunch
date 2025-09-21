@@ -11,7 +11,6 @@ internal static partial class assign
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this, [NativeType("class crnd::vector<unsigned char> const &")] void* other)
 	{
-		bool flag = false;
 		if (@this == other)
 		{
 			return true;
@@ -33,12 +32,12 @@ internal static partial class assign
 				{
 					return false;
 				}
-				bool flag2 = increase_capacity_a7boycc.Invoke(@this, ((crnd_vector_f3cmzmc*)other)->field_1, grow_hint: false);
+				bool flag = increase_capacity_a7boycc.Invoke(@this, ((crnd_vector_f3cmzmc*)other)->field_1, grow_hint: false);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
 				}
-				if (!flag2)
+				if (!flag)
 				{
 					return false;
 				}

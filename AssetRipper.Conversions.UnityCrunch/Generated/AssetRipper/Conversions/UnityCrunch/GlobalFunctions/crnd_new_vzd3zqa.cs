@@ -10,18 +10,17 @@ internal static partial class crnd_new_vzd3zqa
 	[return: NativeType("class crnd::prefix_coding::decoder_tables *")]
 	public unsafe static void* Invoke([NativeType("class crnd::prefix_coding::decoder_tables const &")] void* init)
 	{
-		void* ptr = null;
-		void* ptr2 = crnd_malloc.Invoke(192L, null);
+		void* ptr = crnd_malloc.Invoke(192L, null);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
-		void* ptr3 = ptr2;
-		if (ptr3 == null)
+		void* ptr2 = ptr;
+		if (ptr2 == null)
 		{
 			return null;
 		}
-		void* result = construct_zybj4yc.Invoke(ptr3, init);
+		void* result = construct_zybj4yc.Invoke(ptr2, init);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;

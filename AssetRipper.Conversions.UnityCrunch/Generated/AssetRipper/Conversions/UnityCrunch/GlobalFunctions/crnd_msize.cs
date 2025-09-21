@@ -10,7 +10,6 @@ internal static partial class crnd_msize
 	[return: NativeType("unsigned __int64")]
 	public unsafe static long Invoke([NativeType("void *")] void* p)
 	{
-		long num = 0L;
 		if (p == null)
 		{
 			return 0L;

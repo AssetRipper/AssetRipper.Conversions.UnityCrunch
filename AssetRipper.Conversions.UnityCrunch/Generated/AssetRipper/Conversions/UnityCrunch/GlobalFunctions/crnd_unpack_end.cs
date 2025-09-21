@@ -9,18 +9,15 @@ internal static partial class crnd_unpack_end
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke([NativeType("void *")] void* pContext)
 	{
-		bool flag = false;
-		void* ptr = null;
 		if (pContext == null)
 		{
 			return false;
 		}
-		ptr = pContext;
-		if (!is_valid.Invoke(ptr))
+		if (!is_valid.Invoke(pContext))
 		{
 			return false;
 		}
-		crnd_delete_e7rwdhb.Invoke(ptr);
+		crnd_delete_e7rwdhb.Invoke(pContext);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;

@@ -17,12 +17,11 @@ internal static partial class crnd_realloc
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
-		void* ptr = null;
 		localsPointer->field_0 = 0L;
-		void* ptr2 = null;
 		sbyte b = (movable ? ((sbyte)1) : ((sbyte)0));
 		unchecked
 		{
+			void* ptr;
 			if (((int)p & 7) != 0)
 			{
 				crnd_mem_error.Invoke(String_ifury7b.__pointer);
@@ -38,27 +37,21 @@ internal static partial class crnd_realloc
 				localsPointer->field_0 = size;
 				void* value = g_pRealloc.Value;
 				void* value2 = g_pUser_data.Value;
-				void* ptr3 = ((delegate*<void*, long, long*, bool, void*, void*>)value)(p, size, &localsPointer->field_0, (b & 1) == 1, value2);
+				void* ptr2 = ((delegate*<void*, long, long*, bool, void*, void*>)value)(p, size, &localsPointer->field_0, (b & 1) == 1, value2);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
 				}
-				ptr2 = ptr3;
+				void* ptr3 = ptr2;
 				if (pActual_size != null)
 				{
 					*(long*)pActual_size = localsPointer->field_0;
 				}
-				int num;
-				if (((int)ptr2 & 7) == 0)
-				{
-					num = -1;
-				}
-				else
+				if (((int)ptr3 & 7) != 0)
 				{
 					crnd_assert.Invoke(String_42humaa.__pointer, String_yguirrd.__pointer, 2039);
-					num = 0;
 				}
-				ptr = ptr2;
+				ptr = ptr3;
 			}
 			void* result = ptr;
 			StackFrameList.Current.Clear(startFrame);

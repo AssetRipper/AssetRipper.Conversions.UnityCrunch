@@ -14,7 +14,7 @@ internal static partial class vector_unsigned_int_Destructor
 	public unsafe static void Invoke(void* @this)
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
+		startFrame.GetLocalsPointer<LocalVariables>();
 		clear_utei2oa.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{

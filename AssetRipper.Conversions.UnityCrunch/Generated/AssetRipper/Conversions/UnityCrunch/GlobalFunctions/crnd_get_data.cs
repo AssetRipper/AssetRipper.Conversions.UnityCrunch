@@ -9,14 +9,11 @@ internal static partial class crnd_get_data
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke([NativeType("void *")] void* pContext, [NativeType("void const **")] void* ppData, [NativeType("unsigned int *")] void* pData_size)
 	{
-		bool flag = false;
-		void* ptr = null;
 		if (pContext == null)
 		{
 			return false;
 		}
-		ptr = pContext;
-		if (!is_valid.Invoke(ptr))
+		if (!is_valid.Invoke(pContext))
 		{
 			return false;
 		}
@@ -24,11 +21,11 @@ internal static partial class crnd_get_data
 		{
 			if (ppData != null)
 			{
-				*(void**)ppData = Get_data.Invoke(ptr);
+				*(void**)ppData = Get_data.Invoke(pContext);
 			}
 			if (pData_size != null)
 			{
-				*(int*)pData_size = Get_data_size.Invoke(ptr);
+				*(int*)pData_size = Get_data_size.Invoke(pContext);
 			}
 			return true;
 		}

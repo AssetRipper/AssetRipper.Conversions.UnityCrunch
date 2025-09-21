@@ -9,18 +9,16 @@ internal static partial class crnd_unpack_begin
 	[return: NativeType("void *")]
 	public unsafe static void* Invoke([NativeType("void const *")] void* pData, [NativeType("unsigned int")] int data_size)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
 		if (pData == null || unchecked((uint)data_size) < 62u)
 		{
 			return null;
 		}
-		void* ptr3 = crnd_new_xzix9sb.Invoke();
+		void* ptr = crnd_new_xzix9sb.Invoke();
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
-		ptr2 = ptr3;
+		void* ptr2 = ptr;
 		if (ptr2 == null)
 		{
 			return null;

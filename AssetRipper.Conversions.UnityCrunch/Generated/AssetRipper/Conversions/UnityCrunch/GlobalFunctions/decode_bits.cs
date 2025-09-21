@@ -9,9 +9,6 @@ internal static partial class decode_bits
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this, [NativeType("unsigned int")] int num_bits)
 	{
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
 		switch (num_bits)
 		{
 		case 0:

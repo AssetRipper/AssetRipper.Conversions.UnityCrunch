@@ -10,7 +10,6 @@ internal static partial class Get_block_values_2npk7qa
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke([NativeType("unsigned int *")] void* pDst, [NativeType("unsigned int")] int l, [NativeType("unsigned int")] int h)
 	{
-		int num = 0;
 		if (unchecked((uint)l > (uint)h))
 		{
 			return Get_block_values8_ml7jl2d.Invoke(pDst, l, h);

@@ -15,15 +15,9 @@ internal static partial class unpack_endpoint_bamuzlc
 		sbyte b = (scaled ? ((sbyte)1) : ((sbyte)0));
 		unchecked
 		{
-			int num;
-			if ((uint)index < 2u)
-			{
-				num = -1;
-			}
-			else
+			if ((uint)index >= 2u)
 			{
 				crnd_assert.Invoke(String_4tt2t2d.__pointer, String_yguirrd.__pointer, 2821);
-				num = 0;
 			}
 			unpack_color_ifs9dpd.Invoke(agg_result, (short)((endpoints >>> index * 16) & 0xFFFF), (b & 1) == 1, alpha);
 		}

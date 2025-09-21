@@ -9,24 +9,22 @@ internal static partial class compute_max_mips
 	[return: NativeType("unsigned int")]
 	public static int Invoke([NativeType("unsigned int")] int width, [NativeType("unsigned int")] int height)
 	{
-		int num = 0;
-		int num2 = 0;
-		int num3 = height;
-		int num4 = width;
-		if ((num4 | num3) == 0)
+		int num = height;
+		int num2 = width;
+		if ((num2 | num) == 0)
 		{
 			return 0;
 		}
-		num2 = 1;
+		int num3 = 1;
 		unchecked
 		{
-			while (((uint)num4 <= 1u) ? ((uint)num3 > 1u) : true)
+			while (((uint)num2 <= 1u) ? ((uint)num > 1u) : true)
 			{
-				num4 >>>= 1;
-				num3 >>>= 1;
-				num2++;
+				num2 >>>= 1;
+				num >>>= 1;
+				num3++;
 			}
-			return num2;
+			return num3;
 		}
 	}
 }

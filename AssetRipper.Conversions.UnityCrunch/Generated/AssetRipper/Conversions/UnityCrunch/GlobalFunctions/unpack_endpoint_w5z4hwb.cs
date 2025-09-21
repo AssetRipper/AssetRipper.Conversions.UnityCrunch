@@ -13,15 +13,9 @@ internal static partial class unpack_endpoint_w5z4hwb
 	{
 		unchecked
 		{
-			int num;
-			if ((uint)index < 2u)
-			{
-				num = -1;
-			}
-			else
+			if ((uint)index >= 2u)
 			{
 				crnd_assert.Invoke(String_4tt2t2d.__pointer, String_yguirrd.__pointer, 2919);
-				num = 0;
 			}
 			return (packed >>> 8 * index) & 0xFF;
 		}

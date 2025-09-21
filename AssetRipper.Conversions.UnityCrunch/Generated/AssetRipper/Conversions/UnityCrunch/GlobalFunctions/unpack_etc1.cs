@@ -22,130 +22,115 @@ internal static partial class unpack_etc1
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
 		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
-		int num = 0;
-		int num2 = 0;
-		sbyte b = 0;
-		int num3 = 0;
-		void* ptr = null;
-		int num4 = 0;
-		sbyte b2 = 0;
-		int num5 = 0;
-		void* ptr2 = null;
-		sbyte b3 = 0;
 		localsPointer->field_0 = default(InlineArray4_SByte);
 		localsPointer->field_1 = default(InlineArray4_SByte);
 		localsPointer->field_2 = default(InlineArray4_SByte);
-		int num6 = 0;
-		int num7 = 0;
-		int num8 = 0;
-		int num9 = 0;
-		int num10 = 0;
 		unchecked
 		{
-			int num11 = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
-			int num12 = (output_width + 1) & -2;
-			int num13 = (output_height + 1) & -2;
-			int num14 = (output_pitch_in_bytes >>> 2) - (num12 << 1);
-			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->field_12) < (uint)(num12 << 1))
+			int num = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
+			int num2 = (output_width + 1) & -2;
+			int num3 = (output_height + 1) & -2;
+			int num4 = (output_pitch_in_bytes >>> 2) - (num2 << 1);
+			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->field_12) < (uint)(num2 << 1))
 			{
-				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num12 << 1);
+				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num2 << 1);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
 				}
 			}
-			num = 0;
-			num2 = 0;
-			b = 0;
-			for (num3 = 0; (uint)num3 < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_8); num3++)
+			int num5 = 0;
+			int num6 = 0;
+			for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_8); i++)
 			{
-				ptr = ((void**)pDst)[(uint)num3];
-				num4 = 0;
-				while ((uint)num4 < (uint)num13)
+				void* ptr = ((void**)pDst)[(uint)i];
+				int num7 = 0;
+				while ((uint)num7 < (uint)num3)
 				{
-					b2 = (((uint)num4 < (uint)output_height) ? ((sbyte)1) : ((sbyte)0));
-					num5 = 0;
-					while ((uint)num5 < (uint)num12)
+					sbyte b = (((uint)num7 < (uint)output_height) ? ((sbyte)1) : ((sbyte)0));
+					int num8 = 0;
+					while ((uint)num8 < (uint)num2)
 					{
-						b2 = (((b2 & 1) == 1 && (uint)num5 < (uint)output_width) ? ((sbyte)1) : ((sbyte)0));
-						ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num5 << 1);
-						if ((num4 & 1) != 0)
+						b = (((b & 1) == 1 && (uint)num8 < (uint)output_width) ? ((sbyte)1) : ((sbyte)0));
+						void* ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num8 << 1);
+						sbyte b2;
+						if ((num7 & 1) != 0)
 						{
-							b3 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0;
+							b2 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0;
 						}
 						else
 						{
-							b = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_5);
-							b3 = (sbyte)(((byte)b & 3) | (((byte)b >> 2) & 0xC));
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0 = (short)((((byte)b >> 2) & 3) | (((byte)b >> 4) & 0xC));
+							sbyte b3 = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_5);
+							b2 = (sbyte)(((byte)b3 & 3) | (((byte)b3 >> 2) & 0xC));
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0 = (short)((((byte)b3 >> 2) & 3) | (((byte)b3 >> 4) & 0xC));
 						}
-						if (((byte)b3 & 3) == 0)
+						if (((byte)b2 & 3) == 0)
 						{
-							num += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
-							if ((uint)num >= (uint)num11)
+							num5 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
+							if ((uint)num5 >= (uint)num)
 							{
-								num -= num11;
+								num5 -= num;
 							}
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num5;
 						}
-						else if (((byte)b3 & 3) == 1)
+						else if (((byte)b2 & 3) == 1)
 						{
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num5;
 						}
-						else if (((byte)b3 & 3) == 3)
+						else if (((byte)b2 & 3) == 3)
 						{
-							int num15 = num2;
-							num = num15;
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num15;
+							int num9 = num6;
+							num5 = num9;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num9;
 						}
 						else
 						{
-							num = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1;
+							num5 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1;
 						}
-						b3 = (sbyte)((byte)b3 >> 2);
-						int num16 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num);
-						*(int*)(&localsPointer->field_1) = num16;
-						num6 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_7);
-						if (b3 != 0)
+						b2 = (sbyte)((byte)b2 >> 2);
+						int num10 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num5);
+						*(int*)(&localsPointer->field_1) = num10;
+						int num11 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_7);
+						if (b2 != 0)
 						{
-							num += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
-							if ((uint)num >= (uint)num11)
+							num5 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
+							if ((uint)num5 >= (uint)num)
 							{
-								num -= num11;
+								num5 -= num;
 							}
 						}
-						num2 = (ushort)((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num5 << 1) | 1))->field_1;
-						((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num5 << 1) | 1))->field_1 = (short)num;
-						int num17 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num);
-						*(int*)(&localsPointer->field_2) = num17;
-						if ((b2 & 1) == 1)
+						num6 = (ushort)((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num8 << 1) | 1))->field_1;
+						((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num8 << 1) | 1))->field_1 = (short)num5;
+						int num12 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num5);
+						*(int*)(&localsPointer->field_2) = num12;
+						if ((b & 1) == 1)
 						{
-							num7 = ((byte)b3 >> 1) ^ 1;
-							num8 = 1;
-							num9 = 0;
-							while (num8 != 0 && (uint)num9 < 3u)
+							int num13 = ((byte)b2 >> 1) ^ 1;
+							int num14 = 1;
+							int num15 = 0;
+							while (num14 != 0 && (uint)num15 < 3u)
 							{
 								checked
 								{
-									num8 = ((unchecked((byte)((sbyte*)(&localsPointer->field_1))[(uint)num9]) + 3 >= unchecked((byte)((sbyte*)(&localsPointer->field_2))[(uint)num9]) && unchecked((byte)((sbyte*)(&localsPointer->field_2))[(uint)num9]) + 4 >= unchecked((byte)((sbyte*)(&localsPointer->field_1))[(uint)num9])) ? num8 : 0);
+									num14 = ((unchecked((byte)((sbyte*)(&localsPointer->field_1))[(uint)num15]) + 3 >= unchecked((byte)((sbyte*)(&localsPointer->field_2))[(uint)num15]) && unchecked((byte)((sbyte*)(&localsPointer->field_2))[(uint)num15]) + 4 >= unchecked((byte)((sbyte*)(&localsPointer->field_1))[(uint)num15])) ? num14 : 0);
 								}
-								num9++;
+								num15++;
 							}
-							for (num10 = 0; (uint)num10 < 3u; num10++)
+							for (int j = 0; (uint)j < 3u; j++)
 							{
-								int num18 = ((num8 == 0) ? ((((byte)((sbyte*)(&localsPointer->field_1))[(uint)num10] << 3) & 0xF0) | ((byte)((sbyte*)(&localsPointer->field_2))[(uint)num10] >> 1)) : (((byte)((sbyte*)(&localsPointer->field_1))[(uint)num10] << 3) | (checked(unchecked((byte)((sbyte*)(&localsPointer->field_2))[(uint)num10]) - unchecked((byte)((sbyte*)(&localsPointer->field_1))[(uint)num10])) & 7)));
-								((sbyte*)(&localsPointer->field_0))[(uint)num10] = (sbyte)num18;
+								int num16 = ((num14 == 0) ? ((((byte)((sbyte*)(&localsPointer->field_1))[(uint)j] << 3) & 0xF0) | ((byte)((sbyte*)(&localsPointer->field_2))[(uint)j] >> 1)) : (((byte)((sbyte*)(&localsPointer->field_1))[(uint)j] << 3) | (checked(unchecked((byte)((sbyte*)(&localsPointer->field_2))[(uint)j]) - unchecked((byte)((sbyte*)(&localsPointer->field_1))[(uint)j])) & 7)));
+								((sbyte*)(&localsPointer->field_0))[(uint)j] = (sbyte)num16;
 							}
-							sbyte b4 = (sbyte)(((byte)((sbyte*)(&localsPointer->field_1))[3] << 5) | ((byte)((sbyte*)(&localsPointer->field_2))[3] << 2) | (num8 << 1) | num7);
+							sbyte b4 = (sbyte)(((byte)((sbyte*)(&localsPointer->field_1))[3] << 5) | ((byte)((sbyte*)(&localsPointer->field_2))[3] << 2) | (num14 << 1) | num13);
 							((sbyte*)(&localsPointer->field_0))[3] = b4;
 							*(int*)ptr = *(int*)(&localsPointer->field_0);
-							((int*)ptr)[1] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_9, (num6 << 1) | num7);
+							((int*)ptr)[1] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_9, (num11 << 1) | num13);
 						}
-						num5++;
+						num8++;
 						ptr = (byte*)ptr + 8;
 					}
-					num4++;
-					ptr = (byte*)ptr + (nint)num14 * (nint)4;
+					num7++;
+					ptr = (byte*)ptr + (nint)num4 * (nint)4;
 				}
 			}
 			StackFrameList.Current.Clear(startFrame);

@@ -9,18 +9,15 @@ internal static partial class crnd_unpack_level
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke([NativeType("void *")] void* pContext, [NativeType("void **")] void* pDst, [NativeType("unsigned int")] int dst_size_in_bytes, [NativeType("unsigned int")] int row_pitch_in_bytes, [NativeType("unsigned int")] int level_index)
 	{
-		bool flag = false;
-		void* ptr = null;
 		if (unchecked(pContext == null || pDst == null || (uint)dst_size_in_bytes < 8u || (uint)level_index >= 16u))
 		{
 			return false;
 		}
-		ptr = pContext;
-		if (!is_valid.Invoke(ptr))
+		if (!is_valid.Invoke(pContext))
 		{
 			return false;
 		}
-		bool result = unpack_level_cvfjdga.Invoke(ptr, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
+		bool result = unpack_level_cvfjdga.Invoke(pContext, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;

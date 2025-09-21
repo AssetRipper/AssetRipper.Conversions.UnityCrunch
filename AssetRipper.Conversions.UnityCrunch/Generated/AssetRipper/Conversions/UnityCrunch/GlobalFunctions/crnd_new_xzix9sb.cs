@@ -10,18 +10,17 @@ internal static partial class crnd_new_xzix9sb
 	[return: NativeType("class crnd::crn_unpacker *")]
 	public unsafe static void* Invoke()
 	{
-		void* ptr = null;
-		void* ptr2 = crnd_malloc.Invoke(392L, null);
+		void* ptr = crnd_malloc.Invoke(392L, null);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
-		void* ptr3 = ptr2;
-		if (ptr3 == null)
+		void* ptr2 = ptr;
+		if (ptr2 == null)
 		{
 			return null;
 		}
-		void* result = construct_bzfae7a.Invoke(ptr3);
+		void* result = construct_bzfae7a.Invoke(ptr2);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;

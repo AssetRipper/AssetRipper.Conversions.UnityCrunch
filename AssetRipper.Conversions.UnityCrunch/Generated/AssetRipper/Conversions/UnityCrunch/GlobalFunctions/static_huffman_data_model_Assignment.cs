@@ -10,7 +10,6 @@ internal static partial class static_huffman_data_model_Assignment
 	[return: NativeType("class crnd::static_huffman_data_model &")]
 	public unsafe static void* Invoke(void* @this, [NativeType("class crnd::static_huffman_data_model const &")] void* rhs)
 	{
-		void* ptr = null;
 		if (@this == rhs)
 		{
 			return @this;

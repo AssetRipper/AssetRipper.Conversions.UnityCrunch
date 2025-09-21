@@ -10,7 +10,6 @@ internal static partial class start_decoding
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this, [NativeType("unsigned char const *")] void* pBuf, [NativeType("unsigned int")] int buf_size)
 	{
-		bool flag = false;
 		if (buf_size == 0)
 		{
 			return false;

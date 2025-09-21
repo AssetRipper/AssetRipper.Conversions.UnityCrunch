@@ -20,15 +20,9 @@ internal static partial class unpack_level_cvfjdga
 			{
 				num2 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)(level_index + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
 			}
-			int num3;
-			if ((uint)num2 > (uint)num)
-			{
-				num3 = -1;
-			}
-			else
+			if ((uint)num2 <= (uint)num)
 			{
 				crnd_assert.Invoke(String_huvyfmc.__pointer, String_yguirrd.__pointer, 2982);
-				num3 = 0;
 			}
 			bool result = unpack_level_zjb72ec.Invoke(@this, (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)num, num2 - num, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 			if (ExceptionInfo.Current != null)

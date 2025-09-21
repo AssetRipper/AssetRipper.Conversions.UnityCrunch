@@ -10,24 +10,21 @@ internal static partial class crnd_get_header
 	[return: NativeType("struct crnd::crn_header const *")]
 	public unsafe static void* Invoke([NativeType("void const *")] void* pData, [NativeType("unsigned int")] int data_size)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
 		unchecked
 		{
 			if (pData == null || (ulong)(uint)data_size < 74uL)
 			{
 				return null;
 			}
-			ptr2 = pData;
-			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr2)->field_0) != 18552)
+			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pData)->field_0) != 18552)
 			{
 				return null;
 			}
-			if ((ulong)(uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr2)->field_1) < 74uL || (uint)data_size < (uint)crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr2)->field_3))
+			if ((ulong)(uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pData)->field_1) < 74uL || (uint)data_size < (uint)crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)pData)->field_3))
 			{
 				return null;
 			}
-			return ptr2;
+			return pData;
 		}
 	}
 }

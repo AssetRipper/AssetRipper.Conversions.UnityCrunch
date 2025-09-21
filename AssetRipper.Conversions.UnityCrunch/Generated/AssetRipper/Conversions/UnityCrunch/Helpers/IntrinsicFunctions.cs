@@ -552,7 +552,7 @@ internal static partial class IntrinsicFunctions
 		unchecked
 		{
 			RttiTypeDescriptor* ptr = *(RttiTypeDescriptor**)checked((nuint)args[0]);
-			int num = *(int*)checked((nuint)args[1]);
+			_ = *(int*)checked((nuint)args[1]);
 			void** ptr2 = (void**)checked((nuint)args[2]);
 			if (ExceptionInfo.Current is NativeExceptionInfo nativeExceptionInfo)
 			{

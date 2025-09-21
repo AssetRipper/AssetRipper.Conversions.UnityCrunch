@@ -9,7 +9,6 @@ internal static partial class clamp
 	[return: NativeType("int")]
 	public static int Invoke([NativeType("int")] int v)
 	{
-		int num = 0;
 		if (v < 0)
 		{
 			return 0;

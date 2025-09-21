@@ -11,21 +11,14 @@ internal static partial class Get_alpha
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this, [NativeType("unsigned int")] int x, [NativeType("unsigned int")] int y, [NativeType("bool")] bool scaled)
 	{
-		int num = 0;
 		sbyte b = (scaled ? ((sbyte)1) : ((sbyte)0));
 		unchecked
 		{
-			int num2;
-			if ((uint)x < 4u && (uint)y < 4u)
-			{
-				num2 = -1;
-			}
-			else
+			if ((uint)x >= 4u || (uint)y >= 4u)
 			{
 				crnd_assert.Invoke(String_cahur4b.__pointer, String_yguirrd.__pointer, 2850);
-				num2 = 0;
 			}
-			num = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)((y << 1) + (x >>> 1))];
+			int num = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)((y << 1) + (x >>> 1))];
 			if ((x & 1) != 0)
 			{
 				num >>>= 4;

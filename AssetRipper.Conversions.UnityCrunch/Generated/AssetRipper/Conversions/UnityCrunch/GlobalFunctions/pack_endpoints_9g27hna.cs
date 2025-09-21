@@ -11,15 +11,9 @@ internal static partial class pack_endpoints_9g27hna
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke([NativeType("unsigned int")] int lo, [NativeType("unsigned int")] int hi)
 	{
-		int num;
-		if (unchecked((uint)lo <= 65535u && (uint)hi <= 65535u))
-		{
-			num = -1;
-		}
-		else
+		if (unchecked((uint)lo > 65535u || (uint)hi > 65535u))
 		{
 			crnd_assert.Invoke(String_myspu3d.__pointer, String_yguirrd.__pointer, 2826);
-			num = 0;
 		}
 		return lo | (hi << 16);
 	}

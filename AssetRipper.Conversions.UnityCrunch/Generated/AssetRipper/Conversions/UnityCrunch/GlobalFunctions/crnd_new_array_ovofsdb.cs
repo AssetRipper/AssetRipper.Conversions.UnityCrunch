@@ -10,9 +10,6 @@ internal static partial class crnd_new_array_ovofsdb
 	[return: NativeType("unsigned short *")]
 	public unsafe static void* Invoke([NativeType("unsigned int")] int num)
 	{
-		void* ptr = null;
-		void* ptr2 = null;
-		void* ptr3 = null;
 		int num2 = num;
 		if (num2 == 0)
 		{
@@ -20,17 +17,17 @@ internal static partial class crnd_new_array_ovofsdb
 		}
 		unchecked
 		{
-			void* ptr4 = crnd_malloc.Invoke(8L + 2L * (long)(uint)num2, null);
+			void* ptr = crnd_malloc.Invoke(8L + 2L * (long)(uint)num2, null);
 			if (ExceptionInfo.Current != null)
 			{
 				return null;
 			}
-			ptr2 = ptr4;
+			void* ptr2 = ptr;
 			if (ptr2 == null)
 			{
 				return null;
 			}
-			ptr3 = (byte*)ptr2 + 8;
+			void* ptr3 = (byte*)ptr2 + 8;
 			*(int*)((byte*)ptr3 + -4) = num2;
 			*(int*)((byte*)ptr3 + -8) = num2 ^ -1;
 			construct_array_pri7s5c.Invoke(ptr3, num2);

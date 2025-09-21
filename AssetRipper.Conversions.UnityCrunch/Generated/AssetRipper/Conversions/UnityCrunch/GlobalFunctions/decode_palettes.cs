@@ -10,12 +10,20 @@ internal static partial class decode_palettes
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this)
 	{
-		bool flag = false;
 		unchecked
 		{
 			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_14.field_2) != 0)
 			{
-				bool flag2 = decode_color_endpoints.Invoke(@this);
+				bool flag = decode_color_endpoints.Invoke(@this);
+				if (ExceptionInfo.Current != null)
+				{
+					return false;
+				}
+				if (!flag)
+				{
+					return false;
+				}
+				bool flag2 = decode_color_selectors.Invoke(@this);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -24,7 +32,10 @@ internal static partial class decode_palettes
 				{
 					return false;
 				}
-				bool flag3 = decode_color_selectors.Invoke(@this);
+			}
+			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2) != 0)
+			{
+				bool flag3 = decode_alpha_endpoints.Invoke(@this);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -33,21 +44,21 @@ internal static partial class decode_palettes
 				{
 					return false;
 				}
-			}
-			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2) != 0)
-			{
-				bool flag4 = decode_alpha_endpoints.Invoke(@this);
-				if (ExceptionInfo.Current != null)
-				{
-					return false;
-				}
-				if (!flag4)
-				{
-					return false;
-				}
 				if (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 14)
 				{
-					bool flag5 = decode_alpha_selectors_etcs.Invoke(@this);
+					bool flag4 = decode_alpha_selectors_etcs.Invoke(@this);
+					if (ExceptionInfo.Current != null)
+					{
+						return false;
+					}
+					if (!flag4)
+					{
+						goto IL_0118;
+					}
+				}
+				else if (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12)
+				{
+					bool flag5 = decode_alpha_selectors_etc.Invoke(@this);
 					if (ExceptionInfo.Current != null)
 					{
 						return false;
@@ -57,26 +68,14 @@ internal static partial class decode_palettes
 						goto IL_0118;
 					}
 				}
-				else if (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 12)
+				else
 				{
-					bool flag6 = decode_alpha_selectors_etc.Invoke(@this);
+					bool flag6 = decode_alpha_selectors.Invoke(@this);
 					if (ExceptionInfo.Current != null)
 					{
 						return false;
 					}
 					if (!flag6)
-					{
-						goto IL_0118;
-					}
-				}
-				else
-				{
-					bool flag7 = decode_alpha_selectors.Invoke(@this);
-					if (ExceptionInfo.Current != null)
-					{
-						return false;
-					}
-					if (!flag7)
 					{
 						goto IL_0118;
 					}

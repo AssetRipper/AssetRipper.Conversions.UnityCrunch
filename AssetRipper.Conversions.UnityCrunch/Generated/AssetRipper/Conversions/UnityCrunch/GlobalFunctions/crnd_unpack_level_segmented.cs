@@ -9,18 +9,15 @@ internal static partial class crnd_unpack_level_segmented
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke([NativeType("void *")] void* pContext, [NativeType("void const *")] void* pSrc, [NativeType("unsigned int")] int src_size_in_bytes, [NativeType("void **")] void* pDst, [NativeType("unsigned int")] int dst_size_in_bytes, [NativeType("unsigned int")] int row_pitch_in_bytes, [NativeType("unsigned int")] int level_index)
 	{
-		bool flag = false;
-		void* ptr = null;
 		if (unchecked(pContext == null || pSrc == null || pDst == null || (uint)dst_size_in_bytes < 8u || (uint)level_index >= 16u))
 		{
 			return false;
 		}
-		ptr = pContext;
-		if (!is_valid.Invoke(ptr))
+		if (!is_valid.Invoke(pContext))
 		{
 			return false;
 		}
-		bool result = unpack_level_zjb72ec.Invoke(ptr, pSrc, src_size_in_bytes, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
+		bool result = unpack_level_zjb72ec.Invoke(pContext, pSrc, src_size_in_bytes, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;

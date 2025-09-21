@@ -14,15 +14,9 @@ internal static partial class prepare_decoder_tables
 		unchecked
 		{
 			int num = size_23co4id.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1);
-			int num2;
-			if ((uint)num >= 1u && (uint)num <= 8192u)
-			{
-				num2 = -1;
-			}
-			else
+			if ((uint)num < 1u || (uint)num > 8192u)
 			{
 				crnd_assert.Invoke(String_3h2uiyd.__pointer, String_yguirrd.__pointer, 2468);
-				num2 = 0;
 			}
 			((crnd_static_huffman_data_model*)@this)->field_0 = num;
 			if (((crnd_static_huffman_data_model*)@this)->field_2 == null)

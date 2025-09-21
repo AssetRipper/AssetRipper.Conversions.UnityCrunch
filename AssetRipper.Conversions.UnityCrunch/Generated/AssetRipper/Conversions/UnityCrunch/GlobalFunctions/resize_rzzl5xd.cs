@@ -11,7 +11,6 @@ internal static partial class resize_rzzl5xd
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this, [NativeType("unsigned int")] int new_size)
 	{
-		bool flag = false;
 		unchecked
 		{
 			if (((crnd_vector_f3cmzmc*)@this)->field_1 != new_size)
@@ -24,12 +23,12 @@ internal static partial class resize_rzzl5xd
 				{
 					if ((uint)new_size > (uint)((crnd_vector_f3cmzmc*)@this)->field_2)
 					{
-						bool flag2 = increase_capacity_a7boycc.Invoke(@this, new_size, new_size == ((crnd_vector_f3cmzmc*)@this)->field_1 + 1);
+						bool flag = increase_capacity_a7boycc.Invoke(@this, new_size, new_size == ((crnd_vector_f3cmzmc*)@this)->field_1 + 1);
 						if (ExceptionInfo.Current != null)
 						{
 							return false;
 						}
-						if (!flag2)
+						if (!flag)
 						{
 							return false;
 						}

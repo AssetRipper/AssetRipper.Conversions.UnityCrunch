@@ -11,7 +11,6 @@ internal static partial class decoder_tables_Assignment
 	[return: NativeType("class crnd::prefix_coding::decoder_tables &")]
 	public unsafe static void* Invoke(void* @this, [NativeType("class crnd::prefix_coding::decoder_tables const &")] void* other)
 	{
-		void* ptr = null;
 		if (@this == other)
 		{
 			return @this;

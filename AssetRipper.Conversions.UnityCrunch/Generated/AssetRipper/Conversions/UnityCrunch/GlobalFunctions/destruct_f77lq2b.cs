@@ -15,7 +15,7 @@ internal static partial class destruct_f77lq2b
 	public unsafe static void Invoke([NativeType("class crnd::crn_unpacker *")] void* p)
 	{
 		StackFrame startFrame = StackFrameList.Current.New<LocalVariables>();
-		LocalVariables* localsPointer = startFrame.GetLocalsPointer<LocalVariables>();
+		startFrame.GetLocalsPointer<LocalVariables>();
 		crn_unpacker_Destructor.Invoke(p);
 		if (ExceptionInfo.Current == null)
 		{

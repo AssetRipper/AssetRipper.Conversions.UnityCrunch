@@ -10,7 +10,6 @@ internal static partial class crnd_get_crn_format_bits_per_texel
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke([NativeType("enum crn_format")] int fmt)
 	{
-		int num = 0;
 		switch (fmt)
 		{
 		case 0:

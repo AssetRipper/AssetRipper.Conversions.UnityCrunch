@@ -1,5 +1,6 @@
 ﻿using AssetRipper.Conversions.UnityCrunch.Structures;
 using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace AssetRipper.Conversions.UnityCrunch;
@@ -16,12 +17,7 @@ public static partial class UnityCrunch
 	/// </summary>
 	public const int MaxLevels = 16;
 
-	public static bool TryDecompress(ReadOnlySpan<byte> input, [NotNullWhen(true)] out byte[]? output)
-	{
-		return TryDecompress(input, 0, out output);
-	}
-
-	public static unsafe bool TryDecompress(ReadOnlySpan<byte> input, int levelIndex, [NotNullWhen(true)] out byte[]? output)
+	public static unsafe bool TryDecompress(ReadOnlySpan<byte> input, [NotNullWhen(true)] out byte[]? output)
 	{
 		if (input.Length == 0)
 		{
@@ -46,35 +42,54 @@ public static partial class UnityCrunch
 			}
 
 			// m_struct_size
-			int width = int.Max(1, textureInfo.field_1 >> levelIndex);
-			int height = int.Max(1, textureInfo.field_2 >> levelIndex);
-			// m_levels
+			int fullWidth = textureInfo.field_1;
+			int fullHeight = textureInfo.field_2;
+			int levelCount = textureInfo.field_3;
 			int faceCount = textureInfo.field_4;
-			int bytesPerBlock = textureInfo.field_5;
+			int bytesPerDxtBlock = textureInfo.field_5;
 			// m_userdata0
 			// m_userdata1
 			// m_format
 
-			int blocksX = (width + 3) >> 2;
-			int blocksY = (height + 3) >> 2;
-			int rowPitch = blocksX * crnd_get_bytes_per_dxt_block(textureInfo.field_8);
-			int faceSize = rowPitch * blocksY;
-			int totalFaceSize = faceCount * faceSize;
+			Debug.Assert(bytesPerDxtBlock == crnd_get_bytes_per_dxt_block(textureInfo.field_8));
 
-			byte[] result = new byte[totalFaceSize];
+			if (levelCount < 1 || levelCount > MaxLevels || faceCount < 1 || faceCount > MaxFaces)
+			{
+				crnd_unpack_end(context);
+				return False(out output);
+			}
+
+			int completeImageSize = CalculateCompleteImageSize(fullWidth, fullHeight, bytesPerDxtBlock, levelCount);
+
+			byte[] result = new byte[completeImageSize * faceCount];
+
+			byte** pResultArray = stackalloc byte*[MaxFaces];
 
 			fixed (byte* pResult = result)
 			{
-				byte** pResultArray = stackalloc byte*[MaxFaces] { null, null, null, null, null, null };
-				for (int i = 0; i < faceCount; i++)
+				int offset = 0;
+				for (int levelIndex = 0; levelIndex < levelCount; levelIndex++)
 				{
-					pResultArray[i] = pResult + i * faceSize;
-				}
+					int width = int.Max(1, fullWidth >> levelIndex);
+					int height = int.Max(1, fullHeight >> levelIndex);
+					int blocksX = (width + 3) >> 2;
+					int blocksY = (height + 3) >> 2;
+					int rowPitch = blocksX * bytesPerDxtBlock;
+					int faceSize = rowPitch * blocksY;
 
-				if (!crnd_unpack_level(context, pResultArray, faceSize, rowPitch, levelIndex))
-				{
-					crnd_unpack_end(context);
-					return False(out output);
+					new Span<nint>(pResultArray, MaxFaces).Clear();
+					for (int i = 0; i < faceCount; i++)
+					{
+						pResultArray[i] = pResult + offset + i * completeImageSize;
+					}
+
+					if (!crnd_unpack_level(context, pResultArray, faceSize, rowPitch, levelIndex))
+					{
+						crnd_unpack_end(context);
+						return False(out output);
+					}
+
+					offset += faceSize;
 				}
 			}
 			crnd_unpack_end(context);
@@ -83,10 +98,24 @@ public static partial class UnityCrunch
 
 		return true;
 
-		static unsafe bool False([NotNullWhen(true)] out byte[]? output)
+		static bool False([NotNullWhen(true)] out byte[]? output)
 		{
 			output = null;
 			return false;
+		}
+
+		static int CalculateCompleteImageSize(int width, int height, int bytesPerDxtBlock, int levelCount)
+		{
+			int totalSize = 0;
+			for (int levelIndex = 0; levelIndex < levelCount; levelIndex++)
+			{
+				int levelWidth = int.Max(1, width >> levelIndex);
+				int levelHeight = int.Max(1, height >> levelIndex);
+				int blocksX = (levelWidth + 3) >> 2;
+				int blocksY = (levelHeight + 3) >> 2;
+				totalSize += blocksX * blocksY * bytesPerDxtBlock;
+			}
+			return totalSize;
 		}
 	}
 }

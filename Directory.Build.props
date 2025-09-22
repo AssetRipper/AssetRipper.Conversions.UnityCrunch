@@ -5,7 +5,7 @@
 		<Nullable>enable</Nullable>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 
-		<VersionPrefix>1.0.1</VersionPrefix>
+		<VersionPrefix>1.0.2</VersionPrefix>
 		<Copyright>Copyright (c) 2025 ds5678</Copyright>
 		<Authors>ds5678</Authors>
 		<Company>AssetRipper</Company>

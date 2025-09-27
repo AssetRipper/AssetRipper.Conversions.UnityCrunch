@@ -20,16 +20,16 @@ internal static partial class decode_alpha_endpoints
 		localsPointer->field_0 = default(crnd_static_huffman_data_model);
 		unchecked
 		{
-			int num = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_2);
+			int num = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_alpha_endpoints.m_num);
 			bool flag;
-			if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4, buf_size: crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_1), pBuf: (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_16.field_0)))
+			if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, buf_size: crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_alpha_endpoints.m_size), pBuf: (byte*)((crnd_crn_unpacker*)@this)->m_pData + (uint)crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_alpha_endpoints.m_ofs)))
 			{
 				flag = false;
 			}
 			else
 			{
 				static_huffman_data_model_Constructor_tl33idc.Invoke(&localsPointer->field_0);
-				bool flag2 = decode_receive_static_data_model.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
+				bool flag2 = decode_receive_static_data_model.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &localsPointer->field_0);
 				if (ExceptionInfo.Current != null)
 				{
 					goto IL_01e3;
@@ -40,7 +40,7 @@ internal static partial class decode_alpha_endpoints
 				}
 				else
 				{
-					bool flag3 = resize_w95s75a.Invoke(&((crnd_crn_unpacker*)@this)->field_10, num);
+					bool flag3 = resize_w95s75a.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, num);
 					if (ExceptionInfo.Current != null)
 					{
 						goto IL_01e3;
@@ -51,7 +51,7 @@ internal static partial class decode_alpha_endpoints
 					}
 					else
 					{
-						void* ptr = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_10, 0);
+						void* ptr = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, 0);
 						if (ExceptionInfo.Current != null)
 						{
 							goto IL_01e3;
@@ -63,12 +63,12 @@ internal static partial class decode_alpha_endpoints
 						while ((uint)num4 < (uint)num)
 						{
 							int num5 = num2;
-							int num6 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
+							int num6 = decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &localsPointer->field_0);
 							if (ExceptionInfo.Current == null)
 							{
 								num2 = (num5 + num6) & 0xFF;
 								int num7 = num3;
-								int num8 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &localsPointer->field_0);
+								int num8 = decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &localsPointer->field_0);
 								if (ExceptionInfo.Current == null)
 								{
 									num3 = (num7 + num8) & 0xFF;
@@ -82,7 +82,7 @@ internal static partial class decode_alpha_endpoints
 							}
 							goto IL_01e3;
 						}
-						stop_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4);
+						stop_decoding.Invoke(&((crnd_crn_unpacker*)@this)->m_codec);
 						flag = true;
 					}
 				}

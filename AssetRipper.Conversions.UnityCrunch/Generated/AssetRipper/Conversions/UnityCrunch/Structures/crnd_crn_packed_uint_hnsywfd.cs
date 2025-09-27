@@ -11,5 +11,5 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_crn_packed_uint_hnsywfd
 {
 	[FieldOffset(0)]
-	public InlineArray2_SByte field_0;
+	public InlineArray2_SByte m_buf;
 }

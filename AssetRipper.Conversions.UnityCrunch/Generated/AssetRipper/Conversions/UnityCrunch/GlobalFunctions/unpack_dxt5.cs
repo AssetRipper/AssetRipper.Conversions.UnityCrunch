@@ -12,14 +12,14 @@ internal static partial class unpack_dxt5
 	{
 		unchecked
 		{
-			int num = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
-			int num2 = size_lxodu4b.Invoke(&((crnd_crn_unpacker*)@this)->field_10);
+			int num = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints);
+			int num2 = size_lxodu4b.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints);
 			int num3 = (output_width + 1) & -2;
 			int num4 = (output_height + 1) & -2;
 			int num5 = (row_pitch_in_bytes >>> 2) - (num3 << 2);
-			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->field_12) < (uint)num3)
+			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer) < (uint)num3)
 			{
-				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num3);
+				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, num3);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -28,7 +28,7 @@ internal static partial class unpack_dxt5
 			int num6 = 0;
 			int num7 = 0;
 			sbyte b = 0;
-			for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_8); i++)
+			for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_faces); i++)
 			{
 				void* ptr = ((void**)pDst)[(uint)i];
 				int num8 = 0;
@@ -41,55 +41,55 @@ internal static partial class unpack_dxt5
 						b2 = (((b2 & 1) == 1 && (uint)num9 < (uint)output_width) ? ((sbyte)1) : ((sbyte)0));
 						if ((num8 & 1) == 0 && (num9 & 1) == 0)
 						{
-							b = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_5);
+							b = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_reference_encoding_dm);
 						}
-						void* ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num9);
+						void* ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, num9);
 						sbyte b3;
 						if ((num8 & 1) != 0)
 						{
-							b3 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0;
+							b3 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->endpoint_reference;
 						}
 						else
 						{
 							b3 = (sbyte)((byte)b & 3);
 							b = (sbyte)((byte)b >> 2);
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0 = (short)((byte)b & 3);
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->endpoint_reference = (short)((byte)b & 3);
 							b = (sbyte)((byte)b >> 2);
 						}
 						if (b3 == 0)
 						{
-							num6 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
+							num6 += decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm);
 							if ((uint)num6 >= (uint)num)
 							{
 								num6 -= num;
 							}
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num6;
-							num7 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&((crnd_crn_unpacker*)@this)->field_6) + sizeof(crnd_static_huffman_data_model));
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index = (short)num6;
+							num7 += decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, (byte*)(&((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm) + sizeof(crnd_static_huffman_data_model));
 							if ((uint)num7 >= (uint)num2)
 							{
 								num7 -= num2;
 							}
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2 = (short)num7;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index = (short)num7;
 						}
 						else if ((byte)b3 == 1)
 						{
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num6;
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2 = (short)num7;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index = (short)num6;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index = (short)num7;
 						}
 						else
 						{
-							num6 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1;
-							num7 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2;
+							num6 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index;
+							num7 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index;
 						}
-						int i2 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_7);
-						int num10 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&((crnd_crn_unpacker*)@this)->field_7) + sizeof(crnd_static_huffman_data_model));
+						int i2 = decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_selector_delta_dm);
+						int num10 = decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, (byte*)(&((crnd_crn_unpacker*)@this)->m_selector_delta_dm) + sizeof(crnd_static_huffman_data_model));
 						if ((b2 & 1) == 1)
 						{
-							void* ptr3 = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_11, num10 * 3);
-							*(int*)ptr = (ushort)(*(short*)vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_10, num7)) | ((ushort)(*(short*)ptr3) << 16);
+							void* ptr3 = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_selectors, num10 * 3);
+							*(int*)ptr = (ushort)(*(short*)vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, num7)) | ((ushort)(*(short*)ptr3) << 16);
 							((int*)ptr)[1] = (ushort)((short*)ptr3)[1] | ((ushort)((short*)ptr3)[2] << 16);
-							((int*)ptr)[2] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num6);
-							((int*)ptr)[3] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_9, i2);
+							((int*)ptr)[2] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, num6);
+							((int*)ptr)[3] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, i2);
 						}
 						num9++;
 						ptr = (byte*)ptr + 16;

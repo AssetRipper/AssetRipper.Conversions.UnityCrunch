@@ -13,17 +13,17 @@ internal static partial class resize_kfwzjla
 	{
 		unchecked
 		{
-			if (((crnd_vector_y4ukjxd*)@this)->field_1 != new_size)
+			if (((crnd_vector_y4ukjxd*)@this)->m_size != new_size)
 			{
-				if ((uint)new_size < (uint)((crnd_vector_y4ukjxd*)@this)->field_1)
+				if ((uint)new_size < (uint)((crnd_vector_y4ukjxd*)@this)->m_size)
 				{
-					destruct_array_h3fegud.Invoke(n: ((crnd_vector_y4ukjxd*)@this)->field_1 - new_size, p: (byte*)((crnd_vector_y4ukjxd*)@this)->field_0 + (nint)(uint)new_size * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
+					destruct_array_h3fegud.Invoke(n: ((crnd_vector_y4ukjxd*)@this)->m_size - new_size, p: (byte*)((crnd_vector_y4ukjxd*)@this)->m_p + (nint)(uint)new_size * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
 				}
 				else
 				{
-					if ((uint)new_size > (uint)((crnd_vector_y4ukjxd*)@this)->field_2)
+					if ((uint)new_size > (uint)((crnd_vector_y4ukjxd*)@this)->m_capacity)
 					{
-						bool flag = increase_capacity_ucojcwb.Invoke(@this, new_size, new_size == ((crnd_vector_y4ukjxd*)@this)->field_1 + 1);
+						bool flag = increase_capacity_ucojcwb.Invoke(@this, new_size, new_size == ((crnd_vector_y4ukjxd*)@this)->m_size + 1);
 						if (ExceptionInfo.Current != null)
 						{
 							return false;
@@ -33,9 +33,9 @@ internal static partial class resize_kfwzjla
 							return false;
 						}
 					}
-					construct_array_5afuwda.Invoke(n: new_size - ((crnd_vector_y4ukjxd*)@this)->field_1, p: (byte*)((crnd_vector_y4ukjxd*)@this)->field_0 + (nint)(uint)((crnd_vector_y4ukjxd*)@this)->field_1 * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
+					construct_array_5afuwda.Invoke(n: new_size - ((crnd_vector_y4ukjxd*)@this)->m_size, p: (byte*)((crnd_vector_y4ukjxd*)@this)->m_p + (nint)(uint)((crnd_vector_y4ukjxd*)@this)->m_size * (nint)sizeof(crnd_crn_unpacker_block_buffer_element));
 				}
-				((crnd_vector_y4ukjxd*)@this)->field_1 = new_size;
+				((crnd_vector_y4ukjxd*)@this)->m_size = new_size;
 			}
 			return true;
 		}

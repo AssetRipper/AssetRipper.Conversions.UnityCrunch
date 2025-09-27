@@ -10,44 +10,44 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_prefix_coding_decoder_tables
 {
 	[FieldOffset(0)]
-	public int field_0;
+	public int m_num_syms;
 
 	[FieldOffset(4)]
-	public int field_1;
+	public int m_total_used_syms;
 
 	[FieldOffset(8)]
-	public int field_2;
+	public int m_table_bits;
 
 	[FieldOffset(12)]
-	public int field_3;
+	public int m_table_shift;
 
 	[FieldOffset(16)]
-	public int field_4;
+	public int m_table_max_code;
 
 	[FieldOffset(20)]
-	public int field_5;
+	public int m_decode_start_code_size;
 
 	[FieldOffset(24)]
-	public sbyte field_6;
+	public sbyte m_min_code_size;
 
 	[FieldOffset(25)]
-	public sbyte field_7;
+	public sbyte m_max_code_size;
 
 	[FieldOffset(28)]
-	public InlineArray17_Int32 field_8;
+	public InlineArray17_Int32 m_max_codes;
 
 	[FieldOffset(96)]
-	public InlineArray17_Int32 field_9;
+	public InlineArray17_Int32 m_val_ptrs;
 
 	[FieldOffset(164)]
-	public int field_10;
+	public int m_cur_lookup_size;
 
 	[FieldOffset(168)]
-	public unsafe void* field_11;
+	public unsafe void* m_lookup;
 
 	[FieldOffset(176)]
-	public int field_12;
+	public int m_cur_sorted_symbol_order_size;
 
 	[FieldOffset(184)]
-	public unsafe void* field_13;
+	public unsafe void* m_sorted_symbol_order;
 }

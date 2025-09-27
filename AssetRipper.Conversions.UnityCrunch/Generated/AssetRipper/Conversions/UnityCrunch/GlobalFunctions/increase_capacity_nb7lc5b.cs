@@ -26,7 +26,7 @@ internal static partial class increase_capacity_nb7lc5b
 		int num2;
 		unchecked
 		{
-			if ((uint)((crnd_elemental_vector*)@this)->field_1 > (uint)((crnd_elemental_vector*)@this)->field_2)
+			if ((uint)((crnd_elemental_vector*)@this)->m_size > (uint)((crnd_elemental_vector*)@this)->m_capacity)
 			{
 				crnd_assert.Invoke(String_vmviqdc.__pointer, String_yguirrd.__pointer, 1659);
 			}
@@ -34,7 +34,7 @@ internal static partial class increase_capacity_nb7lc5b
 			{
 				crnd_assert.Invoke(String_hbzy3qd.__pointer, String_yguirrd.__pointer, 1660);
 			}
-			if ((uint)((crnd_elemental_vector*)@this)->field_2 >= (uint)min_new_capacity)
+			if ((uint)((crnd_elemental_vector*)@this)->m_capacity >= (uint)min_new_capacity)
 			{
 				flag = true;
 			}
@@ -45,14 +45,14 @@ internal static partial class increase_capacity_nb7lc5b
 				{
 					num = next_pow2.Invoke(num);
 				}
-				if (num == 0 || (uint)num <= (uint)((crnd_elemental_vector*)@this)->field_2)
+				if (num == 0 || (uint)num <= (uint)((crnd_elemental_vector*)@this)->m_capacity)
 				{
 					crnd_assert.Invoke(String_rugjm7a.__pointer, String_yguirrd.__pointer, 1669);
 				}
 				num2 = element_size * num;
 				if (pMover == null)
 				{
-					void* ptr = crnd_realloc.Invoke(((crnd_elemental_vector*)@this)->field_0, (uint)num2, &localsPointer->field_0, movable: true);
+					void* ptr = crnd_realloc.Invoke(((crnd_elemental_vector*)@this)->m_p, (uint)num2, &localsPointer->field_0, movable: true);
 					if (ExceptionInfo.Current != null)
 					{
 						return false;
@@ -60,7 +60,7 @@ internal static partial class increase_capacity_nb7lc5b
 					void* ptr2 = ptr;
 					if (ptr2 != null)
 					{
-						((crnd_elemental_vector*)@this)->field_0 = ptr2;
+						((crnd_elemental_vector*)@this)->m_p = ptr2;
 						goto IL_0203;
 					}
 					flag = false;
@@ -76,21 +76,21 @@ internal static partial class increase_capacity_nb7lc5b
 					if (ptr4 != null)
 					{
 						void* ptr5 = pMover;
-						int field_ = ((crnd_elemental_vector*)@this)->field_1;
-						((delegate*<void*, void*, int, void>)ptr5)(ptr4, ((crnd_elemental_vector*)@this)->field_0, field_);
+						int size = ((crnd_elemental_vector*)@this)->m_size;
+						((delegate*<void*, void*, int, void>)ptr5)(ptr4, ((crnd_elemental_vector*)@this)->m_p, size);
 						if (ExceptionInfo.Current != null)
 						{
 							return false;
 						}
-						if (((crnd_elemental_vector*)@this)->field_0 != null)
+						if (((crnd_elemental_vector*)@this)->m_p != null)
 						{
-							crnd_free.Invoke(((crnd_elemental_vector*)@this)->field_0);
+							crnd_free.Invoke(((crnd_elemental_vector*)@this)->m_p);
 							if (ExceptionInfo.Current != null)
 							{
 								return false;
 							}
 						}
-						((crnd_elemental_vector*)@this)->field_0 = ptr4;
+						((crnd_elemental_vector*)@this)->m_p = ptr4;
 						goto IL_0203;
 					}
 					flag = false;
@@ -103,11 +103,11 @@ internal static partial class increase_capacity_nb7lc5b
 		{
 			if ((ulong)localsPointer->field_0 > (ulong)(uint)num2)
 			{
-				((crnd_elemental_vector*)@this)->field_2 = (int)((ulong)localsPointer->field_0 / (ulong)(uint)element_size);
+				((crnd_elemental_vector*)@this)->m_capacity = (int)((ulong)localsPointer->field_0 / (ulong)(uint)element_size);
 			}
 			else
 			{
-				((crnd_elemental_vector*)@this)->field_2 = num;
+				((crnd_elemental_vector*)@this)->m_capacity = num;
 			}
 			flag = true;
 			goto IL_023e;

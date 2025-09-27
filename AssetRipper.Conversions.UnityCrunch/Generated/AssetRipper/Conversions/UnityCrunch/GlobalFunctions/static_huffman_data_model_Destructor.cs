@@ -12,9 +12,9 @@ internal static partial class static_huffman_data_model_Destructor
 	{
 		unchecked
 		{
-			if (((crnd_static_huffman_data_model*)@this)->field_2 != null)
+			if (((crnd_static_huffman_data_model*)@this)->m_pDecode_tables != null)
 			{
-				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->field_2);
+				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
 				if (ExceptionInfo.Current != null)
 				{
 					ExceptionInfo.Current = null;
@@ -22,7 +22,7 @@ internal static partial class static_huffman_data_model_Destructor
 					throw null;
 				}
 			}
-			vector_unsigned_char_Destructor.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1);
+			vector_unsigned_char_Destructor.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes);
 		}
 	}
 }

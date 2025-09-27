@@ -1,4 +1,5 @@
-﻿using AssetRipper.Conversions.UnityCrunch.Structures;
+﻿using AssetRipper.Conversions.UnityCrunch.Enumerations;
+using AssetRipper.Conversions.UnityCrunch.Structures;
 using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -7,15 +8,9 @@ namespace AssetRipper.Conversions.UnityCrunch;
 
 public static partial class UnityCrunch
 {
-	/// <summary>
-	/// <see href="https://github.com/Unity-Technologies/crunch/blob/8708900eca8ec609d279270e72936258f81ddfb7/inc/crnlib.h#L92"/>
-	/// </summary>
-	public const int MaxFaces = 6;
+	public const int MaxFaces = (int)crn_limits.cCRNMaxFaces;
 
-	/// <summary>
-	/// <see href="https://github.com/Unity-Technologies/crunch/blob/8708900eca8ec609d279270e72936258f81ddfb7/inc/crnlib.h#L93"/>
-	/// </summary>
-	public const int MaxLevels = 16;
+	public const int MaxLevels = (int)crn_limits.cCRNMaxLevels;
 
 	public static unsafe bool TryDecompress(ReadOnlySpan<byte> input, [NotNullWhen(true)] out byte[]? output)
 	{
@@ -29,7 +24,7 @@ public static partial class UnityCrunch
 		fixed (byte* pInput = input)
 		{
 			crnd_crn_texture_info textureInfo = default;
-			textureInfo.field_0 = 36; // size of crnd_crn_texture_info
+			textureInfo.m_struct_size = sizeof(crnd_crn_texture_info);
 			if (!crnd_get_texture_info(pInput, inputLength, &textureInfo))
 			{
 				return False(out output);
@@ -41,17 +36,13 @@ public static partial class UnityCrunch
 				return False(out output);
 			}
 
-			// m_struct_size
-			int fullWidth = textureInfo.field_1;
-			int fullHeight = textureInfo.field_2;
-			int levelCount = textureInfo.field_3;
-			int faceCount = textureInfo.field_4;
-			int bytesPerDxtBlock = textureInfo.field_5;
-			// m_userdata0
-			// m_userdata1
-			// m_format
+			int fullWidth = textureInfo.m_width;
+			int fullHeight = textureInfo.m_height;
+			int levelCount = textureInfo.m_levels;
+			int faceCount = textureInfo.m_faces;
+			int bytesPerDxtBlock = textureInfo.m_bytes_per_block;
 
-			Debug.Assert(bytesPerDxtBlock == crnd_get_bytes_per_dxt_block(textureInfo.field_8));
+			Debug.Assert(bytesPerDxtBlock == crnd_get_bytes_per_dxt_block(textureInfo.m_format));
 
 			if (levelCount < 1 || levelCount > MaxLevels || faceCount < 1 || faceCount > MaxFaces)
 			{

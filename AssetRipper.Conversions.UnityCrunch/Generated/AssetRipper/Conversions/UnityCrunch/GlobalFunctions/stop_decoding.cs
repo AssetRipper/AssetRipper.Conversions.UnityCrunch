@@ -10,6 +10,6 @@ internal static partial class stop_decoding
 	[return: NativeType("unsigned __int64")]
 	public unsafe static long Invoke(void* @this)
 	{
-		return unchecked((long)((crnd_symbol_codec*)@this)->field_1 - (long)((crnd_symbol_codec*)@this)->field_0);
+		return unchecked((long)((crnd_symbol_codec*)@this)->m_pDecode_buf_next - (long)((crnd_symbol_codec*)@this)->m_pDecode_buf);
 	}
 }

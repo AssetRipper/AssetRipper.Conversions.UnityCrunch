@@ -16,7 +16,7 @@ internal static partial class crn_packed_uint_4_Assignment
 		{
 			for (int i = 0; (uint)i < 4u; i++)
 			{
-				((sbyte*)(&((crnd_crn_packed_uint_jymcebc*)@this)->field_0))[(uint)i] = (sbyte)(num >>> 24);
+				((sbyte*)(&((crnd_crn_packed_uint_jymcebc*)@this)->m_buf))[(uint)i] = (sbyte)(num >>> 24);
 				num <<= 8;
 			}
 			return @this;

@@ -16,13 +16,13 @@ internal static partial class static_huffman_data_model_Assignment
 		}
 		unchecked
 		{
-			((crnd_static_huffman_data_model*)@this)->field_0 = ((crnd_static_huffman_data_model*)rhs)->field_0;
-			vector_unsigned_char_Assignment.Invoke(other: &((crnd_static_huffman_data_model*)rhs)->field_1, @this: &((crnd_static_huffman_data_model*)@this)->field_1);
+			((crnd_static_huffman_data_model*)@this)->m_total_syms = ((crnd_static_huffman_data_model*)rhs)->m_total_syms;
+			vector_unsigned_char_Assignment.Invoke(other: &((crnd_static_huffman_data_model*)rhs)->m_code_sizes, @this: &((crnd_static_huffman_data_model*)@this)->m_code_sizes);
 			if (ExceptionInfo.Current != null)
 			{
 				return null;
 			}
-			if (Get_alloc_failed.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1))
+			if (Get_alloc_failed.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes))
 			{
 				clear_egw7ktb.Invoke(@this);
 				if (ExceptionInfo.Current != null)
@@ -31,11 +31,11 @@ internal static partial class static_huffman_data_model_Assignment
 				}
 				return @this;
 			}
-			if (((crnd_static_huffman_data_model*)rhs)->field_2 != null)
+			if (((crnd_static_huffman_data_model*)rhs)->m_pDecode_tables != null)
 			{
-				if (((crnd_static_huffman_data_model*)@this)->field_2 != null)
+				if (((crnd_static_huffman_data_model*)@this)->m_pDecode_tables != null)
 				{
-					decoder_tables_Assignment.Invoke(other: ((crnd_static_huffman_data_model*)rhs)->field_2, @this: ((crnd_static_huffman_data_model*)@this)->field_2);
+					decoder_tables_Assignment.Invoke(other: ((crnd_static_huffman_data_model*)rhs)->m_pDecode_tables, @this: ((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
 					if (ExceptionInfo.Current != null)
 					{
 						return null;
@@ -43,22 +43,22 @@ internal static partial class static_huffman_data_model_Assignment
 				}
 				else
 				{
-					void* field_ = crnd_new_vzd3zqa.Invoke(((crnd_static_huffman_data_model*)rhs)->field_2);
+					void* pDecode_tables = crnd_new_vzd3zqa.Invoke(((crnd_static_huffman_data_model*)rhs)->m_pDecode_tables);
 					if (ExceptionInfo.Current != null)
 					{
 						return null;
 					}
-					((crnd_static_huffman_data_model*)@this)->field_2 = field_;
+					((crnd_static_huffman_data_model*)@this)->m_pDecode_tables = pDecode_tables;
 				}
 			}
 			else
 			{
-				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->field_2);
+				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
 				}
-				((crnd_static_huffman_data_model*)@this)->field_2 = null;
+				((crnd_static_huffman_data_model*)@this)->m_pDecode_tables = null;
 			}
 			return @this;
 		}

@@ -17,7 +17,7 @@ internal static partial class assign
 		}
 		unchecked
 		{
-			if (((crnd_vector_f3cmzmc*)@this)->field_2 == ((crnd_vector_f3cmzmc*)other)->field_1)
+			if (((crnd_vector_f3cmzmc*)@this)->m_capacity == ((crnd_vector_f3cmzmc*)other)->m_size)
 			{
 				resize_rzzl5xd.Invoke(@this, 0);
 				if (ExceptionInfo.Current != null)
@@ -32,7 +32,7 @@ internal static partial class assign
 				{
 					return false;
 				}
-				bool flag = increase_capacity_a7boycc.Invoke(@this, ((crnd_vector_f3cmzmc*)other)->field_1, grow_hint: false);
+				bool flag = increase_capacity_a7boycc.Invoke(@this, ((crnd_vector_f3cmzmc*)other)->m_size, grow_hint: false);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -42,8 +42,8 @@ internal static partial class assign
 					return false;
 				}
 			}
-			llvm_memcpy_p0_p0_i64.Invoke(((crnd_vector_f3cmzmc*)@this)->field_0, ((crnd_vector_f3cmzmc*)other)->field_0, (long)(uint)((crnd_vector_f3cmzmc*)other)->field_1 * 1L, isVolatile: false);
-			((crnd_vector_f3cmzmc*)@this)->field_1 = ((crnd_vector_f3cmzmc*)other)->field_1;
+			llvm_memcpy_p0_p0_i64.Invoke(((crnd_vector_f3cmzmc*)@this)->m_p, ((crnd_vector_f3cmzmc*)other)->m_p, (long)(uint)((crnd_vector_f3cmzmc*)other)->m_size * 1L, isVolatile: false);
+			((crnd_vector_f3cmzmc*)@this)->m_size = ((crnd_vector_f3cmzmc*)other)->m_size;
 			return true;
 		}
 	}

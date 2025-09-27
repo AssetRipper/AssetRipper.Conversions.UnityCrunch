@@ -12,9 +12,9 @@ internal static partial class static_huffman_data_model_Constructor_tl33idc
 	{
 		unchecked
 		{
-			((crnd_static_huffman_data_model*)@this)->field_0 = 0;
-			vector_unsigned_char_Constructor.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1);
-			((crnd_static_huffman_data_model*)@this)->field_2 = null;
+			((crnd_static_huffman_data_model*)@this)->m_total_syms = 0;
+			vector_unsigned_char_Constructor.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes);
+			((crnd_static_huffman_data_model*)@this)->m_pDecode_tables = null;
 			return @this;
 		}
 	}

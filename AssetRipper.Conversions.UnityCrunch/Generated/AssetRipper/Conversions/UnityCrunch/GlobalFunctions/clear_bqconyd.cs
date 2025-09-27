@@ -13,19 +13,19 @@ internal static partial class clear_bqconyd
 	{
 		unchecked
 		{
-			if (((crnd_vector_rf9iywd*)@this)->field_0 != null)
+			if (((crnd_vector_rf9iywd*)@this)->m_p != null)
 			{
-				destruct_array_l9jmj2b.Invoke(parameter_1: ((crnd_vector_rf9iywd*)@this)->field_1, parameter_0: ((crnd_vector_rf9iywd*)@this)->field_0);
-				crnd_free.Invoke(((crnd_vector_rf9iywd*)@this)->field_0);
+				destruct_array_l9jmj2b.Invoke(parameter_1: ((crnd_vector_rf9iywd*)@this)->m_size, parameter_0: ((crnd_vector_rf9iywd*)@this)->m_p);
+				crnd_free.Invoke(((crnd_vector_rf9iywd*)@this)->m_p);
 				if (ExceptionInfo.Current != null)
 				{
 					return;
 				}
-				((crnd_vector_rf9iywd*)@this)->field_0 = null;
-				((crnd_vector_rf9iywd*)@this)->field_1 = 0;
-				((crnd_vector_rf9iywd*)@this)->field_2 = 0;
+				((crnd_vector_rf9iywd*)@this)->m_p = null;
+				((crnd_vector_rf9iywd*)@this)->m_size = 0;
+				((crnd_vector_rf9iywd*)@this)->m_capacity = 0;
 			}
-			((crnd_vector_rf9iywd*)@this)->field_3 = 0;
+			((crnd_vector_rf9iywd*)@this)->m_alloc_failed = 0;
 		}
 	}
 }

@@ -18,7 +18,7 @@ internal static partial class increase_capacity_rjagtyd
 		}
 		if (!flag)
 		{
-			unchecked((crnd_vector_rf9iywd*)@this)->field_3 = 1;
+			unchecked((crnd_vector_rf9iywd*)@this)->m_alloc_failed = 1;
 			return false;
 		}
 		return true;

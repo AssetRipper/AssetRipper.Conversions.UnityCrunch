@@ -16,7 +16,7 @@ internal static partial class crnd_get_texture_info
 			{
 				return false;
 			}
-			if ((long)(uint)((crnd_crn_texture_info*)pInfo)->field_0 != 36L)
+			if ((long)(uint)((crnd_crn_texture_info*)pInfo)->m_struct_size != 36L)
 			{
 				return false;
 			}
@@ -25,14 +25,14 @@ internal static partial class crnd_get_texture_info
 			{
 				return false;
 			}
-			((crnd_crn_texture_info*)pInfo)->field_1 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_5);
-			((crnd_crn_texture_info*)pInfo)->field_2 = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_6);
-			((crnd_crn_texture_info*)pInfo)->field_3 = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_7);
-			((crnd_crn_texture_info*)pInfo)->field_4 = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_8);
-			((crnd_crn_texture_info*)pInfo)->field_8 = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_9);
-			((crnd_crn_texture_info*)pInfo)->field_5 = InstructionHelper.Select((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_9) == 0) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_9) == 9) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_9) == 10) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_9) != 11) ? (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_9) == 13) : true))), 8, 16);
-			((crnd_crn_texture_info*)pInfo)->field_6 = crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_12);
-			((crnd_crn_texture_info*)pInfo)->field_7 = crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_13);
+			((crnd_crn_texture_info*)pInfo)->m_width = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_width);
+			((crnd_crn_texture_info*)pInfo)->m_height = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_height);
+			((crnd_crn_texture_info*)pInfo)->m_levels = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_levels);
+			((crnd_crn_texture_info*)pInfo)->m_faces = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_faces);
+			((crnd_crn_texture_info*)pInfo)->m_format = crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_format);
+			((crnd_crn_texture_info*)pInfo)->m_bytes_per_block = InstructionHelper.Select((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_format) == 0) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_format) == 9) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_format) == 10) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_format) != 11) ? (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_format) == 13) : true))), 8, 16);
+			((crnd_crn_texture_info*)pInfo)->m_userdata0 = crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_userdata0);
+			((crnd_crn_texture_info*)pInfo)->m_userdata1 = crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_userdata1);
 			return true;
 		}
 	}

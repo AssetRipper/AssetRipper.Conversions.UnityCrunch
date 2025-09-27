@@ -18,7 +18,7 @@ internal static partial class Get_alpha
 			{
 				crnd_assert.Invoke(String_cahur4b.__pointer, String_yguirrd.__pointer, 2850);
 			}
-			int num = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)((y << 1) + (x >>> 1))];
+			int num = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->m_alpha))[(uint)((y << 1) + (x >>> 1))];
 			if ((x & 1) != 0)
 			{
 				num >>>= 4;

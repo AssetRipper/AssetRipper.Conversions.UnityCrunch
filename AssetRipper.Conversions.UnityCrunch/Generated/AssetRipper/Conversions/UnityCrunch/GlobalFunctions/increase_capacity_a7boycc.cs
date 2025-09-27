@@ -18,7 +18,7 @@ internal static partial class increase_capacity_a7boycc
 		}
 		if (!flag)
 		{
-			unchecked((crnd_vector_f3cmzmc*)@this)->field_3 = 1;
+			unchecked((crnd_vector_f3cmzmc*)@this)->m_alloc_failed = 1;
 			return false;
 		}
 		return true;

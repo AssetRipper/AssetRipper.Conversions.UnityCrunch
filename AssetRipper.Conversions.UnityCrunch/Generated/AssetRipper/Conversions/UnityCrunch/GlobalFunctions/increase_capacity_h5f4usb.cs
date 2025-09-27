@@ -18,7 +18,7 @@ internal static partial class increase_capacity_h5f4usb
 		}
 		if (!flag)
 		{
-			unchecked((crnd_vector_maaktjc*)@this)->field_3 = 1;
+			unchecked((crnd_vector_maaktjc*)@this)->m_alloc_failed = 1;
 			return false;
 		}
 		return true;

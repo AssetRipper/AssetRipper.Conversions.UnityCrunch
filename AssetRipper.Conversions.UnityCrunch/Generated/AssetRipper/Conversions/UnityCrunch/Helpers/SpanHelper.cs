@@ -11,11 +11,6 @@ internal static partial class SpanHelper
 		return span;
 	}
 
-	public static ReadOnlySpan<char> ToCharacterSpan(this string str)
-	{
-		return str.AsSpan();
-	}
-
 	public unsafe static T* ToPointer<T>(this ReadOnlySpan<T> span) where T : unmanaged
 	{
 		return unchecked((T*)Unsafe.AsPointer(ref MemoryMarshal.GetReference(span)));

@@ -9,29 +9,29 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_crn_texture_info
 {
 	[FieldOffset(0)]
-	public int field_0;
+	public int m_struct_size;
 
 	[FieldOffset(4)]
-	public int field_1;
+	public int m_width;
 
 	[FieldOffset(8)]
-	public int field_2;
+	public int m_height;
 
 	[FieldOffset(12)]
-	public int field_3;
+	public int m_levels;
 
 	[FieldOffset(16)]
-	public int field_4;
+	public int m_faces;
 
 	[FieldOffset(20)]
-	public int field_5;
+	public int m_bytes_per_block;
 
 	[FieldOffset(24)]
-	public int field_6;
+	public int m_userdata0;
 
 	[FieldOffset(28)]
-	public int field_7;
+	public int m_userdata1;
 
 	[FieldOffset(32)]
-	public int field_8;
+	public int m_format;
 }

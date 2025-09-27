@@ -10,6 +10,6 @@ internal static partial class Get_data
 	[return: NativeType("void const *")]
 	public unsafe static void* Invoke(void* @this)
 	{
-		return unchecked((crnd_crn_unpacker*)@this)->field_1;
+		return unchecked((crnd_crn_unpacker*)@this)->m_pData;
 	}
 }

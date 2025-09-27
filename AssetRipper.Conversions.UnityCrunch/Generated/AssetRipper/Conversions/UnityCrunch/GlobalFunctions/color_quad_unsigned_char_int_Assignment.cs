@@ -12,14 +12,14 @@ internal static partial class color_quad_unsigned_char_int_Assignment
 	{
 		unchecked
 		{
-			sbyte field_ = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field_0))->field_0;
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field_0))->field_0 = field_;
-			sbyte field_2 = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field_0))->field_1;
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field_0))->field_1 = field_2;
-			sbyte field_3 = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field_0))->field_2;
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field_0))->field_2 = field_3;
-			sbyte field_4 = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field_0))->field_3;
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field_0))->field_3 = field_4;
+			sbyte field_ = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field))->field_0;
+			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_0 = field_;
+			sbyte field_2 = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field))->field_1;
+			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_1 = field_2;
+			sbyte field_3 = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field))->field_2;
+			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_2 = field_3;
+			sbyte field_4 = ((anon_b9ijpuc*)(&((crnd_color_quad*)other)->field))->field_3;
+			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_3 = field_4;
 			return @this;
 		}
 	}

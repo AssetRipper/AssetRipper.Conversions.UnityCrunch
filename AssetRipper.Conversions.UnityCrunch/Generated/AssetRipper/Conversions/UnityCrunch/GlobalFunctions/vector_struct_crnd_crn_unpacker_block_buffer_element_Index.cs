@@ -13,11 +13,11 @@ internal static partial class vector_struct_crnd_crn_unpacker_block_buffer_eleme
 	{
 		unchecked
 		{
-			if ((uint)i >= (uint)((crnd_vector_y4ukjxd*)@this)->field_1)
+			if ((uint)i >= (uint)((crnd_vector_y4ukjxd*)@this)->m_size)
 			{
 				crnd_assert.Invoke(String_ededlgd.__pointer, String_yguirrd.__pointer, 590);
 			}
-			return (byte*)((crnd_vector_y4ukjxd*)@this)->field_0 + (nint)(uint)i * (nint)sizeof(crnd_crn_unpacker_block_buffer_element);
+			return (byte*)((crnd_vector_y4ukjxd*)@this)->m_p + (nint)(uint)i * (nint)sizeof(crnd_crn_unpacker_block_buffer_element);
 		}
 	}
 }

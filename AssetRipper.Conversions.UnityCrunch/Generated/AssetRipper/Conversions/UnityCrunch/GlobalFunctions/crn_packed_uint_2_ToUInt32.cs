@@ -10,6 +10,6 @@ internal static partial class crn_packed_uint_2_ToUInt32
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this)
 	{
-		return unchecked(((byte)(*(sbyte*)(&((crnd_crn_packed_uint_hnsywfd*)@this)->field_0)) << 8) | (byte)((sbyte*)(&((crnd_crn_packed_uint_hnsywfd*)@this)->field_0))[1]);
+		return unchecked(((byte)(*(sbyte*)(&((crnd_crn_packed_uint_hnsywfd*)@this)->m_buf)) << 8) | (byte)((sbyte*)(&((crnd_crn_packed_uint_hnsywfd*)@this)->m_buf))[1]);
 	}
 }

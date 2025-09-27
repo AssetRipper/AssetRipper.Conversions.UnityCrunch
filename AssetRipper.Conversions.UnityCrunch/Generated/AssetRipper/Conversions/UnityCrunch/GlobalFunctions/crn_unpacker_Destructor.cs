@@ -11,34 +11,34 @@ internal static partial class crn_unpacker_Destructor
 	{
 		unchecked
 		{
-			((crnd_crn_unpacker*)@this)->field_0 = 0;
-			vector_struct_crnd_crn_unpacker_block_buffer_element_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_12);
+			((crnd_crn_unpacker*)@this)->m_magic = 0;
+			vector_struct_crnd_crn_unpacker_block_buffer_element_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer);
 			if (ExceptionInfo.Current != null)
 			{
 				return;
 			}
-			vector_unsigned_short_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_11);
+			vector_unsigned_short_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_selectors);
 			if (ExceptionInfo.Current != null)
 			{
 				return;
 			}
-			vector_unsigned_short_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_10);
+			vector_unsigned_short_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints);
 			if (ExceptionInfo.Current != null)
 			{
 				return;
 			}
-			vector_unsigned_int_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_9);
+			vector_unsigned_int_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors);
 			if (ExceptionInfo.Current != null)
 			{
 				return;
 			}
-			vector_unsigned_int_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
+			vector_unsigned_int_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints);
 			if (ExceptionInfo.Current != null)
 			{
 				return;
 			}
-			crnd_static_huffman_data_model* field_ = (crnd_static_huffman_data_model*)(&((crnd_crn_unpacker*)@this)->field_7);
-			nint num = (nint)(field_ + 2L);
+			crnd_static_huffman_data_model* selector_delta_dm = (crnd_static_huffman_data_model*)(&((crnd_crn_unpacker*)@this)->m_selector_delta_dm);
+			nint num = (nint)(selector_delta_dm + 2L);
 			while (true)
 			{
 				crnd_static_huffman_data_model* ptr = (crnd_static_huffman_data_model*)(num + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
@@ -47,14 +47,14 @@ internal static partial class crn_unpacker_Destructor
 				{
 					return;
 				}
-				if (ptr == field_)
+				if (ptr == selector_delta_dm)
 				{
 					break;
 				}
 				num = (nint)ptr;
 			}
-			crnd_static_huffman_data_model* field_2 = (crnd_static_huffman_data_model*)(&((crnd_crn_unpacker*)@this)->field_6);
-			nint num2 = (nint)(field_2 + 2L);
+			crnd_static_huffman_data_model* endpoint_delta_dm = (crnd_static_huffman_data_model*)(&((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm);
+			nint num2 = (nint)(endpoint_delta_dm + 2L);
 			while (true)
 			{
 				crnd_static_huffman_data_model* ptr2 = (crnd_static_huffman_data_model*)(num2 + (nint)(-1) * sizeof(crnd_static_huffman_data_model));
@@ -63,13 +63,13 @@ internal static partial class crn_unpacker_Destructor
 				{
 					return;
 				}
-				if (ptr2 == field_2)
+				if (ptr2 == endpoint_delta_dm)
 				{
 					break;
 				}
 				num2 = (nint)ptr2;
 			}
-			static_huffman_data_model_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->field_5);
+			static_huffman_data_model_Destructor.Invoke(&((crnd_crn_unpacker*)@this)->m_reference_encoding_dm);
 		}
 	}
 }

@@ -10,6 +10,6 @@ internal static partial class Get_alloc_failed
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this)
 	{
-		return (unchecked((crnd_vector_f3cmzmc*)@this)->field_3 & 1) == 1;
+		return (unchecked((crnd_vector_f3cmzmc*)@this)->m_alloc_failed & 1) == 1;
 	}
 }

@@ -16,11 +16,11 @@ internal static partial class crnd_get_header
 			{
 				return null;
 			}
-			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pData)->field_0) != 18552)
+			if (crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pData)->m_sig) != 18552)
 			{
 				return null;
 			}
-			if ((ulong)(uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pData)->field_1) < 74uL || (uint)data_size < (uint)crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)pData)->field_3))
+			if ((ulong)(uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pData)->m_header_size) < 74uL || (uint)data_size < (uint)crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)pData)->m_data_size))
 			{
 				return null;
 			}

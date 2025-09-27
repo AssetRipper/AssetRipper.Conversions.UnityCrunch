@@ -10,6 +10,6 @@ internal static partial class Get_data_size
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this)
 	{
-		return unchecked((crnd_crn_unpacker*)@this)->field_2;
+		return unchecked((crnd_crn_unpacker*)@this)->m_data_size;
 	}
 }

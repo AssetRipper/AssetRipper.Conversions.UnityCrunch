@@ -9,11 +9,11 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_static_huffman_data_model
 {
 	[FieldOffset(0)]
-	public int field_0;
+	public int m_total_syms;
 
 	[FieldOffset(8)]
-	public crnd_vector_f3cmzmc field_1;
+	public crnd_vector_f3cmzmc m_code_sizes;
 
 	[FieldOffset(32)]
-	public unsafe void* field_2;
+	public unsafe void* m_pDecode_tables;
 }

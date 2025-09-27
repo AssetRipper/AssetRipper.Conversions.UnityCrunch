@@ -14,11 +14,11 @@ internal static partial class vector_unsigned_char_Index_3lowkad
 	{
 		unchecked
 		{
-			if ((uint)i >= (uint)((crnd_vector_f3cmzmc*)@this)->field_1)
+			if ((uint)i >= (uint)((crnd_vector_f3cmzmc*)@this)->m_size)
 			{
 				crnd_assert.Invoke(String_ededlgd.__pointer, String_yguirrd.__pointer, 586);
 			}
-			return (byte*)((crnd_vector_f3cmzmc*)@this)->field_0 + (uint)i;
+			return (byte*)((crnd_vector_f3cmzmc*)@this)->m_p + (uint)i;
 		}
 	}
 }

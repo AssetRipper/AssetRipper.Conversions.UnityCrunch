@@ -17,9 +17,9 @@ internal static partial class unpack_color_bejelqb
 		unpack_color_ifs9dpd.Invoke(&crnd_color_quad, packed_color2, ((num ? 1u : 0u) & 1u) == 1, 0);
 		unchecked
 		{
-			*(int*)r = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field_0))->field_0;
-			*(int*)g = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field_0))->field_1;
-			*(int*)b = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field_0))->field_2;
+			*(int*)r = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field))->field_0;
+			*(int*)g = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field))->field_1;
+			*(int*)b = (byte)((anon_b9ijpuc*)(&crnd_color_quad.field))->field_2;
 		}
 	}
 }

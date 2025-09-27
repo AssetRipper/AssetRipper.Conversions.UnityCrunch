@@ -23,7 +23,7 @@ internal static partial class crnd_create_segmented_file
 			{
 				return false;
 			}
-			if ((crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->field_10) & 1) != 0)
+			if ((crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_flags) & 1) != 0)
 			{
 				return false;
 			}
@@ -33,10 +33,10 @@ internal static partial class crnd_create_segmented_file
 				return false;
 			}
 			llvm_memcpy_p0_p0_i64.Invoke(pBase_data, pData, (uint)num, isVolatile: false);
-			crn_packed_uint_2_Assignment.Invoke(val: crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->field_10) | 1, @this: &((crnd_crn_header*)pBase_data)->field_10);
-			crn_packed_uint_4_Assignment.Invoke(&((crnd_crn_header*)pBase_data)->field_3, num);
-			crn_packed_uint_2_Assignment.Invoke(val: (ushort)crc16.Invoke(len: crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->field_3) - crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->field_1), pBuf: (byte*)pBase_data + (uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->field_1), crc: 0), @this: &((crnd_crn_header*)pBase_data)->field_4);
-			crn_packed_uint_2_Assignment.Invoke(val: (ushort)crc16.Invoke(len: crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->field_1) - (int)((long)(&((crnd_crn_header*)pBase_data)->field_3) - (long)pBase_data), pBuf: &((crnd_crn_header*)pBase_data)->field_3, crc: 0), @this: &((crnd_crn_header*)pBase_data)->field_2);
+			crn_packed_uint_2_Assignment.Invoke(val: crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->m_flags) | 1, @this: &((crnd_crn_header*)pBase_data)->m_flags);
+			crn_packed_uint_4_Assignment.Invoke(&((crnd_crn_header*)pBase_data)->m_data_size, num);
+			crn_packed_uint_2_Assignment.Invoke(val: (ushort)crc16.Invoke(len: crn_packed_uint_4_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->m_data_size) - crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->m_header_size), pBuf: (byte*)pBase_data + (uint)crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->m_header_size), crc: 0), @this: &((crnd_crn_header*)pBase_data)->m_data_crc16);
+			crn_packed_uint_2_Assignment.Invoke(val: (ushort)crc16.Invoke(len: crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->m_header_size) - (int)((long)(&((crnd_crn_header*)pBase_data)->m_data_size) - (long)pBase_data), pBuf: &((crnd_crn_header*)pBase_data)->m_data_size, crc: 0), @this: &((crnd_crn_header*)pBase_data)->m_header_crc16);
 			if (!crnd_validate_file.Invoke(pBase_data, num, null))
 			{
 				crnd_assert.Invoke(String_2bpyz2d.__pointer, String_yguirrd.__pointer, 2374);

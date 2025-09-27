@@ -12,8 +12,8 @@ internal static partial class Get_bits_init
 	{
 		unchecked
 		{
-			((crnd_symbol_codec*)@this)->field_4 = 0;
-			((crnd_symbol_codec*)@this)->field_5 = 0;
+			((crnd_symbol_codec*)@this)->m_bit_buf = 0;
+			((crnd_symbol_codec*)@this)->m_bit_count = 0;
 		}
 	}
 }

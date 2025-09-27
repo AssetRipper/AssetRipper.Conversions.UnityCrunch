@@ -10,14 +10,14 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_vector_y4ukjxd
 {
 	[FieldOffset(0)]
-	public unsafe void* field_0;
+	public unsafe void* m_p;
 
 	[FieldOffset(8)]
-	public int field_1;
+	public int m_size;
 
 	[FieldOffset(12)]
-	public int field_2;
+	public int m_capacity;
 
 	[FieldOffset(16)]
-	public sbyte field_3;
+	public sbyte m_alloc_failed;
 }

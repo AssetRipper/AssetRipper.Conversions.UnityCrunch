@@ -20,7 +20,7 @@ internal static partial class init_nh4ii2d
 				crnd_assert.Invoke(String_ejppfib.__pointer, String_yguirrd.__pointer, 2433);
 			}
 			num = minimum.Invoke(num, 16);
-			bool flag = resize_rzzl5xd.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1, total_syms);
+			bool flag = resize_rzzl5xd.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes, total_syms);
 			if (ExceptionInfo.Current != null)
 			{
 				return false;
@@ -34,7 +34,7 @@ internal static partial class init_nh4ii2d
 			for (int i = 0; (uint)i < (uint)total_syms; i++)
 			{
 				int num4 = (byte)((sbyte*)pCode_sizes)[(uint)i];
-				*(sbyte*)vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1, i) = (sbyte)num4;
+				*(sbyte*)vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes, i) = (sbyte)num4;
 				num2 = minimum.Invoke(num2, num4);
 				num3 = maximum.Invoke(num3, num4);
 			}
@@ -46,16 +46,16 @@ internal static partial class init_nh4ii2d
 			{
 				return false;
 			}
-			if (((crnd_static_huffman_data_model*)@this)->field_2 == null)
+			if (((crnd_static_huffman_data_model*)@this)->m_pDecode_tables == null)
 			{
-				void* field_ = crnd_new_9bg4xgd.Invoke();
+				void* pDecode_tables = crnd_new_9bg4xgd.Invoke();
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
 				}
-				((crnd_static_huffman_data_model*)@this)->field_2 = field_;
+				((crnd_static_huffman_data_model*)@this)->m_pDecode_tables = pDecode_tables;
 			}
-			bool flag2 = init_igqra9d.Invoke(((crnd_static_huffman_data_model*)@this)->field_2, table_bits: compute_decoder_table_bits.Invoke(@this), pCodesizes: vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1, 0), num_syms: ((crnd_static_huffman_data_model*)@this)->field_0);
+			bool flag2 = init_igqra9d.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables, table_bits: compute_decoder_table_bits.Invoke(@this), pCodesizes: vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes, 0), num_syms: ((crnd_static_huffman_data_model*)@this)->m_total_syms);
 			if (ExceptionInfo.Current != null)
 			{
 				return false;

@@ -23,30 +23,30 @@ internal static partial class decoder_tables_Assignment
 		llvm_memcpy_p0_p0_i64.Invoke(@this, other, 192L, isVolatile: false);
 		unchecked
 		{
-			if (((crnd_prefix_coding_decoder_tables*)other)->field_11 != null)
+			if (((crnd_prefix_coding_decoder_tables*)other)->m_lookup != null)
 			{
-				void* field_ = crnd_new_array_linsntd.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_10);
+				void* lookup = crnd_new_array_linsntd.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_cur_lookup_size);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
 				}
-				((crnd_prefix_coding_decoder_tables*)@this)->field_11 = field_;
-				if (((crnd_prefix_coding_decoder_tables*)@this)->field_11 != null)
+				((crnd_prefix_coding_decoder_tables*)@this)->m_lookup = lookup;
+				if (((crnd_prefix_coding_decoder_tables*)@this)->m_lookup != null)
 				{
-					llvm_memcpy_p0_p0_i64.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_11, ((crnd_prefix_coding_decoder_tables*)other)->field_11, 4L * (long)(uint)((crnd_prefix_coding_decoder_tables*)@this)->field_10, isVolatile: false);
+					llvm_memcpy_p0_p0_i64.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_lookup, ((crnd_prefix_coding_decoder_tables*)other)->m_lookup, 4L * (long)(uint)((crnd_prefix_coding_decoder_tables*)@this)->m_cur_lookup_size, isVolatile: false);
 				}
 			}
-			if (((crnd_prefix_coding_decoder_tables*)other)->field_13 != null)
+			if (((crnd_prefix_coding_decoder_tables*)other)->m_sorted_symbol_order != null)
 			{
-				void* field_2 = crnd_new_array_ovofsdb.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_12);
+				void* sorted_symbol_order = crnd_new_array_ovofsdb.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_cur_sorted_symbol_order_size);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
 				}
-				((crnd_prefix_coding_decoder_tables*)@this)->field_13 = field_2;
-				if (((crnd_prefix_coding_decoder_tables*)@this)->field_13 != null)
+				((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order = sorted_symbol_order;
+				if (((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order != null)
 				{
-					llvm_memcpy_p0_p0_i64.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_13, ((crnd_prefix_coding_decoder_tables*)other)->field_13, 2L * (long)(uint)((crnd_prefix_coding_decoder_tables*)@this)->field_12, isVolatile: false);
+					llvm_memcpy_p0_p0_i64.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order, ((crnd_prefix_coding_decoder_tables*)other)->m_sorted_symbol_order, 2L * (long)(uint)((crnd_prefix_coding_decoder_tables*)@this)->m_cur_sorted_symbol_order_size, isVolatile: false);
 				}
 			}
 			return @this;

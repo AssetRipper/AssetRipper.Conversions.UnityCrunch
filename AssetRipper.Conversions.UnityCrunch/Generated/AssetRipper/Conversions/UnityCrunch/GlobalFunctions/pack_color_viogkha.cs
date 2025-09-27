@@ -14,9 +14,9 @@ internal static partial class pack_color_viogkha
 		bool num = scaled;
 		unchecked
 		{
-			int num2 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_0;
-			int num3 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_1;
-			int num4 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field_0))->field_2;
+			int num2 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field))->field_0;
+			int num3 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field))->field_1;
+			int num4 = (byte)((anon_b9ijpuc*)(&((crnd_color_quad*)color)->field))->field_2;
 			if (((num ? 1u : 0u) & 1u) == 1)
 			{
 				num2 = (int)((uint)(num2 * 31 + bias) / 255u);

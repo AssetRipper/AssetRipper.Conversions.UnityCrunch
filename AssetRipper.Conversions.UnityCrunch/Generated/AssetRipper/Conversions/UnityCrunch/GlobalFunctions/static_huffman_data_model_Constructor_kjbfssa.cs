@@ -12,10 +12,10 @@ internal static partial class static_huffman_data_model_Constructor_kjbfssa
 	{
 		unchecked
 		{
-			((crnd_static_huffman_data_model*)@this)->field_0 = 0;
-			crnd_vector_f3cmzmc* field_ = &((crnd_static_huffman_data_model*)@this)->field_1;
-			vector_unsigned_char_Constructor.Invoke(field_);
-			((crnd_static_huffman_data_model*)@this)->field_2 = null;
+			((crnd_static_huffman_data_model*)@this)->m_total_syms = 0;
+			crnd_vector_f3cmzmc* code_sizes = &((crnd_static_huffman_data_model*)@this)->m_code_sizes;
+			vector_unsigned_char_Constructor.Invoke(code_sizes);
+			((crnd_static_huffman_data_model*)@this)->m_pDecode_tables = null;
 			static_huffman_data_model_Assignment.Invoke(@this, other);
 			if (ExceptionInfo.Current == null)
 			{
@@ -23,7 +23,7 @@ internal static partial class static_huffman_data_model_Constructor_kjbfssa
 			}
 			ExceptionInfo current = ExceptionInfo.Current;
 			ExceptionInfo.Current = null;
-			vector_unsigned_char_Destructor.Invoke(field_);
+			vector_unsigned_char_Destructor.Invoke(code_sizes);
 			if (ExceptionInfo.Current != null)
 			{
 				return null;

@@ -9,14 +9,14 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_crn_unpacker_block_buffer_element
 {
 	[FieldOffset(0)]
-	public short field_0;
+	public short endpoint_reference;
 
 	[FieldOffset(2)]
-	public short field_1;
+	public short color_endpoint_index;
 
 	[FieldOffset(4)]
-	public short field_2;
+	public short alpha0_endpoint_index;
 
 	[FieldOffset(6)]
-	public short field_3;
+	public short alpha1_endpoint_index;
 }

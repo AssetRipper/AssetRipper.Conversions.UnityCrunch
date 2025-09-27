@@ -14,17 +14,17 @@ internal static partial class unpack_level_cvfjdga
 	{
 		unchecked
 		{
-			int num = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)level_index * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
-			int num2 = ((crnd_crn_unpacker*)@this)->field_2;
-			if ((uint)(level_index + 1) < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_7))
+			int num = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_level_ofs) + (nint)(uint)level_index * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+			int num2 = ((crnd_crn_unpacker*)@this)->m_data_size;
+			if ((uint)(level_index + 1) < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_levels))
 			{
-				num2 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_20) + (nint)(uint)(level_index + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+				num2 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_level_ofs) + (nint)(uint)(level_index + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
 			}
 			if ((uint)num2 <= (uint)num)
 			{
 				crnd_assert.Invoke(String_huvyfmc.__pointer, String_yguirrd.__pointer, 2982);
 			}
-			bool result = unpack_level_zjb72ec.Invoke(@this, (byte*)((crnd_crn_unpacker*)@this)->field_1 + (uint)num, num2 - num, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
+			bool result = unpack_level_zjb72ec.Invoke(@this, (byte*)((crnd_crn_unpacker*)@this)->m_pData + (uint)num, num2 - num, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 			if (ExceptionInfo.Current != null)
 			{
 				return false;

@@ -16,10 +16,10 @@ internal static partial class start_decoding
 		}
 		unchecked
 		{
-			((crnd_symbol_codec*)@this)->field_0 = pBuf;
-			((crnd_symbol_codec*)@this)->field_1 = pBuf;
-			((crnd_symbol_codec*)@this)->field_3 = buf_size;
-			((crnd_symbol_codec*)@this)->field_2 = (byte*)pBuf + (uint)buf_size;
+			((crnd_symbol_codec*)@this)->m_pDecode_buf = pBuf;
+			((crnd_symbol_codec*)@this)->m_pDecode_buf_next = pBuf;
+			((crnd_symbol_codec*)@this)->m_decode_buf_size = buf_size;
+			((crnd_symbol_codec*)@this)->m_pDecode_buf_end = (byte*)pBuf + (uint)buf_size;
 			Get_bits_init.Invoke(@this);
 			return true;
 		}

@@ -32,8 +32,8 @@ internal static partial class Set_alpha
 				crnd_assert.Invoke(String_azii4xc.__pointer, String_yguirrd.__pointer, 2837);
 			}
 			int num2 = (y << 1) + (x >>> 1);
-			int num3 = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)num2];
-			((sbyte*)(&((crnd_dxt3_block*)@this)->field_0))[(uint)num2] = (sbyte)((num3 & ((15 << ((x & 1) << 2)) ^ -1)) | (num << ((x & 1) << 2)));
+			int num3 = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->m_alpha))[(uint)num2];
+			((sbyte*)(&((crnd_dxt3_block*)@this)->m_alpha))[(uint)num2] = (sbyte)((num3 & ((15 << ((x & 1) << 2)) ^ -1)) | (num << ((x & 1) << 2)));
 		}
 	}
 }

@@ -13,11 +13,11 @@ internal static partial class vector_unsigned_short_Index
 	{
 		unchecked
 		{
-			if ((uint)i >= (uint)((crnd_vector_rf9iywd*)@this)->field_1)
+			if ((uint)i >= (uint)((crnd_vector_rf9iywd*)@this)->m_size)
 			{
 				crnd_assert.Invoke(String_ededlgd.__pointer, String_yguirrd.__pointer, 590);
 			}
-			return (byte*)((crnd_vector_rf9iywd*)@this)->field_0 + (nint)(uint)i * (nint)2;
+			return (byte*)((crnd_vector_rf9iywd*)@this)->m_p + (nint)(uint)i * (nint)2;
 		}
 	}
 }

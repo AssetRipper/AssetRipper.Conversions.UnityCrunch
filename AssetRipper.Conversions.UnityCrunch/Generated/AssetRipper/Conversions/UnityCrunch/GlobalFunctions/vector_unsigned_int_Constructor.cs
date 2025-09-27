@@ -11,10 +11,10 @@ internal static partial class vector_unsigned_int_Constructor
 	{
 		unchecked
 		{
-			((crnd_vector_maaktjc*)@this)->field_0 = null;
-			((crnd_vector_maaktjc*)@this)->field_1 = 0;
-			((crnd_vector_maaktjc*)@this)->field_2 = 0;
-			((crnd_vector_maaktjc*)@this)->field_3 = 0;
+			((crnd_vector_maaktjc*)@this)->m_p = null;
+			((crnd_vector_maaktjc*)@this)->m_size = 0;
+			((crnd_vector_maaktjc*)@this)->m_capacity = 0;
+			((crnd_vector_maaktjc*)@this)->m_alloc_failed = 0;
 			return @this;
 		}
 	}

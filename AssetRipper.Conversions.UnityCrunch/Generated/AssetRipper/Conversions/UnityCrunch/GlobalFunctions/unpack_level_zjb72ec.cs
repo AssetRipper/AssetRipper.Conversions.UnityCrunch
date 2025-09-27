@@ -14,11 +14,11 @@ internal static partial class unpack_level_zjb72ec
 		int num = row_pitch_in_bytes;
 		unchecked
 		{
-			int num2 = maximum.Invoke(crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_5) >>> level_index, 1);
-			int num3 = maximum.Invoke(crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_6) >>> level_index, 1);
+			int num2 = maximum.Invoke(crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_width) >>> level_index, 1);
+			int num3 = maximum.Invoke(crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_height) >>> level_index, 1);
 			int num4 = num2 + 3 >>> 2;
 			int num5 = num3 + 3 >>> 2;
-			int num6 = InstructionHelper.Select((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 0) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 9) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 10) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) != 11) ? (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9) == 13) : true))), 8, 16) * num4;
+			int num6 = InstructionHelper.Select((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 0) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 9) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 10) ? true : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) != 11) ? (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 13) : true))), 8, 16) * num4;
 			if (num == 0)
 			{
 				num = num6;
@@ -31,12 +31,12 @@ internal static partial class unpack_level_zjb72ec
 			{
 				return false;
 			}
-			if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4, pSrc, src_size_in_bytes))
+			if (!start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, pSrc, src_size_in_bytes))
 			{
 				return false;
 			}
 			sbyte b;
-			switch (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_9))
+			switch (crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format))
 			{
 			case 0:
 			case 13:
@@ -122,7 +122,7 @@ internal static partial class unpack_level_zjb72ec
 			{
 				return false;
 			}
-			stop_decoding.Invoke(&((crnd_crn_unpacker*)@this)->field_4);
+			stop_decoding.Invoke(&((crnd_crn_unpacker*)@this)->m_codec);
 			return true;
 		}
 	}

@@ -27,14 +27,14 @@ internal static partial class unpack_etc2a
 		localsPointer->field_2 = default(InlineArray4_SByte);
 		unchecked
 		{
-			int num = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->field_8);
-			int num2 = size_lxodu4b.Invoke(&((crnd_crn_unpacker*)@this)->field_10);
+			int num = size_7uifdkc.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints);
+			int num2 = size_lxodu4b.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints);
 			int num3 = (output_width + 1) & -2;
 			int num4 = (output_height + 1) & -2;
 			int num5 = (output_pitch_in_bytes >>> 2) - (num3 << 2);
-			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->field_12) < (uint)(num3 << 1))
+			if ((uint)size_jm5h2sb.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer) < (uint)(num3 << 1))
 			{
-				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num3 << 1);
+				resize_kfwzjla.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, num3 << 1);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -44,7 +44,7 @@ internal static partial class unpack_etc2a
 			int num7 = 0;
 			int num8 = 0;
 			int num9 = 0;
-			for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->field_3)->field_8); i++)
+			for (int i = 0; (uint)i < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_faces); i++)
 			{
 				void* ptr = ((void**)pDst)[(uint)i];
 				int num10 = 0;
@@ -55,71 +55,71 @@ internal static partial class unpack_etc2a
 					while ((uint)num11 < (uint)num3)
 					{
 						b = (((b & 1) == 1 && (uint)num11 < (uint)output_width) ? ((sbyte)1) : ((sbyte)0));
-						void* ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, num11 << 1);
+						void* ptr2 = vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, num11 << 1);
 						sbyte b2;
 						if ((num10 & 1) != 0)
 						{
-							b2 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0;
+							b2 = (sbyte)((crnd_crn_unpacker_block_buffer_element*)ptr2)->endpoint_reference;
 						}
 						else
 						{
-							sbyte b3 = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_5);
+							sbyte b3 = (sbyte)decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_reference_encoding_dm);
 							b2 = (sbyte)(((byte)b3 & 3) | (((byte)b3 >> 2) & 0xC));
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_0 = (short)((((byte)b3 >> 2) & 3) | (((byte)b3 >> 4) & 0xC));
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->endpoint_reference = (short)((((byte)b3 >> 2) & 3) | (((byte)b3 >> 4) & 0xC));
 						}
 						if (((byte)b2 & 3) == 0)
 						{
-							num6 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
+							num6 += decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm);
 							if ((uint)num6 >= (uint)num)
 							{
 								num6 -= num;
 							}
-							num8 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&((crnd_crn_unpacker*)@this)->field_6) + sizeof(crnd_static_huffman_data_model));
+							num8 += decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, (byte*)(&((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm) + sizeof(crnd_static_huffman_data_model));
 							if ((uint)num8 >= (uint)num2)
 							{
 								num8 -= num2;
 							}
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num6;
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2 = (short)num8;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index = (short)num6;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index = (short)num8;
 						}
 						else if (((byte)b2 & 3) == 1)
 						{
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num6;
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2 = (short)num8;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index = (short)num6;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index = (short)num8;
 						}
 						else if (((byte)b2 & 3) == 3)
 						{
 							int num12 = num7;
 							num6 = num12;
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1 = (short)num12;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index = (short)num12;
 							int num13 = num9;
 							num8 = num13;
-							((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2 = (short)num13;
+							((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index = (short)num13;
 						}
 						else
 						{
-							num6 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_1;
-							num8 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->field_2;
+							num6 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->color_endpoint_index;
+							num8 = (ushort)((crnd_crn_unpacker_block_buffer_element*)ptr2)->alpha0_endpoint_index;
 						}
 						b2 = (sbyte)((byte)b2 >> 2);
-						int num14 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num6);
+						int num14 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, num6);
 						*(int*)(&localsPointer->field_1) = num14;
-						int num15 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_7);
-						int num16 = decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, (byte*)(&((crnd_crn_unpacker*)@this)->field_7) + sizeof(crnd_static_huffman_data_model));
+						int num15 = decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_selector_delta_dm);
+						int num16 = decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, (byte*)(&((crnd_crn_unpacker*)@this)->m_selector_delta_dm) + sizeof(crnd_static_huffman_data_model));
 						if (b2 != 0)
 						{
-							num6 += decode.Invoke(&((crnd_crn_unpacker*)@this)->field_4, &((crnd_crn_unpacker*)@this)->field_6);
+							num6 += decode.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm);
 							if ((uint)num6 >= (uint)num)
 							{
 								num6 -= num;
 							}
 						}
-						int num17 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_8, num6);
+						int num17 = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, num6);
 						*(int*)(&localsPointer->field_2) = num17;
-						num7 = (ushort)((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num11 << 1) | 1))->field_1;
-						num9 = (ushort)((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num11 << 1) | 1))->field_2;
-						((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num11 << 1) | 1))->field_1 = (short)num6;
-						((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_12, (num11 << 1) | 1))->field_2 = (short)num8;
+						num7 = (ushort)((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, (num11 << 1) | 1))->color_endpoint_index;
+						num9 = (ushort)((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, (num11 << 1) | 1))->alpha0_endpoint_index;
+						((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, (num11 << 1) | 1))->color_endpoint_index = (short)num6;
+						((crnd_crn_unpacker_block_buffer_element*)vector_struct_crnd_crn_unpacker_block_buffer_element_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_block_buffer, (num11 << 1) | 1))->alpha0_endpoint_index = (short)num8;
 						if ((b & 1) == 1)
 						{
 							int num18 = ((byte)b2 >> 1) ^ 1;
@@ -140,11 +140,11 @@ internal static partial class unpack_etc2a
 							}
 							sbyte b4 = (sbyte)(((byte)((sbyte*)(&localsPointer->field_1))[3] << 5) | ((byte)((sbyte*)(&localsPointer->field_2))[3] << 2) | (num19 << 1) | num18);
 							((sbyte*)(&localsPointer->field_0))[3] = b4;
-							void* ptr3 = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_11, num16 * 6 + InstructionHelper.Select(num18 != 0, 3, 0));
-							*(int*)ptr = (ushort)(*(short*)vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_10, num8)) | ((ushort)(*(short*)ptr3) << 16);
+							void* ptr3 = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_selectors, num16 * 6 + InstructionHelper.Select(num18 != 0, 3, 0));
+							*(int*)ptr = (ushort)(*(short*)vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, num8)) | ((ushort)(*(short*)ptr3) << 16);
 							((int*)ptr)[1] = (ushort)((short*)ptr3)[1] | ((ushort)((short*)ptr3)[2] << 16);
 							((int*)ptr)[2] = *(int*)(&localsPointer->field_0);
-							((int*)ptr)[3] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->field_9, (num15 << 1) | num18);
+							((int*)ptr)[3] = *(int*)vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, (num15 << 1) | num18);
 						}
 						num11++;
 						ptr = (byte*)ptr + 16;

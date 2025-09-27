@@ -13,9 +13,9 @@ internal static partial class compute_decoder_table_bits
 		int result = 0;
 		unchecked
 		{
-			if ((uint)((crnd_static_huffman_data_model*)@this)->field_0 > 16u)
+			if ((uint)((crnd_static_huffman_data_model*)@this)->m_total_syms > 16u)
 			{
-				result = (byte)(sbyte)minimum.Invoke(1 + ceil_log2i.Invoke(((crnd_static_huffman_data_model*)@this)->field_0), 11);
+				result = (byte)(sbyte)minimum.Invoke(1 + ceil_log2i.Invoke(((crnd_static_huffman_data_model*)@this)->m_total_syms), 11);
 			}
 			return result;
 		}

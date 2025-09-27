@@ -10,6 +10,6 @@ internal static partial class is_valid
 	[return: NativeType("bool")]
 	public unsafe static bool Invoke(void* @this)
 	{
-		return unchecked((crnd_crn_unpacker*)@this)->field_0 == 519686845;
+		return unchecked((crnd_crn_unpacker*)@this)->m_magic == 519686845;
 	}
 }

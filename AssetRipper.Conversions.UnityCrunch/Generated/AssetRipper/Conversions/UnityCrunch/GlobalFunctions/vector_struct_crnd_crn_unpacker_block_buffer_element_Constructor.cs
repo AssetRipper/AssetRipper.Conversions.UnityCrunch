@@ -11,10 +11,10 @@ internal static partial class vector_struct_crnd_crn_unpacker_block_buffer_eleme
 	{
 		unchecked
 		{
-			((crnd_vector_y4ukjxd*)@this)->field_0 = null;
-			((crnd_vector_y4ukjxd*)@this)->field_1 = 0;
-			((crnd_vector_y4ukjxd*)@this)->field_2 = 0;
-			((crnd_vector_y4ukjxd*)@this)->field_3 = 0;
+			((crnd_vector_y4ukjxd*)@this)->m_p = null;
+			((crnd_vector_y4ukjxd*)@this)->m_size = 0;
+			((crnd_vector_y4ukjxd*)@this)->m_capacity = 0;
+			((crnd_vector_y4ukjxd*)@this)->m_alloc_failed = 0;
 			return @this;
 		}
 	}

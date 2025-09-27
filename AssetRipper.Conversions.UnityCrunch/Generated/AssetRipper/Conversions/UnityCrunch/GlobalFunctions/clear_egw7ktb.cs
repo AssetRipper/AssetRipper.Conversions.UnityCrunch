@@ -13,14 +13,14 @@ internal static partial class clear_egw7ktb
 	{
 		unchecked
 		{
-			((crnd_static_huffman_data_model*)@this)->field_0 = 0;
-			clear_q4odfmb.Invoke(&((crnd_static_huffman_data_model*)@this)->field_1);
-			if (ExceptionInfo.Current == null && ((crnd_static_huffman_data_model*)@this)->field_2 != null)
+			((crnd_static_huffman_data_model*)@this)->m_total_syms = 0;
+			clear_q4odfmb.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes);
+			if (ExceptionInfo.Current == null && ((crnd_static_huffman_data_model*)@this)->m_pDecode_tables != null)
 			{
-				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->field_2);
+				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
 				if (ExceptionInfo.Current == null)
 				{
-					((crnd_static_huffman_data_model*)@this)->field_2 = null;
+					((crnd_static_huffman_data_model*)@this)->m_pDecode_tables = null;
 				}
 			}
 		}

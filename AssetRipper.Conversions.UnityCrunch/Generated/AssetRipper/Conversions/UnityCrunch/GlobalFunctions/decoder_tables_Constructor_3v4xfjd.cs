@@ -12,10 +12,10 @@ internal static partial class decoder_tables_Constructor_3v4xfjd
 	{
 		unchecked
 		{
-			((crnd_prefix_coding_decoder_tables*)@this)->field_10 = 0;
-			((crnd_prefix_coding_decoder_tables*)@this)->field_11 = null;
-			((crnd_prefix_coding_decoder_tables*)@this)->field_12 = 0;
-			((crnd_prefix_coding_decoder_tables*)@this)->field_13 = null;
+			((crnd_prefix_coding_decoder_tables*)@this)->m_cur_lookup_size = 0;
+			((crnd_prefix_coding_decoder_tables*)@this)->m_lookup = null;
+			((crnd_prefix_coding_decoder_tables*)@this)->m_cur_sorted_symbol_order_size = 0;
+			((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order = null;
 			decoder_tables_Assignment.Invoke(@this, other);
 			if (ExceptionInfo.Current != null)
 			{

@@ -11,6 +11,6 @@ internal static partial class size_7uifdkc
 	[return: NativeType("unsigned int")]
 	public unsafe static int Invoke(void* @this)
 	{
-		return unchecked((crnd_vector_maaktjc*)@this)->field_1;
+		return unchecked((crnd_vector_maaktjc*)@this)->m_size;
 	}
 }

@@ -10,5 +10,5 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_dxt3_block
 {
 	[FieldOffset(0)]
-	public InlineArray8_SByte field_0;
+	public InlineArray8_SByte m_alpha;
 }

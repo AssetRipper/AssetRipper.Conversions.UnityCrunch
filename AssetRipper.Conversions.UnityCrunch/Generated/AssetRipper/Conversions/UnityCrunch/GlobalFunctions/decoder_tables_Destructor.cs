@@ -12,19 +12,19 @@ internal static partial class decoder_tables_Destructor
 	{
 		unchecked
 		{
-			if (((crnd_prefix_coding_decoder_tables*)@this)->field_11 != null)
+			if (((crnd_prefix_coding_decoder_tables*)@this)->m_lookup != null)
 			{
-				crnd_delete_array_nughn5d.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_11);
+				crnd_delete_array_nughn5d.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_lookup);
 				if (ExceptionInfo.Current != null)
 				{
 					goto IL_0051;
 				}
 			}
-			if (((crnd_prefix_coding_decoder_tables*)@this)->field_13 == null)
+			if (((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order == null)
 			{
 				return;
 			}
-			crnd_delete_array_rytswyc.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->field_13);
+			crnd_delete_array_rytswyc.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order);
 			if (ExceptionInfo.Current == null)
 			{
 				return;

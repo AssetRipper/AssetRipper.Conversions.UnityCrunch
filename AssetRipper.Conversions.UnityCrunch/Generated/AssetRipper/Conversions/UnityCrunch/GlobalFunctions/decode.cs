@@ -74,13 +74,13 @@ internal static partial class decode
 				int num8 = ((int*)((crnd_prefix_coding_decoder_tables*)pDecode_tables)->m_lookup)[(uint)(((crnd_symbol_codec*)@this)->m_bit_buf >>> 32 - ((crnd_prefix_coding_decoder_tables*)pDecode_tables)->m_table_bits)];
 				if (num8 == -1)
 				{
-					crnd_assert.Invoke(String_fwybtzb.__pointer, String_yguirrd.__pointer, 2691);
+					crnd_assert.Invoke(String_hdsqwd.__pointer, String_vvx8bt.__pointer, 2691);
 				}
 				num9 = num8 & 0xFFFF;
 				i = num8 >>> 16;
-				if ((byte)(*(sbyte*)vector_unsigned_char_Index_3lowkad.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num9)) != i)
+				if ((byte)(*(sbyte*)vector_unsigned_char_Operator_btiznu.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num9)) != i)
 				{
-					crnd_assert.Invoke(String_e4i4x9a.__pointer, String_yguirrd.__pointer, 2695);
+					crnd_assert.Invoke(String_8pbqr2.__pointer, String_vvx8bt.__pointer, 2695);
 				}
 			}
 			else
@@ -91,7 +91,7 @@ internal static partial class decode
 				int num10 = ((int*)(&((crnd_prefix_coding_decoder_tables*)pDecode_tables)->m_val_ptrs))[(uint)(i - 1)] + (((crnd_symbol_codec*)@this)->m_bit_buf >>> 32 - i);
 				if ((uint)num10 >= (uint)((crnd_static_huffman_data_model*)model)->m_total_syms)
 				{
-					crnd_assert.Invoke(String_xzkwrkb.__pointer, String_yguirrd.__pointer, 2709);
+					crnd_assert.Invoke(String_m5q5qr.__pointer, String_vvx8bt.__pointer, 2709);
 					return 0;
 				}
 				num9 = (ushort)((short*)((crnd_prefix_coding_decoder_tables*)pDecode_tables)->m_sorted_symbol_order)[num10];

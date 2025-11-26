@@ -23,15 +23,15 @@ internal static partial class decode_color_selectors
 			sbyte b = (sbyte)(byte)((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 10) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 11) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 12) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) != 13) ? ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 14) ? 1 : 0) : (-1)))));
 			sbyte b2 = (sbyte)(byte)((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 10) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) != 11) ? ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 12) ? 1 : 0) : (-1)));
 			start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, buf_size: crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_color_selectors.m_size), pBuf: (byte*)((crnd_crn_unpacker*)@this)->m_pData + (uint)crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_color_selectors.m_ofs));
-			static_huffman_data_model_Constructor_tl33idc.Invoke(&localsPointer->field_0);
+			static_huffman_data_model_Constructor_c98ih8.Invoke(&localsPointer->field_0);
 			decode_receive_static_data_model.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &localsPointer->field_0);
 			if (ExceptionInfo.Current == null)
 			{
-				crnd_vector_maaktjc* color_selectors = &((crnd_crn_unpacker*)@this)->m_color_selectors;
+				crnd_vector_rgfndh* color_selectors = &((crnd_crn_unpacker*)@this)->m_color_selectors;
 				int num = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_color_selectors.m_num);
 				if (ExceptionInfo.Current == null)
 				{
-					resize_a3d3m5b.Invoke(color_selectors, num << InstructionHelper.Select((b2 & 1) == 1, 1, 0));
+					resize_dreg6y.Invoke(color_selectors, num << InstructionHelper.Select((b2 & 1) == 1, 1, 0));
 					if (ExceptionInfo.Current == null)
 					{
 						int num2 = 0;
@@ -69,7 +69,7 @@ internal static partial class decode_color_selectors
 											{
 												int num11 = num7 >>> ((num10 << 3) | (num9 << 1));
 												int num12 = (((num11 >>> 1) & 1) | ((num11 & 1) << 16)) << (num8 & 0xF);
-												void* ptr = vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, num3 << 1);
+												void* ptr = vector_unsigned_int_Operator.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, num3 << 1);
 												if (ExceptionInfo.Current != null)
 												{
 													goto end_IL_01ed;
@@ -78,7 +78,7 @@ internal static partial class decode_color_selectors
 											}
 											int num13 = num7 >>> ((num9 << 3) | (num10 << 1));
 											int num14 = (((num13 >>> 1) & 1) | ((num13 & 1) << 16)) << (num8 & 0xF);
-											void* ptr2 = vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, ((b2 & 1) != 1) ? num3 : ((num3 << 1) | 1));
+											void* ptr2 = vector_unsigned_int_Operator.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, ((b2 & 1) != 1) ? num3 : ((num3 << 1) | 1));
 											if (ExceptionInfo.Current != null)
 											{
 												goto end_IL_01ed;
@@ -94,7 +94,7 @@ internal static partial class decode_color_selectors
 								else
 								{
 									int num15 = ((num2 ^ (num2 << 1)) & -1431655766) | ((num2 >>> 1) & 0x55555555);
-									void* ptr3 = vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, num3);
+									void* ptr3 = vector_unsigned_int_Operator.Invoke(&((crnd_crn_unpacker*)@this)->m_color_selectors, num3);
 									if (ExceptionInfo.Current != null)
 									{
 										break;

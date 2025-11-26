@@ -26,15 +26,15 @@ internal static partial class decode_alpha_selectors_etc
 		unchecked
 		{
 			start_decoding.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, buf_size: crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_alpha_selectors.m_size), pBuf: (byte*)((crnd_crn_unpacker*)@this)->m_pData + (uint)crn_packed_uint_3_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_alpha_selectors.m_ofs));
-			static_huffman_data_model_Constructor_tl33idc.Invoke(&localsPointer->field_0);
+			static_huffman_data_model_Constructor_c98ih8.Invoke(&localsPointer->field_0);
 			decode_receive_static_data_model.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &localsPointer->field_0);
 			if (ExceptionInfo.Current == null)
 			{
-				crnd_vector_rf9iywd* alpha_selectors = &((crnd_crn_unpacker*)@this)->m_alpha_selectors;
+				crnd_vector_h6df48* alpha_selectors = &((crnd_crn_unpacker*)@this)->m_alpha_selectors;
 				int num = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_alpha_selectors.m_num);
 				if (ExceptionInfo.Current == null)
 				{
-					resize_w95s75a.Invoke(alpha_selectors, num * 6);
+					resize_9ubjj8.Invoke(alpha_selectors, num * 6);
 					if (ExceptionInfo.Current == null)
 					{
 						llvm_memset_p0_i64.Invoke(&localsPointer->field_1, 0, 8L, isVolatile: false);
@@ -42,7 +42,7 @@ internal static partial class decode_alpha_selectors_etc
 						int num2 = 0;
 						while (true)
 						{
-							if ((uint)num2 < (uint)size_lxodu4b.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_selectors))
+							if ((uint)num2 < (uint)size_g72hpe.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_selectors))
 							{
 								int num3 = 0;
 								for (int i = 0; (uint)i < 16u; i++)

@@ -18,7 +18,7 @@ internal static partial class crn_unpacker_Constructor
 			((crnd_crn_unpacker*)@this)->m_pHeader = null;
 			symbol_codec_Constructor.Invoke(&((crnd_crn_unpacker*)@this)->m_codec);
 			crnd_static_huffman_data_model* reference_encoding_dm = &((crnd_crn_unpacker*)@this)->m_reference_encoding_dm;
-			static_huffman_data_model_Constructor_tl33idc.Invoke(reference_encoding_dm);
+			static_huffman_data_model_Constructor_c98ih8.Invoke(reference_encoding_dm);
 			InlineArray2_crnd_static_huffman_data_model* endpoint_delta_dm = &((crnd_crn_unpacker*)@this)->m_endpoint_delta_dm;
 			crnd_static_huffman_data_model* ptr = (crnd_static_huffman_data_model*)endpoint_delta_dm;
 			crnd_static_huffman_data_model* ptr2 = ptr + 2L;
@@ -26,7 +26,7 @@ internal static partial class crn_unpacker_Constructor
 			while (true)
 			{
 				void* ptr3 = intPtr;
-				static_huffman_data_model_Constructor_tl33idc.Invoke(ptr3);
+				static_huffman_data_model_Constructor_c98ih8.Invoke(ptr3);
 				if (ExceptionInfo.Current == null)
 				{
 					crnd_static_huffman_data_model* ptr4 = (crnd_static_huffman_data_model*)ptr3 + 1;
@@ -42,7 +42,7 @@ internal static partial class crn_unpacker_Constructor
 					while (true)
 					{
 						void* ptr7 = intPtr2;
-						static_huffman_data_model_Constructor_tl33idc.Invoke(ptr7);
+						static_huffman_data_model_Constructor_c98ih8.Invoke(ptr7);
 						if (ExceptionInfo.Current == null)
 						{
 							crnd_static_huffman_data_model* ptr8 = (crnd_static_huffman_data_model*)ptr7 + 1;
@@ -51,19 +51,19 @@ internal static partial class crn_unpacker_Constructor
 								intPtr2 = ptr8;
 								continue;
 							}
-							crnd_vector_maaktjc* color_endpoints = &((crnd_crn_unpacker*)@this)->m_color_endpoints;
+							crnd_vector_rgfndh* color_endpoints = &((crnd_crn_unpacker*)@this)->m_color_endpoints;
 							vector_unsigned_int_Constructor.Invoke(color_endpoints);
 							if (ExceptionInfo.Current == null)
 							{
-								crnd_vector_maaktjc* color_selectors = &((crnd_crn_unpacker*)@this)->m_color_selectors;
+								crnd_vector_rgfndh* color_selectors = &((crnd_crn_unpacker*)@this)->m_color_selectors;
 								vector_unsigned_int_Constructor.Invoke(color_selectors);
 								if (ExceptionInfo.Current == null)
 								{
-									crnd_vector_rf9iywd* alpha_endpoints = &((crnd_crn_unpacker*)@this)->m_alpha_endpoints;
+									crnd_vector_h6df48* alpha_endpoints = &((crnd_crn_unpacker*)@this)->m_alpha_endpoints;
 									vector_unsigned_short_Constructor.Invoke(alpha_endpoints);
 									if (ExceptionInfo.Current == null)
 									{
-										crnd_vector_rf9iywd* alpha_selectors = &((crnd_crn_unpacker*)@this)->m_alpha_selectors;
+										crnd_vector_h6df48* alpha_selectors = &((crnd_crn_unpacker*)@this)->m_alpha_selectors;
 										vector_unsigned_short_Constructor.Invoke(alpha_selectors);
 										if (ExceptionInfo.Current == null)
 										{

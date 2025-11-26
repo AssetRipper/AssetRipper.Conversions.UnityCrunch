@@ -12,7 +12,7 @@ public partial struct crnd_static_huffman_data_model
 	public int m_total_syms;
 
 	[FieldOffset(8)]
-	public crnd_vector_f3cmzmc m_code_sizes;
+	public crnd_vector_uksit8 m_code_sizes;
 
 	[FieldOffset(32)]
 	public unsafe void* m_pDecode_tables;

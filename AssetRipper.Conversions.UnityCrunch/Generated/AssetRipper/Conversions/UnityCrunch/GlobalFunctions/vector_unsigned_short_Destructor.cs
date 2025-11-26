@@ -9,7 +9,7 @@ internal static partial class vector_unsigned_short_Destructor
 {
 	public unsafe static void Invoke(void* @this)
 	{
-		clear_bqconyd.Invoke(@this);
+		clear_isy3cf.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{
 			return;

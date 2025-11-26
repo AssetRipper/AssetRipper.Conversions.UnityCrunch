@@ -13,7 +13,7 @@ internal static partial class crnd_unpack_begin
 		{
 			return null;
 		}
-		void* ptr = crnd_new_xzix9sb.Invoke();
+		void* ptr = crnd_new_jsasrf.Invoke();
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
@@ -23,14 +23,14 @@ internal static partial class crnd_unpack_begin
 		{
 			return null;
 		}
-		bool flag = init_lqqdgrc.Invoke(ptr2, pData, data_size);
+		bool flag = init_4dt3g9.Invoke(ptr2, pData, data_size);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
 		}
 		if (!flag)
 		{
-			crnd_delete_e7rwdhb.Invoke(ptr2);
+			crnd_delete_ps427s.Invoke(ptr2);
 			if (ExceptionInfo.Current != null)
 			{
 				return null;

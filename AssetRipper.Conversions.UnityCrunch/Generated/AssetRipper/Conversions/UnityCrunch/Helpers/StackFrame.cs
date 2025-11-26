@@ -1,19 +1,10 @@
-using System.Runtime.CompilerServices;
-
 namespace AssetRipper.Conversions.UnityCrunch.Helpers;
 
-internal partial struct StackFrame
+internal unsafe partial struct StackFrame(int index, int size)
 {
-	internal readonly int Index;
+	internal readonly int Index = index;
 
-	private unsafe void* Locals;
-
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private unsafe StackFrame(int index, int size)
-	{
-		Index = index;
-		Locals = ((size > 0) ? NativeMemoryHelper.Allocate(size) : null);
-	}
+	private unsafe void* Locals = ((size > 0) ? NativeMemoryHelper.Allocate(size) : null);
 
 	internal unsafe void FreeLocals()
 	{

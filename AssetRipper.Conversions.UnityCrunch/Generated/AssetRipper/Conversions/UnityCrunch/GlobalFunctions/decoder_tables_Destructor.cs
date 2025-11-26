@@ -14,7 +14,7 @@ internal static partial class decoder_tables_Destructor
 		{
 			if (((crnd_prefix_coding_decoder_tables*)@this)->m_lookup != null)
 			{
-				crnd_delete_array_nughn5d.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_lookup);
+				crnd_delete_array_wgct9q.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_lookup);
 				if (ExceptionInfo.Current != null)
 				{
 					goto IL_0051;
@@ -24,7 +24,7 @@ internal static partial class decoder_tables_Destructor
 			{
 				return;
 			}
-			crnd_delete_array_rytswyc.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order);
+			crnd_delete_array_yym6az.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_sorted_symbol_order);
 			if (ExceptionInfo.Current == null)
 			{
 				return;

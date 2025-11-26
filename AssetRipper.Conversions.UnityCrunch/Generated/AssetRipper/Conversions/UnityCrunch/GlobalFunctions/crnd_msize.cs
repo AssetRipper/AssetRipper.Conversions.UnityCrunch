@@ -18,7 +18,7 @@ internal static partial class crnd_msize
 		{
 			if (((int)p & 7) != 0)
 			{
-				crnd_mem_error.Invoke(String_zijibvd.__pointer);
+				crnd_mem_error.Invoke(String_x22k5v.__pointer);
 				return 0L;
 			}
 			long result = ((delegate*<void*, void*, long>)g_pMSize.Value)(p, g_pUser_data.Value);

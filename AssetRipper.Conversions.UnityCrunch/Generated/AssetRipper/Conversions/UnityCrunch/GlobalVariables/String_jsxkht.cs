@@ -1,0 +1,30 @@
+using AssetRipper.Conversions.UnityCrunch.Helpers;
+using AssetRipper.Conversions.UnityCrunch.InlineArrays;
+
+namespace AssetRipper.Conversions.UnityCrunch.GlobalVariables;
+
+[MangledName("??_C@_0CL@INIAFNGL@?$CIx?5?$DM?5cDXTBlockSize?$CJ?5?$CG?$CG?5?$CIy?5?$DM?5cDXT@")]
+[DemangledName("\"(x < cDXTBlockSize) && (y < cDXT\"...")]
+[CleanName("String")]
+internal static partial class String_jsxkht
+{
+	public unsafe static InlineArray43_SByte* __pointer;
+
+	public unsafe static InlineArray43_SByte Value
+	{
+		get
+		{
+			return *__pointer;
+		}
+		set
+		{
+			*__pointer = value;
+		}
+	}
+
+	unsafe static String_jsxkht()
+	{
+		__pointer = unchecked((InlineArray43_SByte*)PointerIndices.Register(NativeMemoryHelper.Allocate(sizeof(InlineArray43_SByte))));
+		Value = InlineArrayHelper.Create<InlineArray43_SByte, byte>("(x < cDXTBlockSize) && (y < cDXTBlockSize)\0"u8);
+	}
+}

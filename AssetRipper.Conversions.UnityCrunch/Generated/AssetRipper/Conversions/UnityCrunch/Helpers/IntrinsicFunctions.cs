@@ -1,5 +1,6 @@
 using System;
 using System.Buffers;
+using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -126,6 +127,8 @@ internal static partial class IntrinsicFunctions
 		}
 	}
 
+	private static readonly ConcurrentStack<nint> atexitFunctions = new ConcurrentStack<nint>();
+
 	[MangledName("puts")]
 	public unsafe static int PutString(sbyte* P_0)
 	{
@@ -156,10 +159,38 @@ internal static partial class IntrinsicFunctions
 
 	[DoesNotReturn]
 	[MangledName("__std_terminate")]
+	[MangledName("terminate")]
 	[MangledName("llvm.trap")]
 	public static void Terminate()
 	{
 		throw new FatalException("Terminate");
+	}
+
+	[MangledName("atexit")]
+	public unsafe static int AtExit(delegate*<void> func)
+	{
+		unchecked
+		{
+			if (atexitFunctions.IsEmpty)
+			{
+				lock (atexitFunctions)
+				{
+					if (atexitFunctions.IsEmpty)
+					{
+						AppDomain.CurrentDomain.ProcessExit += delegate
+						{
+							nint result;
+							while (atexitFunctions.TryPop(out result))
+							{
+								((delegate*<void>)checked((nuint)result))();
+							}
+						};
+					}
+				}
+			}
+		}
+		atexitFunctions.Push((nint)func);
+		return 0;
 	}
 
 	[MangledName("llvm.va_start.p0")]
@@ -193,6 +224,27 @@ internal static partial class IntrinsicFunctions
 		return *p1 - *p2;
 	}
 
+	[MangledName("memchr")]
+	public unsafe static byte* memchr(byte* data, int c, long length)
+	{
+		if (data == null)
+		{
+			return null;
+		}
+		unchecked
+		{
+			byte b = (byte)c;
+			for (long num = 0L; num < length; num = checked(num + 1))
+			{
+				if (data[num] == b)
+				{
+					return (byte*)checked(unchecked((nuint)data) + unchecked((nuint)num));
+				}
+			}
+			return null;
+		}
+	}
+
 	[MangledName("strchr")]
 	public unsafe static byte* strchr(byte* str, int c)
 	{
@@ -202,15 +254,16 @@ internal static partial class IntrinsicFunctions
 		}
 		unchecked
 		{
+			byte b = (byte)c;
 			while (*str != 0)
 			{
-				if (*str == c)
+				if (*str == b)
 				{
 					return str;
 				}
 				str = (byte*)checked(unchecked((nuint)str) + (nuint)1u);
 			}
-			return null;
+			return (b == 0) ? str : null;
 		}
 	}
 
@@ -277,6 +330,25 @@ internal static partial class IntrinsicFunctions
 		return num;
 	}
 
+	[MangledName("wcslen")]
+	public unsafe static long wcslen(char* str)
+	{
+		if (str == null)
+		{
+			return 0L;
+		}
+		long num = 0L;
+		while (*str != 0)
+		{
+			num++;
+			unchecked
+			{
+				str = (char*)checked(unchecked((nuint)str) + (nuint)2u);
+			}
+		}
+		return num;
+	}
+
 	[MangledName("strncpy")]
 	public unsafe static byte* strncpy(byte* destination, byte* source, long count)
 	{
@@ -314,6 +386,12 @@ internal static partial class IntrinsicFunctions
 		}
 		destination[num + num2] = 0;
 		return destination;
+	}
+
+	[MangledName("strcat")]
+	public unsafe static byte* strcat(byte* destination, byte* source)
+	{
+		return strncat(destination, source, 2147483647L);
 	}
 
 	private unsafe static long StringLengthWithMaximum(byte* str, long maxLength)

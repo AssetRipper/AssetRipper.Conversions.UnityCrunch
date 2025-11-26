@@ -17,19 +17,19 @@ internal static partial class Set_alpha
 		{
 			if ((uint)x >= 4u || (uint)y >= 4u)
 			{
-				crnd_assert.Invoke(String_cahur4b.__pointer, String_yguirrd.__pointer, 2831);
+				crnd_assert.Invoke(String_jsxkht.__pointer, String_vvx8bt.__pointer, 2831);
 			}
 			if ((b & 1) == 1)
 			{
 				if ((uint)num > 255u)
 				{
-					crnd_assert.Invoke(String_932ftxa.__pointer, String_yguirrd.__pointer, 2834);
+					crnd_assert.Invoke(String_exh4qe.__pointer, String_vvx8bt.__pointer, 2834);
 				}
 				num = (int)((uint)(num * 15 + 128) / 255u);
 			}
 			else if ((uint)num > 15u)
 			{
-				crnd_assert.Invoke(String_azii4xc.__pointer, String_yguirrd.__pointer, 2837);
+				crnd_assert.Invoke(String_sg8vgw.__pointer, String_vvx8bt.__pointer, 2837);
 			}
 			int num2 = (y << 1) + (x >>> 1);
 			int num3 = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->m_alpha))[(uint)num2];

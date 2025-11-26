@@ -9,7 +9,7 @@ internal static partial class vector_unsigned_int_Destructor
 {
 	public unsafe static void Invoke(void* @this)
 	{
-		clear_utei2oa.Invoke(@this);
+		clear_2hj7fd.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{
 			return;

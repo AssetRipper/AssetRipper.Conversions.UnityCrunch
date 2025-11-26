@@ -17,7 +17,7 @@ internal static partial class crnd_unpack_level
 		{
 			return false;
 		}
-		bool result = unpack_level_cvfjdga.Invoke(pContext, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
+		bool result = unpack_level_vni4dg.Invoke(pContext, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;

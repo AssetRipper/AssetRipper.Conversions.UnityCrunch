@@ -24,7 +24,7 @@ internal static partial class static_huffman_data_model_Assignment
 			}
 			if (Get_alloc_failed.Invoke(&((crnd_static_huffman_data_model*)@this)->m_code_sizes))
 			{
-				clear_egw7ktb.Invoke(@this);
+				clear_9udjtr.Invoke(@this);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
@@ -43,7 +43,7 @@ internal static partial class static_huffman_data_model_Assignment
 				}
 				else
 				{
-					void* pDecode_tables = crnd_new_vzd3zqa.Invoke(((crnd_static_huffman_data_model*)rhs)->m_pDecode_tables);
+					void* pDecode_tables = crnd_new_485jak.Invoke(((crnd_static_huffman_data_model*)rhs)->m_pDecode_tables);
 					if (ExceptionInfo.Current != null)
 					{
 						return null;
@@ -53,7 +53,7 @@ internal static partial class static_huffman_data_model_Assignment
 			}
 			else
 			{
-				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
+				crnd_delete_bvucig.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;

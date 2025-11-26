@@ -43,7 +43,7 @@ internal static partial class crnd_crn_format_to_fourcc
 		case 14:
 			return 1396781637;
 		default:
-			crnd_assert.Invoke(String_xxn2wad.__pointer, String_yguirrd.__pointer, 2126);
+			crnd_assert.Invoke(String_ak4am9.__pointer, String_vvx8bt.__pointer, 2126);
 			return 0;
 		}
 	}

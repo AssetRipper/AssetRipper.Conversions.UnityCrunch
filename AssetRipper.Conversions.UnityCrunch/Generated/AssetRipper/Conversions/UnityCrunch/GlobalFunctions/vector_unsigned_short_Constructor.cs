@@ -11,10 +11,10 @@ internal static partial class vector_unsigned_short_Constructor
 	{
 		unchecked
 		{
-			((crnd_vector_rf9iywd*)@this)->m_p = null;
-			((crnd_vector_rf9iywd*)@this)->m_size = 0;
-			((crnd_vector_rf9iywd*)@this)->m_capacity = 0;
-			((crnd_vector_rf9iywd*)@this)->m_alloc_failed = 0;
+			((crnd_vector_h6df48*)@this)->m_p = null;
+			((crnd_vector_h6df48*)@this)->m_size = 0;
+			((crnd_vector_h6df48*)@this)->m_capacity = 0;
+			((crnd_vector_h6df48*)@this)->m_alloc_failed = 0;
 			return @this;
 		}
 	}

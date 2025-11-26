@@ -17,7 +17,7 @@ internal static partial class crnd_unpack_end
 		{
 			return false;
 		}
-		crnd_delete_e7rwdhb.Invoke(pContext);
+		crnd_delete_ps427s.Invoke(pContext);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;

@@ -140,13 +140,6 @@ internal static partial class InlineArrayNumericHelper
 		return buffer;
 	}
 
-	public static TBuffer Negate<TBuffer, TElement>(TBuffer x) where TBuffer : struct, IInlineArray<TElement> where TElement : IUnaryNegationOperators<TElement, TElement>
-	{
-		TBuffer buffer = default(TBuffer);
-		TensorPrimitives.Negate(x.AsReadOnlySpan<TBuffer, TElement>(), buffer.AsSpan<TBuffer, TElement>());
-		return buffer;
-	}
-
 	public static TBuffer ShiftLeft<TBuffer, TElement>(TBuffer x, TBuffer y) where TBuffer : struct, IInlineArray<TElement> where TElement : IShiftOperators<TElement, int, TElement>
 	{
 		TBuffer buffer = default(TBuffer);
@@ -177,6 +170,23 @@ internal static partial class InlineArrayNumericHelper
 		return buffer;
 	}
 
+	public static TBuffer CtPop<TBuffer, TElement>(TBuffer x, TBuffer y) where TBuffer : struct, IInlineArray<TElement> where TElement : unmanaged
+	{
+		TBuffer buffer = default(TBuffer);
+		for (int i = 0; i < TBuffer.Length; i++)
+		{
+			InlineArrayHelper.SetElement(ref buffer, i, NumericHelper.CtPop(x.GetElement<TBuffer, TElement>(i)));
+		}
+		return buffer;
+	}
+
+	public static TBuffer Negate<TBuffer, TElement>(TBuffer x) where TBuffer : struct, IInlineArray<TElement> where TElement : IUnaryNegationOperators<TElement, TElement>
+	{
+		TBuffer buffer = default(TBuffer);
+		TensorPrimitives.Negate(x.AsReadOnlySpan<TBuffer, TElement>(), buffer.AsSpan<TBuffer, TElement>());
+		return buffer;
+	}
+
 	public static TBuffer BitwiseAnd<TBuffer, TElement>(TBuffer x, TBuffer y) where TBuffer : struct, IInlineArray<TElement> where TElement : IBitwiseOperators<TElement, TElement, TElement>
 	{
 		TBuffer buffer = default(TBuffer);
@@ -198,12 +208,12 @@ internal static partial class InlineArrayNumericHelper
 		return buffer;
 	}
 
-	public static TBuffer CtPop<TBuffer, TElement>(TBuffer x, TBuffer y) where TBuffer : struct, IInlineArray<TElement> where TElement : unmanaged
+	public static TBuffer BSwap<TBuffer, TElement>(TBuffer x, TBuffer y) where TBuffer : struct, IInlineArray<TElement>
 	{
 		TBuffer buffer = default(TBuffer);
 		for (int i = 0; i < TBuffer.Length; i++)
 		{
-			InlineArrayHelper.SetElement(ref buffer, i, NumericHelper.CtPop(x.GetElement<TBuffer, TElement>(i)));
+			InlineArrayHelper.SetElement(ref buffer, i, NumericHelper.BSwap(x.GetElement<TBuffer, TElement>(i)));
 		}
 		return buffer;
 	}

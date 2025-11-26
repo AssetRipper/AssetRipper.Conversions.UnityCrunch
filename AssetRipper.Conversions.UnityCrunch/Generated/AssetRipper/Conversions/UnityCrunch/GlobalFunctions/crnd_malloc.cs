@@ -28,7 +28,7 @@ internal static partial class crnd_malloc
 			void* ptr;
 			if ((ulong)num > 2147418112uL)
 			{
-				crnd_mem_error.Invoke(String_ypy7scc.__pointer);
+				crnd_mem_error.Invoke(String_mqjrcv.__pointer);
 				ptr = null;
 			}
 			else
@@ -48,14 +48,14 @@ internal static partial class crnd_malloc
 				}
 				if (ptr3 == null || (ulong)localsPointer->field_0 < (ulong)num)
 				{
-					crnd_mem_error.Invoke(String_xewaojb.__pointer);
+					crnd_mem_error.Invoke(String_eafej9.__pointer);
 					ptr = null;
 				}
 				else
 				{
 					if (((int)ptr3 & 7) != 0)
 					{
-						crnd_assert.Invoke(String_42humaa.__pointer, String_yguirrd.__pointer, 2017);
+						crnd_assert.Invoke(String_7eewk9.__pointer, String_vvx8bt.__pointer, 2017);
 					}
 					ptr = ptr3;
 				}

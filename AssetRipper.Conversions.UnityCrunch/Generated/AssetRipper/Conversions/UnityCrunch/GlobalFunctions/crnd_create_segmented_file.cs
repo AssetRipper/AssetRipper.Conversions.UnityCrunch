@@ -39,7 +39,7 @@ internal static partial class crnd_create_segmented_file
 			crn_packed_uint_2_Assignment.Invoke(val: (ushort)crc16.Invoke(len: crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)pBase_data)->m_header_size) - (int)((long)(&((crnd_crn_header*)pBase_data)->m_data_size) - (long)pBase_data), pBuf: &((crnd_crn_header*)pBase_data)->m_data_size, crc: 0), @this: &((crnd_crn_header*)pBase_data)->m_header_crc16);
 			if (!crnd_validate_file.Invoke(pBase_data, num, null))
 			{
-				crnd_assert.Invoke(String_2bpyz2d.__pointer, String_yguirrd.__pointer, 2374);
+				crnd_assert.Invoke(String_82dmwb.__pointer, String_vvx8bt.__pointer, 2374);
 			}
 			return true;
 		}

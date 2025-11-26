@@ -9,5 +9,5 @@ namespace AssetRipper.Conversions.UnityCrunch.Structures;
 public partial struct crnd_color_quad
 {
 	[FieldOffset(0)]
-	public anon_fewgjra field;
+	public anon_juyca8 field;
 }

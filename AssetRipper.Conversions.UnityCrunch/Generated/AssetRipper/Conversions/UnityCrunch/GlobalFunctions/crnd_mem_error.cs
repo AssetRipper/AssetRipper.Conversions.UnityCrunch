@@ -10,6 +10,6 @@ internal static partial class crnd_mem_error
 	[return: NativeType("void")]
 	public unsafe static void Invoke([NativeType("char const *")] void* p_msg)
 	{
-		crnd_assert.Invoke(p_msg, String_yguirrd.__pointer, 1993);
+		crnd_assert.Invoke(p_msg, String_vvx8bt.__pointer, 1993);
 	}
 }

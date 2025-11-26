@@ -14,7 +14,7 @@ internal static partial class static_huffman_data_model_Destructor
 		{
 			if (((crnd_static_huffman_data_model*)@this)->m_pDecode_tables != null)
 			{
-				crnd_delete_rldcmnc.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
+				crnd_delete_bvucig.Invoke(((crnd_static_huffman_data_model*)@this)->m_pDecode_tables);
 				if (ExceptionInfo.Current != null)
 				{
 					ExceptionInfo.Current = null;

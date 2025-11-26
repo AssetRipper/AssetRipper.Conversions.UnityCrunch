@@ -14,7 +14,7 @@ internal static partial class crnd_assert
 	public unsafe static void Invoke([NativeType("char const *")] void* pExp, [NativeType("char const *")] void* pFile, [NativeType("unsigned int")] int line)
 	{
 		InlineArray512_SByte inlineArray512_SByte = default(InlineArray512_SByte);
-		sprintf.Invoke(&inlineArray512_SByte, String_tghxvvc.__pointer, default(ReadOnlySpan<nint>));
+		sprintf.Invoke(&inlineArray512_SByte, String_bkvqbi.__pointer, default(ReadOnlySpan<nint>));
 		crnd_output_debug_string.Invoke(&inlineArray512_SByte);
 		puts.Invoke(&inlineArray512_SByte);
 		if (crnd_is_debugger_present.Invoke())

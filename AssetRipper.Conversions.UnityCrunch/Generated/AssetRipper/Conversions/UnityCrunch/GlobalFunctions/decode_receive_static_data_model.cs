@@ -26,7 +26,7 @@ internal static partial class decode_receive_static_data_model
 		{
 			if (num == 0)
 			{
-				clear_egw7ktb.Invoke(model);
+				clear_9udjtr.Invoke(model);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -35,7 +35,7 @@ internal static partial class decode_receive_static_data_model
 			}
 			else
 			{
-				bool flag2 = resize_rzzl5xd.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num);
+				bool flag2 = resize_zpvfc7.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num);
 				if (ExceptionInfo.Current != null)
 				{
 					return false;
@@ -46,12 +46,12 @@ internal static partial class decode_receive_static_data_model
 				}
 				else
 				{
-					llvm_memset_p0_i64.Invoke(vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, 0), 0, 1L * (long)(uint)num, isVolatile: false);
+					llvm_memset_p0_i64.Invoke(vector_unsigned_char_Operator_ggxbum.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, 0), 0, 1L * (long)(uint)num, isVolatile: false);
 					int num2 = decode_bits.Invoke(@this, 5);
 					if ((uint)num2 >= 1u && (uint)num2 <= 21u)
 					{
-						static_huffman_data_model_Constructor_tl33idc.Invoke(&localsPointer->field_0);
-						bool flag3 = resize_rzzl5xd.Invoke(&localsPointer->field_0.m_code_sizes, 21);
+						static_huffman_data_model_Constructor_c98ih8.Invoke(&localsPointer->field_0);
+						bool flag3 = resize_zpvfc7.Invoke(&localsPointer->field_0.m_code_sizes, 21);
 						if (ExceptionInfo.Current == null)
 						{
 							if (!flag3)
@@ -67,7 +67,7 @@ internal static partial class decode_receive_static_data_model
 									if (ExceptionInfo.Current == null)
 									{
 										sbyte b = (sbyte)num4;
-										void* ptr = vector_unsigned_char_Index_o39mi9c.Invoke(&localsPointer->field_0.m_code_sizes, (byte)((sbyte*)g_most_probable_codelength_codes.__pointer)[(uint)num3]);
+										void* ptr = vector_unsigned_char_Operator_ggxbum.Invoke(&localsPointer->field_0.m_code_sizes, (byte)((sbyte*)g_most_probable_codelength_codes.__pointer)[(uint)num3]);
 										if (ExceptionInfo.Current == null)
 										{
 											*(sbyte*)ptr = b;
@@ -100,7 +100,7 @@ internal static partial class decode_receive_static_data_model
 											if ((uint)num8 <= 16u)
 											{
 												sbyte b2 = (sbyte)num8;
-												void* ptr2 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num5++);
+												void* ptr2 = vector_unsigned_char_Operator_ggxbum.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num5++);
 												if (ExceptionInfo.Current == null)
 												{
 													*(sbyte*)ptr2 = b2;
@@ -167,7 +167,7 @@ internal static partial class decode_receive_static_data_model
 										{
 											goto IL_0339;
 										}
-										void* ptr3 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num5 - 1);
+										void* ptr3 = vector_unsigned_char_Operator_ggxbum.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num5 - 1);
 										if (ExceptionInfo.Current == null)
 										{
 											int num16 = (byte)(*(sbyte*)ptr3);
@@ -179,7 +179,7 @@ internal static partial class decode_receive_static_data_model
 											while ((uint)num5 < (uint)num17)
 											{
 												sbyte b3 = (sbyte)num16;
-												void* ptr4 = vector_unsigned_char_Index_o39mi9c.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num5++);
+												void* ptr4 = vector_unsigned_char_Operator_ggxbum.Invoke(&((crnd_static_huffman_data_model*)model)->m_code_sizes, num5++);
 												if (ExceptionInfo.Current == null)
 												{
 													*(sbyte*)ptr4 = b3;
@@ -226,7 +226,7 @@ internal static partial class decode_receive_static_data_model
 		flag = false;
 		goto IL_0410;
 		IL_03bc:
-		crnd_assert.Invoke(String_xzkwrkb.__pointer, String_yguirrd.__pointer, 2598);
+		crnd_assert.Invoke(String_m5q5qr.__pointer, String_vvx8bt.__pointer, 2598);
 		if (ExceptionInfo.Current == null)
 		{
 			flag = false;

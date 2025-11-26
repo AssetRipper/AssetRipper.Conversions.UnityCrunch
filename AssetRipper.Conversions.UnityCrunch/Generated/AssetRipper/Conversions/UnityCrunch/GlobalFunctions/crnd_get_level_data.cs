@@ -29,13 +29,13 @@ internal static partial class crnd_get_level_data
 			{
 				return null;
 			}
-			int num = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->m_level_ofs) + (nint)(uint)level_index * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+			int num = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->m_level_ofs) + (nint)(uint)level_index * (nint)sizeof(crnd_crn_packed_uint_25ciii));
 			if (pSize != null)
 			{
 				int num2 = data_size;
 				if ((uint)(level_index + 1) < (uint)crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)ptr)->m_levels))
 				{
-					num2 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->m_level_ofs) + (nint)(uint)(level_index + 1) * (nint)sizeof(crnd_crn_packed_uint_jymcebc));
+					num2 = crn_packed_uint_4_ToUInt32.Invoke((byte*)(&((crnd_crn_header*)ptr)->m_level_ofs) + (nint)(uint)(level_index + 1) * (nint)sizeof(crnd_crn_packed_uint_25ciii));
 				}
 				*(int*)pSize = num2 - num;
 			}

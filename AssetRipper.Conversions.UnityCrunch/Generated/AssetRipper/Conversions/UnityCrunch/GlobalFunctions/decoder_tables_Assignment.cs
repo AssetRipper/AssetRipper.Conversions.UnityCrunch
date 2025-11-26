@@ -15,7 +15,7 @@ internal static partial class decoder_tables_Assignment
 		{
 			return @this;
 		}
-		clear_ie5thac.Invoke(@this);
+		clear_v2azth.Invoke(@this);
 		if (ExceptionInfo.Current != null)
 		{
 			return null;
@@ -25,7 +25,7 @@ internal static partial class decoder_tables_Assignment
 		{
 			if (((crnd_prefix_coding_decoder_tables*)other)->m_lookup != null)
 			{
-				void* lookup = crnd_new_array_linsntd.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_cur_lookup_size);
+				void* lookup = crnd_new_array_zqdtgg.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_cur_lookup_size);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;
@@ -38,7 +38,7 @@ internal static partial class decoder_tables_Assignment
 			}
 			if (((crnd_prefix_coding_decoder_tables*)other)->m_sorted_symbol_order != null)
 			{
-				void* sorted_symbol_order = crnd_new_array_ovofsdb.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_cur_sorted_symbol_order_size);
+				void* sorted_symbol_order = crnd_new_array_ped3ba.Invoke(((crnd_prefix_coding_decoder_tables*)@this)->m_cur_sorted_symbol_order_size);
 				if (ExceptionInfo.Current != null)
 				{
 					return null;

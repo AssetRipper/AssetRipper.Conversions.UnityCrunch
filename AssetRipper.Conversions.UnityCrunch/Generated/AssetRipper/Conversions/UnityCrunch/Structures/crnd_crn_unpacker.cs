@@ -34,17 +34,17 @@ public partial struct crnd_crn_unpacker
 	public InlineArray2_crnd_static_huffman_data_model m_selector_delta_dm;
 
 	[FieldOffset(272)]
-	public crnd_vector_maaktjc m_color_endpoints;
+	public crnd_vector_rgfndh m_color_endpoints;
 
 	[FieldOffset(296)]
-	public crnd_vector_maaktjc m_color_selectors;
+	public crnd_vector_rgfndh m_color_selectors;
 
 	[FieldOffset(320)]
-	public crnd_vector_rf9iywd m_alpha_endpoints;
+	public crnd_vector_h6df48 m_alpha_endpoints;
 
 	[FieldOffset(344)]
-	public crnd_vector_rf9iywd m_alpha_selectors;
+	public crnd_vector_h6df48 m_alpha_selectors;
 
 	[FieldOffset(368)]
-	public crnd_vector_y4ukjxd m_block_buffer;
+	public crnd_vector_v4kyxs m_block_buffer;
 }

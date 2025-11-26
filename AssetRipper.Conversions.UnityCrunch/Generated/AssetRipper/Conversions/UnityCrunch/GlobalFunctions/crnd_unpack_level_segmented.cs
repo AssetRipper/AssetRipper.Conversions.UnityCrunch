@@ -17,7 +17,7 @@ internal static partial class crnd_unpack_level_segmented
 		{
 			return false;
 		}
-		bool result = unpack_level_zjb72ec.Invoke(pContext, pSrc, src_size_in_bytes, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
+		bool result = unpack_level_u9ch6s.Invoke(pContext, pSrc, src_size_in_bytes, pDst, dst_size_in_bytes, row_pitch_in_bytes, level_index);
 		if (ExceptionInfo.Current != null)
 		{
 			return false;

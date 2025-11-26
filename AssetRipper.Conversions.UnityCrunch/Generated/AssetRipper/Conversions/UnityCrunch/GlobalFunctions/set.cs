@@ -13,13 +13,13 @@ internal static partial class set
 		unchecked
 		{
 			sbyte field_ = (sbyte)clamp.Invoke(red);
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_0 = field_;
+			((anon_m9uqrv*)(&((crnd_color_quad*)@this)->field))->field_0 = field_;
 			sbyte field_2 = (sbyte)clamp.Invoke(green);
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_1 = field_2;
+			((anon_m9uqrv*)(&((crnd_color_quad*)@this)->field))->field_1 = field_2;
 			sbyte field_3 = (sbyte)clamp.Invoke(blue);
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_2 = field_3;
+			((anon_m9uqrv*)(&((crnd_color_quad*)@this)->field))->field_2 = field_3;
 			sbyte field_4 = (sbyte)clamp.Invoke(alpha);
-			((anon_b9ijpuc*)(&((crnd_color_quad*)@this)->field))->field_3 = field_4;
+			((anon_m9uqrv*)(&((crnd_color_quad*)@this)->field))->field_3 = field_4;
 			return @this;
 		}
 	}

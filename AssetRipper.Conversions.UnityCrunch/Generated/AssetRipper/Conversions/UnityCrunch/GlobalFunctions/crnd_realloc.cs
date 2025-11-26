@@ -24,12 +24,12 @@ internal static partial class crnd_realloc
 			void* ptr;
 			if (((int)p & 7) != 0)
 			{
-				crnd_mem_error.Invoke(String_ifury7b.__pointer);
+				crnd_mem_error.Invoke(String_f3peyu.__pointer);
 				ptr = null;
 			}
 			else if ((ulong)size > 2147418112uL)
 			{
-				crnd_mem_error.Invoke(String_ypy7scc.__pointer);
+				crnd_mem_error.Invoke(String_mqjrcv.__pointer);
 				ptr = null;
 			}
 			else
@@ -49,7 +49,7 @@ internal static partial class crnd_realloc
 				}
 				if (((int)ptr3 & 7) != 0)
 				{
-					crnd_assert.Invoke(String_42humaa.__pointer, String_yguirrd.__pointer, 2039);
+					crnd_assert.Invoke(String_7eewk9.__pointer, String_vvx8bt.__pointer, 2039);
 				}
 				ptr = ptr3;
 			}

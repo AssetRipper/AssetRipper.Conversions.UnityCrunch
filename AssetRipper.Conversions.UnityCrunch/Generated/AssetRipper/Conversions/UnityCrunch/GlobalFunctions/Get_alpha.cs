@@ -16,7 +16,7 @@ internal static partial class Get_alpha
 		{
 			if ((uint)x >= 4u || (uint)y >= 4u)
 			{
-				crnd_assert.Invoke(String_cahur4b.__pointer, String_yguirrd.__pointer, 2850);
+				crnd_assert.Invoke(String_jsxkht.__pointer, String_vvx8bt.__pointer, 2850);
 			}
 			int num = (byte)((sbyte*)(&((crnd_dxt3_block*)@this)->m_alpha))[(uint)((y << 1) + (x >>> 1))];
 			if ((x & 1) != 0)

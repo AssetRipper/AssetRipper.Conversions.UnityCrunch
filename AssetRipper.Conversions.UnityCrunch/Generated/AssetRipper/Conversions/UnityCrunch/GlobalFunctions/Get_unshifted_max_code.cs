@@ -15,7 +15,7 @@ internal static partial class Get_unshifted_max_code
 		{
 			if ((uint)len < 1u || (uint)len > 16u)
 			{
-				crnd_assert.Invoke(String_ajzw4md.__pointer, String_yguirrd.__pointer, 1514);
+				crnd_assert.Invoke(String_s4qupc.__pointer, String_vvx8bt.__pointer, 1514);
 			}
 			int num = ((int*)(&((crnd_prefix_coding_decoder_tables*)@this)->m_max_codes))[(uint)(len - 1)];
 			if (num == 0)

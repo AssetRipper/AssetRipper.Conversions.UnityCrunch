@@ -24,7 +24,7 @@ internal static partial class decode_color_endpoints
 			int num = crn_packed_uint_2_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_color_endpoints.m_num);
 			sbyte b = (sbyte)(byte)((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 10) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 11) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 12) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) != 13) ? ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 14) ? 1 : 0) : (-1)))));
 			sbyte b2 = (sbyte)(byte)((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 10) ? (-1) : ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) != 11) ? ((crn_packed_uint_1_ToUInt32.Invoke(&((crnd_crn_header*)((crnd_crn_unpacker*)@this)->m_pHeader)->m_format) == 12) ? 1 : 0) : (-1)));
-			bool flag = resize_a3d3m5b.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, num);
+			bool flag = resize_dreg6y.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, num);
 			if (ExceptionInfo.Current != null)
 			{
 				return false;
@@ -46,7 +46,7 @@ internal static partial class decode_color_endpoints
 				while (true)
 				{
 					void* ptr3 = intPtr;
-					static_huffman_data_model_Constructor_tl33idc.Invoke(ptr3);
+					static_huffman_data_model_Constructor_c98ih8.Invoke(ptr3);
 					if (ExceptionInfo.Current == null)
 					{
 						crnd_static_huffman_data_model* ptr4 = (crnd_static_huffman_data_model*)ptr3 + 1;
@@ -105,7 +105,7 @@ internal static partial class decode_color_endpoints
 						int num7 = 0;
 						int num8 = 0;
 						int num9 = 0;
-						void* ptr6 = vector_unsigned_int_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, 0);
+						void* ptr6 = vector_unsigned_int_Operator.Invoke(&((crnd_crn_unpacker*)@this)->m_color_endpoints, 0);
 						if (ExceptionInfo.Current == null)
 						{
 							void* ptr7 = ptr6;

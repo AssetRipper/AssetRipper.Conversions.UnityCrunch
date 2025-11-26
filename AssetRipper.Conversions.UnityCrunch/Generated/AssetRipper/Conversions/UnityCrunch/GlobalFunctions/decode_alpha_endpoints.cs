@@ -28,7 +28,7 @@ internal static partial class decode_alpha_endpoints
 			}
 			else
 			{
-				static_huffman_data_model_Constructor_tl33idc.Invoke(&localsPointer->field_0);
+				static_huffman_data_model_Constructor_c98ih8.Invoke(&localsPointer->field_0);
 				bool flag2 = decode_receive_static_data_model.Invoke(&((crnd_crn_unpacker*)@this)->m_codec, &localsPointer->field_0);
 				if (ExceptionInfo.Current != null)
 				{
@@ -40,7 +40,7 @@ internal static partial class decode_alpha_endpoints
 				}
 				else
 				{
-					bool flag3 = resize_w95s75a.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, num);
+					bool flag3 = resize_9ubjj8.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, num);
 					if (ExceptionInfo.Current != null)
 					{
 						goto IL_01e3;
@@ -51,7 +51,7 @@ internal static partial class decode_alpha_endpoints
 					}
 					else
 					{
-						void* ptr = vector_unsigned_short_Index.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, 0);
+						void* ptr = vector_unsigned_short_Operator.Invoke(&((crnd_crn_unpacker*)@this)->m_alpha_endpoints, 0);
 						if (ExceptionInfo.Current != null)
 						{
 							goto IL_01e3;

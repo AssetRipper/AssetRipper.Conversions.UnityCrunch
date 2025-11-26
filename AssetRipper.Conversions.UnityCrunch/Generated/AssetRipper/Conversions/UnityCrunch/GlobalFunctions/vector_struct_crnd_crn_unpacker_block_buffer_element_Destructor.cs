@@ -9,7 +9,7 @@ internal static partial class vector_struct_crnd_crn_unpacker_block_buffer_eleme
 {
 	public unsafe static void Invoke(void* @this)
 	{
-		clear_jenxxsd.Invoke(@this);
+		clear_hv5vjw.Invoke(@this);
 		if (ExceptionInfo.Current == null)
 		{
 			return;

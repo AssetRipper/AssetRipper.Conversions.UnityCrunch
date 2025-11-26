@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="source.cpp" />
+  </Folder>
+  <Project Path="AssetRipper.Conversions.UnityCrunch.ConsoleApp/AssetRipper.Conversions.UnityCrunch.ConsoleApp.csproj" />
+  <Project Path="AssetRipper.Conversions.UnityCrunch/AssetRipper.Conversions.UnityCrunch.csproj" />
+</Solution>
